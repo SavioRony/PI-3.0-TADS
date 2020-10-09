@@ -36,7 +36,6 @@ public class Teste extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Teste</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Teste at " + request.getContextPath() + "</h1>");
