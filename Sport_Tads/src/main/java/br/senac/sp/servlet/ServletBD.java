@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.senac.sp.servlet;
 
+import br.senac.sp.dao.ClienteDAO;
+import br.senac.sp.entidade.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author savio
+ * @author tscarton
  */
-@WebServlet(urlPatterns = {"/Teste"})
-public class Teste extends HttpServlet {
+public class ServletBD extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,9 +38,16 @@ public class Teste extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<title>Servlet ServletBD</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Teste at " + request.getContextPath() + "</h1>");
+            
+            List<Cliente> listaClientes = ClienteDAO.getClientes();
+            for(Cliente cliente: listaClientes) {
+                out.println(cliente);
+                out.println("<br/>");
+            }
+            
             out.println("</body>");
             out.println("</html>");
         }
