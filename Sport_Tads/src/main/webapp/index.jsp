@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Sep 25, 2020, 9:09:13 PM
-    Author     : tscarton
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,7 +10,6 @@
     </head>
     <body>
         <h1>Menu</h1>
-        <a href="ListarClientes">Listar Clientes</a><br/>
-        <a href="cadastrarCliente.jsp">Cadastrar Clientes</a>
+        <a href="ListarClientes">Cliente</a><br/>
     </body>
 </html>

@@ -20,7 +20,7 @@ public class AlterarCliente extends HttpServlet {
      @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long cpf = Long.parseLong(request.getParameter("cpf"));
+        String cpf = request.getParameter("cpf");
         Cliente cliente = ClienteDAO.getCliente(cpf);
         request.setAttribute("cliente", cliente);
          RequestDispatcher rd = 
@@ -34,7 +34,7 @@ public class AlterarCliente extends HttpServlet {
             throws ServletException, IOException {
          String nome = request.getParameter("nome");
          String email = request.getParameter("email");
-         Long cpf = Long.parseLong(request.getParameter("cpf"));
+         String cpf = request.getParameter("cpf");
          int celular = Integer.parseInt(request.getParameter("celular"));
          Cliente cliente = ClienteDAO.getCliente(cpf);
          cliente.setNome(nome);
