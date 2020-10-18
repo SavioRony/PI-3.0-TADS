@@ -1,8 +1,4 @@
-<%-- 
-    Document   : header
-    Created on : Oct 2, 2020, 8:26:58 PM
-    Author     : tscarton
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,10 +1,10 @@
 
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="header.jsp" %>
+    <%@include file="header.jsp"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/cliente.css">
@@ -25,30 +25,40 @@
                 });
             }
         </script>
-     
+
     </head>
-    <body class="container">
+    <body>
+ 
         <h1>Cliente</h1>
+            <form action="buscarCliente">
+                    <div class="form-group col-lg-4">
+                        <div class="input-group mb-3">
+                            <input name="cpf" class="form-control" placeholder="CPF Cliente" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+            </form>
         <table class="table">
             <thead>
-            <th>CPF</th>
-            <th>Nome</th>
-            <th>Email</th>               
-            <th>Celular</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>               
+            <th scope="col">Celular</th>
         </thead>
         <tbody> 
-            <c:forEach var="cliente" items="${listaClientes}">
+            <c:forEach var="cliente" items="${listaClientes}">              
                 <tr>
-                    <td width="50">${cliente.cpf}</td>
-                    <td width="300">${cliente.nome}</td>
-                    <td width="100">${cliente.email}</td>
-                    <td width="50">${cliente.celular}</td>
-                    <td width="20"><a href="AlterarCliente?cpf=${cliente.cpf}">Alterar</a></td>
-                    <td width="20"><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${cliente.cpf}, '${cliente.nome}')">Excluir</button></td>
+                    <th scope="row">${cliente.cpf}</th>
+                    <td>${cliente.nome}</td>
+                    <td>${cliente.email}</td>
+                    <td>${cliente.celular}</td>
+                    <td><a href="AlterarCliente?cpf=${cliente.cpf}">Alterar</a></td>
+                    <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${cliente.cpf}, '${cliente.nome}')">Excluir</button></td>
                 </tr>
+                
             </c:forEach>
-
-
         </tbody>
 
     </table>
@@ -64,7 +74,7 @@
                 </div>
                 <div class="modal-body">
                     Confirmar exclusão do cliente  <label id="nomeCliente"></label> ?
-                    <input id="cpfCliente" hidden="true" />
+                    <input id="cpfCliente" hidden="true"/>
 
                 </div>
                 <div class="modal-footer">
@@ -78,4 +88,4 @@
     <a href="index.jsp">Voltar</a>
     <a href="cadastrarCliente.jsp"><button type="button" class="btn btn-primary" id="botaoCadastrar" >Cadastrar Clientes</button></a>
 </body>
-</html>
+</html> 

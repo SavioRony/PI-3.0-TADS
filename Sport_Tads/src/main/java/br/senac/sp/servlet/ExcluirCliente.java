@@ -22,7 +22,7 @@ public class ExcluirCliente extends HttpServlet {
    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long cpf = Long.parseLong(request.getParameter("cpf"));
+        String cpf = request.getParameter("cpf");
        try {
            ClienteDAO.deleteCliente(cpf);
            response.getWriter().print(true);

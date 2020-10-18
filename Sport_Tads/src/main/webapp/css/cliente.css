@@ -2,31 +2,9 @@
     text-align: center;
     float: right;
 }
-#inputEmail{
-    width: 300px;
-    float: left;
-    margin-right: 20px;
-}
-#inputNome{
-    width: 600px;
-}
-#inputCpf{
-    width: 150px;
-    float: left;
-
-}
-#inputCelular{
-    width: 150px;
-    float: left;
-    margin-left: 20px;
-    margin-right: 50px;
-}
 #area{
     width: 720px;
     margin: 0 auto;
-}
-#btnEnviar{
-
 }
 body{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
