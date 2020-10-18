@@ -1,0 +1,33 @@
+package br.senac.sp.servlet;
+
+import br.senac.sp.dao.ProdutoDAO;
+import br.sport.tads.entidade.Produto;
+import java.io.IOException;
+import java.io.PrintWriter; 
+import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author Fernando
+ */
+public class ListaProdutos extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
+      
+        request.setAttribute("listaProd",listaProdutos);
+        
+         RequestDispatcher requestDispatcher = getServletContext()
+                 .getRequestDispatcher("/listaProdutos.jsp");
+                requestDispatcher.forward(request, response);
+    }
+   
+}
