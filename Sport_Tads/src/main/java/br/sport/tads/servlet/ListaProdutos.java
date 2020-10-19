@@ -1,6 +1,6 @@
-package br.senac.sp.servlet;
+package br.sport.tads.servlet;
 
-import br.senac.sp.dao.ProdutoDAO;
+import br.sport.tads.dao.ProdutoDAO;
 import br.sport.tads.entidade.Produto;
 import java.io.IOException;
 import java.io.PrintWriter; 

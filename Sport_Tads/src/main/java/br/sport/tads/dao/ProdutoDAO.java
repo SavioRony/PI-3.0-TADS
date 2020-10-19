@@ -1,8 +1,8 @@
-package br.senac.sp.dao;
+package br.sport.tads.dao;
 
-import br.senac.sp.bd.ConexaoDB;
+import br.sport.tads.bd.ConexaoDB;
 import br.sport.tads.entidade.Produto;
-import br.senac.sp.servlet.ServletBD;
+import br.sport.tads.servlet.ServletBD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

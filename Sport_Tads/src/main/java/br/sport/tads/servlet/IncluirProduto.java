@@ -1,10 +1,10 @@
 
-package br.senac.sp.servlet;
+package br.sport.tads.servlet;
 
 
-import br.senac.sp.dao.ProdutoDAO;
+import br.sport.tads.dao.ProdutoDAO;
 import br.sport.tads.entidade.Produto;
-import br.senac.sp.utils.Utils;
+import br.sport.tads.utils.Utils;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -43,7 +43,7 @@ public class IncluirProduto extends HttpServlet {
             
             response.sendRedirect("listaProdutos");
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(CadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(IncluirProduto.class.getName()).log(Level.SEVERE, null, ex);
             Utils.mostrarTelaErro(ex, request, response);
         }
     }

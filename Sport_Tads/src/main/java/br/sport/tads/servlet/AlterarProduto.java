@@ -1,8 +1,8 @@
 
-package br.senac.sp.servlet;
+package br.sport.tads.servlet;
 
-import br.senac.sp.dao.ProdutoDAO;
-import br.senac.sp.utils.Utils;
+import br.sport.tads.dao.ProdutoDAO;
+import br.sport.tads.utils.Utils;
 import br.sport.tads.entidade.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -56,7 +56,7 @@ public class AlterarProduto extends HttpServlet {
              ProdutoDAO.alterarProduto(produto); 
              response.sendRedirect("sucesso.jsp");
          } catch (ClassNotFoundException | SQLException ex) {
-             Logger.getLogger(AlterarCliente.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(AlterarProduto.class.getName()).log(Level.SEVERE, null, ex);
              Utils.mostrarTelaErro(ex, request, response);
          } 
         
