@@ -1,0 +1,31 @@
+body {
+    color: #333333;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.menu-opcoes {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;   
+    width: 230px;
+    margin-top: 10px;
+    float: left;
+    clear: left;
+ 
+}
+
+.menu-opcoes a{
+    color: #333333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 60px;
+}
+.menu-opcoes h2{
+    padding-left: 60px; 
+    background-color: #DCDCDC;
+}
+.menu-opcoes h1{
+    padding-left: 30px;
+}
