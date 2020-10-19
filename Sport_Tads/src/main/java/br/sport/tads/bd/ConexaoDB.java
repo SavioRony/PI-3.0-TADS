@@ -1,5 +1,5 @@
 
-package br.senac.sp.bd;
+package br.sport.tads.bd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

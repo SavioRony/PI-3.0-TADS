@@ -1,4 +1,4 @@
-package br.senac.sp.entidade;
+package br.sport.tads.entidade;
 
 public class Cliente {
 

@@ -1,9 +1,9 @@
 
-package br.senac.sp.servlet;
+package br.sport.tads.servlet;
 
-import br.senac.sp.dao.ClienteDAO;
-import br.senac.sp.entidade.Cliente;
-import br.senac.sp.utils.Utils;
+import br.sport.tads.dao.ClienteDAO;
+import br.sport.tads.entidade.Cliente;
+import br.sport.tads.utils.Utils;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
