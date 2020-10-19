@@ -1,13 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.senac.sp.servlet;
 
-import br.senac.sp.dao.ClienteDAO;
 import br.senac.sp.dao.ProdutoDAO;
-import br.sport.tads.entidade.Cliente;
 import br.sport.tads.entidade.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,13 +33,7 @@ public class ServletBD extends HttpServlet {
                 out.println(produto);
                 out.println("<br/>");
             }
-            
-          /*  List<Cliente> listaClientes = ClienteDAO.getClientes();
-            for(Cliente cliente: listaClientes) {
-                out.println(cliente);
-                out.println("<br/>");
-            }*/
-            
+                   
             
             
             out.println("</body>");

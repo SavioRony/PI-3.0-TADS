@@ -46,12 +46,12 @@ public class ProdutoDAO {
     }
     
    public static void alterarProduto( Produto produto) throws SQLException, ClassNotFoundException {
-        PreparedStatement ps = null;
-        try {
+        
+        
             Connection con = ConexaoDB.getConexao();
-            String query = "update TB_produto set codfilial=?,nomeproduto=?,marcaproduto=?,categoriaproduto=?, valorproduto=?,quantidadeemestoque=? where codproduto=?";
+            String query = "update tb_produto set codfilial=?,nomeProduto=?,marcaProduto=?,categoriaProduto=?, valorProduto=?,quantidadeEmEstoque=? where codProduto=?";
+            PreparedStatement ps = con.prepareStatement(query);
             
-            ps = con.prepareStatement(query);
             ps.setInt(1, produto.getCodFilial());
             ps.setString(2, produto.getNomeProduto());
             ps.setString(3, produto.getMarcaProduto() );
@@ -61,29 +61,20 @@ public class ProdutoDAO {
             ps.setInt(7, produto.getCodProduto());
                                     
             ps.execute();
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletBD.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        }
-    }
-    
-     public static void excluirProduto( int codproduto) throws SQLException, ClassNotFoundException {
-        PreparedStatement ps = null;
-        try {
-            ps = null;
-            Connection con = ConexaoDB.getConexao();
-            String query = "delete from TB_produto where codproduto=?";
             
-            ps = con.prepareStatement(query);
-            ps.setInt(1, codproduto);
+          }
+    
+     public static void excluirProduto( int codProd) throws SQLException, ClassNotFoundException {
+        
+            Connection con = ConexaoDB.getConexao();
+            String query = "delete from tb_produto where codProduto=?";
+            PreparedStatement ps= con.prepareStatement(query);
+            ps.setInt(1, codProd);
             ps.execute();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletBD.class.getName()).
-                    log(Level.SEVERE, null, ex);
+            
         }
-    }
-       
+    
+ 
      public static List<Produto> getListaProdutos() {
        
         List<Produto> listaProdutos = new ArrayList();
@@ -151,6 +142,8 @@ public class ProdutoDAO {
         }
         return produto;
     }
+
+    
      
      
 }
