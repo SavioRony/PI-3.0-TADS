@@ -10,11 +10,11 @@
     <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/cliente.css">
+         <link rel="stylesheet" href="css/estilo.css">
         <title>Alterar Cliente</title> 
     </head>
-    <body>
-            <div id="area">
+    <body class="container">
+            <div>
                 <center><h1>Alteração de Cadastro: ${cliente.nome}</h1></center></br></br>
                 <form action="AlterarCliente" method="POST">
                     <div class="row">     

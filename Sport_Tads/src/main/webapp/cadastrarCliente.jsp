@@ -10,20 +10,23 @@
     <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/cliente.css">
+        <link rel="stylesheet" href="css/estilo.css">
         <title>Cadastrar Cliente</title>
 
         <script lang="text/javascript">
+            
             function mostraCadastroCliente() {
                 $('#modalCadastro').modal('show');
             }
             function CadastrarCliente() {
                 $.get("CadastrarCliente", function () {
                     $('#modalCadastro').modal('hide');
+                    $.notify("Cliente Cadastrado com sucesso","success");
                     window.location.reload();
                 });
             }
-        </script>    
+        </script>
+        
 
     </head>
     <body class="container">

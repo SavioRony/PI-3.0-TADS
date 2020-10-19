@@ -6,10 +6,19 @@
     <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Menu</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Pagina inicial</title>
     </head>
-    <body>
-        <h1>Menu</h1>
-        <a href="ListarClientes">Cliente</a><br/>
+    <body class="container">
+        <section class="menu-opcoes">
+            <h1><img src="img/Logo.png" alt="Logo da SportTads"></h1>
+            <h2>Menu</h2>
+            <nav>
+                    <a href="ListarClientes">Cliente</a><br/>
+                    <a href="">Produto</a><br/>
+                    <a href="">Colaborador</a><br/>
+                    <a href="">Filial</a><br/>
+            </nav> 
+        </section>
     </body>
 </html>
