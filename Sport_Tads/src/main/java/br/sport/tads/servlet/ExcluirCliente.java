@@ -1,7 +1,7 @@
 
-package br.senac.sp.servlet;
+package br.sport.tads.servlet;
 
-import br.senac.sp.dao.ClienteDAO;
+import br.sport.tads.dao.ClienteDAO;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -22,7 +22,7 @@ public class ExcluirCliente extends HttpServlet {
    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long cpf = Long.parseLong(request.getParameter("cpf"));
+        String cpf = request.getParameter("cpf");
        try {
            ClienteDAO.deleteCliente(cpf);
            response.getWriter().print(true);
