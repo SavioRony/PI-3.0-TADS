@@ -41,7 +41,7 @@ public class IncluirProduto extends HttpServlet {
         try {
             ProdutoDAO.incluirProduto(produto);
             
-            response.sendRedirect("sucesso.jsp");
+            response.sendRedirect("listaProdutos");
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(CadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
             Utils.mostrarTelaErro(ex, request, response);
