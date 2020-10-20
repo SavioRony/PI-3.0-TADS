@@ -1,6 +1,7 @@
 
 package br.sport.tads.bd;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,7 +13,9 @@ public class ConexaoDB {
     // Bloco executado uma única vez quando o servidor é inicializado
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            Class.forName("com.mysql.cj.jdbc.Driver");  // org.apache.derby.jdbc.EmbeddedDriver
+
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexaoDB.class.getName())
                     .log(Level.SEVERE, null, ex);
@@ -21,9 +24,11 @@ public class ConexaoDB {
     }
     
     public static Connection getConexao()throws ClassNotFoundException, SQLException {
-        String url = "jdbc:mysql://localhost:3306/db_sportstads?useSSL=false";
+
+        String url = "jdbc:mysql://localhost:3306/teste?useTimezone=true&serverTimezone=UTC&useSSL=false";  // jdbc:derby://localhost:1527/teste
         String user = "root";
-        String password = "";
+        String password = "root";
+
         return DriverManager.getConnection(url, user, password);
     }
     

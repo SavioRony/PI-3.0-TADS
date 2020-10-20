@@ -3,7 +3,10 @@ package br.sport.tads.servlet;
 
 
 import br.sport.tads.dao.ProdutoDAO;
+import br.sport.tads.dao.ProdutoDAO;
+import br.sport.tads.entidade.Produto;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,20 +35,7 @@ public class ExcluirProduto extends HttpServlet {
         
     }
     
-    /* @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        Long cpf = Long.parseLong(request.getParameter("cpf"));
-       try {
-           ClienteDAO.deleteCliente(cpf);
-           response.getWriter().print(true);
-       } catch (ClassNotFoundException | SQLException ex) {
-           Logger.getLogger(ExcluirCliente.class.getName()).log(Level.SEVERE, null, ex);
-           response.getWriter().print(false);
-       } 
-        
-    }
-    */
+    
     
     
     

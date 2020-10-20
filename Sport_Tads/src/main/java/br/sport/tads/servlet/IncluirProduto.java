@@ -42,7 +42,9 @@ public class IncluirProduto extends HttpServlet {
             
             response.sendRedirect("listaProdutos");
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(CadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
+
+            Logger.getLogger(IncluirProduto.class.getName()).log(Level.SEVERE, null, ex);
+
             Utils.mostrarTelaErro(ex, request, response);
         }
     }
