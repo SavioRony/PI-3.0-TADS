@@ -3,7 +3,6 @@ package br.sport.tads.servlet;
 import br.sport.tads.dao.ProdutoDAO;
 import br.sport.tads.entidade.Produto;
 import java.io.IOException;
-import java.io.PrintWriter; 
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,4 +29,7 @@ public class ListaProdutos extends HttpServlet {
                 requestDispatcher.forward(request, response);
     }
    
+
 }
+
+

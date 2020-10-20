@@ -5,7 +5,6 @@ import br.sport.tads.dao.ProdutoDAO;
 import br.sport.tads.utils.Utils;
 import br.sport.tads.entidade.Produto;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,7 +55,9 @@ public class AlterarProduto extends HttpServlet {
              ProdutoDAO.alterarProduto(produto); 
              response.sendRedirect("sucesso.jsp");
          } catch (ClassNotFoundException | SQLException ex) {
+
              Logger.getLogger(AlterarProduto.class.getName()).log(Level.SEVERE, null, ex);
+
              Utils.mostrarTelaErro(ex, request, response);
          } 
         

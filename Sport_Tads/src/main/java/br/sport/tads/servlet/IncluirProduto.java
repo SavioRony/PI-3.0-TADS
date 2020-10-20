@@ -6,7 +6,6 @@ import br.sport.tads.dao.ProdutoDAO;
 import br.sport.tads.entidade.Produto;
 import br.sport.tads.utils.Utils;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,7 +42,9 @@ public class IncluirProduto extends HttpServlet {
             
             response.sendRedirect("listaProdutos");
         } catch (SQLException | ClassNotFoundException ex) {
+
             Logger.getLogger(IncluirProduto.class.getName()).log(Level.SEVERE, null, ex);
+
             Utils.mostrarTelaErro(ex, request, response);
         }
     }
