@@ -19,9 +19,7 @@
             <p>Código da filial</p>
             <input name="filial" class="form-control" required="true"/><br/>
             
-            <p>Código do produto</p>
-            <input name="codProduto" class="form-control" /><br/>
-            
+                       
             <p>Nome</p>
             <input name="nome" class="form-control" required="true"/><br/>
             
