@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class ConexaoDB {
     
-    // Bloco executado uma única vez quando o servidor é inicializado
+    
     static {
         try {
 
