@@ -16,6 +16,7 @@
             <nav>
                     <a href="ListarClientes">Cliente</a><br/>
                     <a href="listaProdutos">Produto</a><br/>
+                     <a href="vendas">Vendas</a><br/>
                     <a href="">Colaborador</a><br/>
                     <a href="">Filial</a><br/>
             </nav> 
