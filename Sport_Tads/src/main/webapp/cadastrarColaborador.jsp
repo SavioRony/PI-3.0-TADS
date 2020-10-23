@@ -28,7 +28,7 @@
         <%@include file="cabecalho.jsp" %>
         <div class="container">
             <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Cadastro de Colaborador</h1>
-            <form action="CadastrarCliente" method="POST">
+            <form action="CadastrarColaborador" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-8">
                         <p>Nome Completo</p>
@@ -55,8 +55,8 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-lg-4">
-                        <p>Bairro</p>
-                        <input name="bairro" class="form-control" required="true"/><br/>
+                        <p>Cidade</p>
+                        <input name="cidade" class="form-control" required="true"/><br/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Cargo</p>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Filial</p>
-                        <input name="celular" class="form-control" required="true"/><br/>
+                        <input name="filial" class="form-control" required="true"/><br/>
                     </div>
                 </div>
                 <div class="row">

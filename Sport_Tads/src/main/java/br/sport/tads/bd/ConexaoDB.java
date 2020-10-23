@@ -25,9 +25,9 @@ public class ConexaoDB {
     
     public static Connection getConexao()throws ClassNotFoundException, SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/teste?useTimezone=true&serverTimezone=UTC&useSSL=false";  // jdbc:derby://localhost:1527/teste
+        String url = "jdbc:mysql://localhost:3306/db_sportstads?useTimezone=true&serverTimezone=UTC&useSSL=false";  // jdbc:derby://localhost:1527/teste
         String user = "root";
-        String password = "root";
+        String password = "";
 
         return DriverManager.getConnection(url, user, password);
     }

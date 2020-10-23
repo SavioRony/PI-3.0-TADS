@@ -22,7 +22,6 @@ public class ListarColaboradores extends HttpServlet {
             throws ServletException, IOException {
 
         List<Colaborador> listaColaboradores = ColaboradorDAO.getColaboradores();
-        System.out.println("QUANTIDADE DE ELEMENTOS LISTA:" + listaColaboradores.size());
         request.setAttribute("listaColaboradores", listaColaboradores);
 
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(

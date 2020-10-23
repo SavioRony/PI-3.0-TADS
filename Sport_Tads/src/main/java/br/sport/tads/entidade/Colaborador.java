@@ -2,37 +2,37 @@ package br.sport.tads.entidade;
 //
 public class Colaborador {
 
-    private int codigoColaborador;
+    private int codColaborador;
     private String nome;
     private String cpf;
     private String endereco;
     private int numero;
-    private String cep;
-    private String bairro;
+    private int cep;
+    private String cidade;
     private String cargo;
-    private int codigoFilial;
+    private int codFilial;
     private int status;
     private String email;
     private String senha;
 
-    public Colaborador(String nome, String cpf, String endereco, Integer numero,
-            String cep, String bairro, String cargo, Integer codigoFilial, String email, String senha) {
-        this.codigoColaborador = 0;
+    public Colaborador(String nome, String cpf, String endereco, int numero,
+            int cep, String cidade, String cargo, int codFilial, String email, String senha) {
+        this.codColaborador = 0;
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
         this.numero = numero;
         this.cep = cep;
-        this.bairro = bairro;
+        this.cidade = cidade;
         this.cargo = cargo;
-        this.codigoFilial = codigoFilial;
+        this.codFilial = codFilial;
         this.status = 1;
         this.email = email;
         this.senha = senha;
     }
 
     public Integer getCodigoColaborador() {
-        return codigoColaborador;
+        return codColaborador;
     }
 
     public String getNome() {
@@ -67,20 +67,20 @@ public class Colaborador {
         this.numero = numero;
     }
 
-    public String getCep() {
+    public int getCep() {
         return cep;
     }
 
-    public void setCep(String cep) {
+    public void setCep(int cep) {
         this.cep = cep;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getCargo() {
@@ -91,12 +91,12 @@ public class Colaborador {
         this.cargo = cargo;
     }
 
-    public Integer getCodigoFilial() {
-        return codigoFilial;
+    public Integer getCodFilial() {
+        return codFilial;
     }
 
-    public void setCodigoFilial(Integer codigoFilial) {
-        this.codigoFilial = codigoFilial;
+    public void setCodFilial(Integer codigoFilial) {
+        this.codFilial = codigoFilial;
     }
 
     public Integer getStatus() {

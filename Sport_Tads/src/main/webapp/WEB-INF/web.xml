@@ -9,6 +9,10 @@
         <servlet-class>br.sport.tads.servlet.ListarClientes</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ListarColaboradores</servlet-name>
+        <servlet-class>br.sport.tads.servlet.ListarColaboradores</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CadastrarCliente</servlet-name>
         <servlet-class>br.sport.tads.servlet.CadastrarCliente</servlet-class>
     </servlet>
@@ -24,30 +28,18 @@
         <servlet-name>buscarCliente</servlet-name>
         <servlet-class>br.sport.tads.servlet.buscarCliente</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletBD</servlet-name>
-        <url-pattern>/ServletBD</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ListarClientes</servlet-name>
-        <url-pattern>/ListarClientes</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CadastrarCliente</servlet-name>
-        <url-pattern>/CadastrarCliente</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AlterarCliente</servlet-name>
-        <url-pattern>/AlterarCliente</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ExcluirCliente</servlet-name>
-        <url-pattern>/ExcluirCliente</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>buscarCliente</servlet-name>
-        <url-pattern>/buscarCliente</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>AlterarColaborador</servlet-name>
+        <servlet-class>br.sport.tads.servlet.AlterarColaborador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExcluirColaborador</servlet-name>
+        <servlet-class>br.sport.tads.servlet.ExcluirColaborador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarColaborador</servlet-name>
+        <servlet-class>br.sport.tads.servlet.CadastrarColaborador</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>IncluirProduto</servlet-name>
         <servlet-class>br.sport.tads.servlet.IncluirProduto</servlet-class>
@@ -77,16 +69,24 @@
         <url-pattern>/ListarClientes</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ListarColaboradores</servlet-name>
+        <url-pattern>/ListarColaboradores</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CadastrarCliente</servlet-name>
         <url-pattern>/CadastrarCliente</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AlterarCliente</servlet-name>
-        <url-pattern>/AlterarCliente</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ExcluirCliente</servlet-name>
         <url-pattern>/ExcluirCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buscarCliente</servlet-name>
+        <url-pattern>/buscarCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarCliente</servlet-name>
+        <url-pattern>/AlterarCliente</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>IncluirProduto</servlet-name>
@@ -104,6 +104,18 @@
         <servlet-name>AlterarProduto</servlet-name>
         <url-pattern>/AlterarProduto</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarColaborador</servlet-name>
+        <url-pattern>/AlterarColaborador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirColaborador</servlet-name>
+        <url-pattern>/ExcluirColaborador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarColaborador</servlet-name>
+        <url-pattern>/CadastrarColaborador</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -117,6 +129,4 @@
         <error-code>403</error-code>
         <location>/acessoProibido.jsp</location>
     </error-page>
-
 </web-app>
-

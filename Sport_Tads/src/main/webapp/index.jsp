@@ -1,4 +1,8 @@
-
+<%-- 
+    Document   : index
+    Created on : 10/10/2020
+    Author     : Savio Rony
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +21,7 @@
                     <a href="ListarClientes">Cliente</a><br/>
                     <a href="listaProdutos">Produto</a><br/>
                      <a href="vendas">Vendas</a><br/>
-                    <a href="">Colaborador</a><br/>
+                    <a href="ListarColaboradores">Colaborador</a><br/>
                     <a href="">Filial</a><br/>
             </nav> 
         </section>
