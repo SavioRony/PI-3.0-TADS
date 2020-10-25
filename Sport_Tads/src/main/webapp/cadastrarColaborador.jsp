@@ -17,7 +17,6 @@
             font-weight: bolder;
             font-size: 18px;
         }
-
     </style>
     <script>
         $(document).ready(function () {
@@ -31,7 +30,7 @@
             <form action="CadastrarCliente" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-8">
-                        <p>Nome Completo</p>
+                        <p>Nome</p>
                         <input name="nome" class="form-control" required="true"/><br/>
                     </div>
                     <div class="form-group col-lg-4">
@@ -77,7 +76,7 @@
                         <input name="senha" class="form-control" required="true"/><br/>
                     </div>
                 </div>
-                <button type="submit" style="float: right; width: 100px; margin-bottom: 30px" class="btn btn-primary"><strong>Salvar</strong></button>
+                <button type="submit" style="float: right; width: 100px; margin-bottom: 30px" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </body>
