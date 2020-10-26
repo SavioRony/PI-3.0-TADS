@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Relatorio {
     private int codVenda;
-    private Date dataVenda;
+    private String dataVenda;
     private String cpfCliente;
     private String nomeCliente;
     private int codProduto;
@@ -19,7 +19,7 @@ public class Relatorio {
     private double subTotal;
     private double valorTotal;
 
-    public Relatorio(int codVenda, Date dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
         this.codVenda = codVenda;
         this.dataVenda = dataVenda;
         this.cpfCliente = cpfCliente;
@@ -40,11 +40,11 @@ public class Relatorio {
         this.codVenda = codVenda;
     }
 
-    public Date getDataVenda() {
+    public String getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(Date dataVenda) {
+    public void setDataVenda(String dataVenda) {
         this.dataVenda = dataVenda;
     }
 

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +25,8 @@ public class RelatorioDAO {
      public static List<Relatorio> getRelatorioCliente(String cpf) {
         PreparedStatement ps = null;
         List<Relatorio> listaRelatorioCliente = new ArrayList();
-
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        
         try {
             Connection con = ConexaoDB.getConexao();
             String query = "select tb_venda.codVenda, tb_venda.dt_hr_Venda, tb_cliente.cpf, tb_cliente.nome, tb_produto.codProduto, tb_produto.nomeProduto, \n" +
@@ -40,6 +42,7 @@ public class RelatorioDAO {
             while (rs.next()) {
                 int codVenda = rs.getInt("codVenda");
                 Date data = rs.getDate("dt_hr_Venda");
+                String dataForma = formatador.format(data);
                 cpf = rs.getString("cpf");
                 String nomeCliente = rs.getString("nome");
                 int codProduto = rs.getInt("codProduto");
@@ -48,7 +51,7 @@ public class RelatorioDAO {
                 double valorProduto = rs.getDouble("valorProduto");
                 double subTotal = rs.getDouble("subTotal");
                 double valorTotal = rs.getDouble("total");
-                listaRelatorioCliente.add(new Relatorio(codVenda, data, cpf, nomeCliente, codProduto, nomeProduto, quantidade, valorProduto, subTotal, valorTotal));
+                listaRelatorioCliente.add(new Relatorio(codVenda, dataForma, cpf, nomeCliente, codProduto, nomeProduto, quantidade, valorProduto, subTotal, valorTotal));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
