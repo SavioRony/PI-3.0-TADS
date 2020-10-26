@@ -14,6 +14,7 @@
         <title>Pagina inicial</title>
     </head>
     <body class="container">
+        <%@include file="cabecalho.jsp" %>
         <section class="menu-opcoes">
             <h1><img src="img/Logo.png" alt="Logo da SportTads"></h1>
             <h2>Menu</h2>

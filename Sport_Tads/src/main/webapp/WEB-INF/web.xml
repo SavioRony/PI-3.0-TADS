@@ -60,7 +60,7 @@
         <servlet-name>AlterarProduto</servlet-name>
         <servlet-class>br.sport.tads.servlet.AlterarProduto</servlet-class>
     </servlet>
-     <servlet>
+    <servlet>
         <servlet-name>VendaPesquisarCliente</servlet-name>
         <servlet-class>br.sport.tads.servlet.VendaPesquisarCliente</servlet-class>
     </servlet>
@@ -99,6 +99,10 @@
     <servlet>
         <servlet-name>VendaFinalizar</servlet-name>
         <servlet-class>br.sport.tads.servlet.VendaFinalizar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioCliente</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioCliente</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
@@ -156,7 +160,7 @@
         <servlet-name>CadastrarColaborador</servlet-name>
         <url-pattern>/CadastrarColaborador</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>VendaPesquisarCliente</servlet-name>
         <url-pattern>/VendaPesquisarCliente</url-pattern>
     </servlet-mapping>
@@ -195,6 +199,10 @@
     <servlet-mapping>
         <servlet-name>VendaFinalizar</servlet-name>
         <url-pattern>/VendaFinalizar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioCliente</servlet-name>
+        <url-pattern>/RelatorioCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

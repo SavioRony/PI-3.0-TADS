@@ -61,7 +61,7 @@ public class Filial {
         this.cidade = cidade;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
    

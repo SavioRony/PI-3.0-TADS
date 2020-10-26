@@ -26,7 +26,7 @@ public class VendaPesquisarFilial extends HttpServlet {
         String codFilialstr = request.getParameter("codFilial");
         int codFilial = Integer.parseInt(codFilialstr);
         
-        List<Filial> listaFilial = FilialDAO.getFilial(codFilial);                
+        List<Filial> listaFilial = FilialDAO.buscaFilial(codFilial);                
             request.setAttribute("listaFilial", listaFilial);
             request.setAttribute("cpf", cpf);
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaFilial.jsp");
