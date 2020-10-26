@@ -57,6 +57,32 @@
 
         </style>
     </head>
+    <script lang="text/javascript">
+        $(document).ready(function () {
+
+            $("#btn-novo-colaborador").click(function () {
+                window.location.href = "cadastrarColaborador.jsp";
+            });
+        });
+    </script>
+    <style>
+        .idade, .actions{
+            text-align: center;
+        }
+        #logo-sportstads{
+            width: 300px;
+            height: 100px;
+        }
+        #links-menus{
+            margin-left: 30px;
+            font-size: 22px;
+        }
+        li {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+    </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">

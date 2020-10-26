@@ -53,7 +53,7 @@ public class AlterarProduto extends HttpServlet {
        
             try {
              ProdutoDAO.alterarProduto(produto); 
-             response.sendRedirect("sucesso.jsp");
+             response.sendRedirect("ListaProdutos");
          } catch (ClassNotFoundException | SQLException ex) {
 
              Logger.getLogger(AlterarProduto.class.getName()).log(Level.SEVERE, null, ex);
