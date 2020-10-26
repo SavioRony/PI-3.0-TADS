@@ -36,6 +36,7 @@
         </script> 
     </head>
     <body class="container">
+        <%@include file="cabecalho.jsp" %>
         <h1 style="text-align: center" >  Lista de Produtos</h1><br>
         <table class="table">
             <thead class="thead-light" >
@@ -108,4 +109,3 @@
         <a href="cadastrarProduto.jsp" ><button type="button" class="btn btn-primary" style="float: right">Cadastrar Produto  </button></a>
     </body>
 </html>
-

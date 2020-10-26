@@ -19,8 +19,8 @@
             <h2>Menu</h2>
             <nav>
                     <a href="ListarClientes">Cliente</a><br/>
-                    <a href="listaProdutos">Produto</a><br/>
-                     <a href="vendas">Vendas</a><br/>
+                    <a href="ListaProdutos">Produto</a><br/>
+                    <a href="vendaCliente.jsp">Venda</a><br/>
                     <a href="ListarColaboradores">Colaborador</a><br/>
                     <a href="">Filial</a><br/>
             </nav> 

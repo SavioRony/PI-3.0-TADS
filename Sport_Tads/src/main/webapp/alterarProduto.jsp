@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alterar Produto</title>
@@ -17,27 +18,27 @@
             
             
             <p>Código da filial</p>
-            <input name="filial" value="${prod.codFilial}"/><br/>
+            <input class="form-control" name="filial" value="${prod.codFilial}"/><br/>
             
             <p>Código do produto</p>
-            <input name="codProduto" value="${prod.codProduto}" readonly="true"/><br/>
+            <input class="form-control" name="codProduto" value="${prod.codProduto}" readonly="true"/><br/>
             
             <p>Nome</p>
-            <input name="nome" value="${prod.nomeProduto}"/><br/>
+            <input class="form-control" name="nome" value="${prod.nomeProduto}"/><br/>
             
             <p>Marca</p>
-            <input name="marca" value="${prod.marcaProduto}"/><br/>
+            <input class="form-control" name="marca" value="${prod.marcaProduto}"/><br/>
             
             <p>Categoria</p>
-            <input name="categoria" value="${prod.categoriaProduto}"/><br/>
+            <input class="form-control" name="categoria" value="${prod.categoriaProduto}"/><br/>
             
             <p>Valor</p>
-            <input name="valor" value="${prod.valorProduto}"/><br/>
+            <input class="form-control" name="valor" value="${prod.valorProduto}"/><br/>
             
             <p>Quantidade em estoque</p>
-            <input name="qtd" value="${prod.quantidadeEmEstoque}"/><br/>
+            <input class="form-control" name="qtd" value="${prod.quantidadeEmEstoque}"/><br/>
             
             
-            <button type="submit" >Salvar Alteração</button>
+            <button class="btn btn-primary" type="submit" >Salvar Alteração</button>
     </body>
 </html>

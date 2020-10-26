@@ -45,7 +45,7 @@
         <servlet-class>br.sport.tads.servlet.IncluirProduto</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>listaProdutos</servlet-name>
+        <servlet-name>ListaProdutos</servlet-name>
         <servlet-class>br.sport.tads.servlet.ListaProdutos</servlet-class>
     </servlet>
     <servlet>
@@ -59,6 +59,46 @@
     <servlet>
         <servlet-name>AlterarProduto</servlet-name>
         <servlet-class>br.sport.tads.servlet.AlterarProduto</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>VendaPesquisarCliente</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaPesquisarCliente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaGerarPedido</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaGerarPedido</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaBuscarProduto</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaBuscarProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaListarCpf</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaListarCpf</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaProduto</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaPesquisarFilial</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaPesquisarFilial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaInserirProduto</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaInserirProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaCarrinho</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaCarrinho</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaExcluirItem</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaExcluirItem</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VendaFinalizar</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaFinalizar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
@@ -93,8 +133,8 @@
         <url-pattern>/IncluirProduto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>listaProdutos</servlet-name>
-        <url-pattern>/listaProdutos</url-pattern>
+        <servlet-name>ListaProdutos</servlet-name>
+        <url-pattern>/ListaProdutos</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ExcluirProduto</servlet-name>
@@ -115,6 +155,46 @@
     <servlet-mapping>
         <servlet-name>CadastrarColaborador</servlet-name>
         <url-pattern>/CadastrarColaborador</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>VendaPesquisarCliente</servlet-name>
+        <url-pattern>/VendaPesquisarCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaGerarPedido</servlet-name>
+        <url-pattern>/VendaGerarPedido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaBuscarProduto</servlet-name>
+        <url-pattern>/VendaBuscarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaListarCpf</servlet-name>
+        <url-pattern>/VendaListarCpf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaProduto</servlet-name>
+        <url-pattern>/VendaProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaPesquisarFilial</servlet-name>
+        <url-pattern>/VendaPesquisarFilial</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaInserirProduto</servlet-name>
+        <url-pattern>/VendaInserirProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaCarrinho</servlet-name>
+        <url-pattern>/VendaCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaExcluirItem</servlet-name>
+        <url-pattern>/VendaExcluirItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendaFinalizar</servlet-name>
+        <url-pattern>/VendaFinalizar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -28,7 +28,7 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div>
-                <img id="logo-sportstads" src="img\logo.jpeg">
+                <img id="logo-sportstads" src="img\logo.png">
             </div>
             <div id="links-menus">
                 <ul class="navbar-nav">
@@ -37,8 +37,8 @@
                             Clientes
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cadastrar Cliente</a>
-                            <a class="dropdown-item" href="#">Listar Clientes</a>
+                            <a class="dropdown-item" href="cadastrarCliente.jsp">Cadastrar Cliente</a>
+                            <a class="dropdown-item" href="ListarClientes">Listar Clientes</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
@@ -47,7 +47,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="cadastrarColaborador.jsp">Cadastrar Colaborador</a>
-                            <a class="dropdown-item" href="listaColaboradores.jsp">Listar Colaboradores</a>
+                            <a class="dropdown-item" href="ListarColaboradores">Listar Colaboradores</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
@@ -64,8 +64,8 @@
                             Produtos
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cadastrar Produto</a>
-                            <a class="dropdown-item" href="#">Listar Produtos</a>
+                            <a class="dropdown-item" href="cadastrarProduto.jsp">Cadastrar Produto</a>
+                            <a class="dropdown-item" href="ListaProdutos">Listar Produtos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
@@ -73,10 +73,10 @@
                             Vendas
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Realizar Venda</a>
-                            <a class="dropdown-item" href="#">Relatório por Filiais</a>
-                            <a class="dropdown-item" href="#">Relatório por Categorias de Produtos</a>
-                            <a class="dropdown-item" href="#">Relatório Por Cliente</a>
+                            <a class="dropdown-item" href="vendaCliente.jsp">Realizar Venda</a>
+                            <a class="dropdown-item" href="relatorioFiliais.jsp">Relatório por Filial</a>
+                            <a class="dropdown-item" href="relatorioProdutos.jsp">Relatório por Categorias de Produtos</a>
+                            <a class="dropdown-item" href="relatorioClientes.jsp">Relatório por Cliente</a>
                         </div>
                     </li>
                 </ul>
