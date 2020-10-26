@@ -14,10 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-/**
- *
- * @author Rafael
- */
 public class FilialDAO {
     
     public static List<Filial> listarFiliais() {
@@ -47,23 +43,24 @@ public class FilialDAO {
 
         return listaFiliais;
     }
-        
-    public static List<Filial> getFilial(int codFilial) {
+    
+    public static List<Filial> listarFiliais(int codFilial) {
         PreparedStatement ps = null;
-        List<Filial> listaFilial = new ArrayList();
+        List<Filial> listaFiliais = new ArrayList();
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_filial where codFilial=?";
+            String query = "select * from tb_filial where codFilial = ?";
             ps = con.prepareStatement(query);
             ps.setInt(1, codFilial);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                String nome = rs.getString("nomeFilial");
+                codFilial = rs.getInt("codFilial");
+                String nomeFilial = rs.getString("nomeFilial");
                 String estado = rs.getString("estado");
                 String cidade = rs.getString("cidade");
-                String status = rs.getString("status");
-                listaFilial.add(new Filial(codFilial, nome, estado, cidade, status));
+                int status = rs.getInt("status");
+                listaFiliais.add(new Filial(codFilial, nomeFilial, estado, cidade, status));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -73,13 +70,12 @@ public class FilialDAO {
                     log(Level.SEVERE, null, ex);
         }
 
-        return listaFilial;
+        return listaFiliais;
     }
-        
-     public static List<Filial> listarFiliais(int codFilial) {
+    
+    public static Filial getFilial(int codFilial) {
         PreparedStatement ps = null;
-        List<Filial> listaFiliais = new ArrayList();
-
+        Filial filial = null;
 
         try {
             Connection con = ConexaoDB.getConexao();
@@ -94,7 +90,7 @@ public class FilialDAO {
                 String cidade = rs.getString("cidade");
                 int status = rs.getInt("status");
                 filial = new Filial(codFilial, nomeFilial, estado, cidade, status);
-                            }
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
@@ -102,9 +98,38 @@ public class FilialDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-     return filial;
-    }
 
+        return filial;
+    }
+       public static List<Filial> buscaFilial(int codFilial) {
+        PreparedStatement ps = null;
+        List<Filial> listfilial = new ArrayList();
+        Filial filial = null;
+
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_filial where codFilial = ?";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, codFilial);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                codFilial = rs.getInt("codFilial");
+                String nomeFilial = rs.getString("nomeFilial");
+                String estado = rs.getString("estado");
+                String cidade = rs.getString("cidade");
+                int status = rs.getInt("status");
+                listfilial.add(new Filial(codFilial, nomeFilial, estado, cidade, status));
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+
+        return listfilial;
+    }
     
        public static void cadastrarFilial(Filial filial) throws SQLException, ClassNotFoundException {
         PreparedStatement ps = null;
@@ -159,5 +184,5 @@ public class FilialDAO {
         
         
     }
-
+   
 }

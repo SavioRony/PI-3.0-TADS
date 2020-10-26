@@ -102,7 +102,7 @@
             </div>
             <br/>
             <div>
-                <button type="button" id="btn-novo-cliente" class="btn btn-primary" style="float: right">Novo Cliente</button>
+                <a href="cadastrarCliente.jsp"> <button type="button" id="btn-novo-cliente" class="btn btn-primary" style="float: right">Novo Cliente</button></a>
             </div>
         </div>
     </body>
