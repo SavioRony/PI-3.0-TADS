@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -40,7 +42,8 @@ public class ClienteDAO {
 
         return listaClientes;
     }
-        public static List<Cliente> getClientes(String cpf) {
+
+    public static List<Cliente> getClientes(String cpf) {
         PreparedStatement ps = null;
         List<Cliente> listaClientes = new ArrayList();
 
@@ -67,19 +70,19 @@ public class ClienteDAO {
 
         return listaClientes;
     }
-    
 
     public static void addCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
         PreparedStatement ps = null;
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "insert into tb_cliente (nome,cpf,email,celular) values (?,?,?,?)";
-            ps = con.prepareStatement(query);
+            ps = con.prepareStatement("insert into tb_cliente (nome,cpf,email,celular) values (?,?,?,?)");
             ps.setString(1, cliente.getNome());
             ps.setString(2, cliente.getCpf());
             ps.setString(3, cliente.getEmail());
             ps.setInt(4, cliente.getCelular());
             ps.execute();
+
+            
         } catch (SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);

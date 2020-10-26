@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,8 +40,8 @@ public class IncluirProduto extends HttpServlet {
         
         try {
             ProdutoDAO.incluirProduto(produto);
-            
-            response.sendRedirect("listaProdutos");
+            response.sendRedirect("ListaProdutos");
+       
         } catch (SQLException | ClassNotFoundException ex) {
 
             Logger.getLogger(IncluirProduto.class.getName()).log(Level.SEVERE, null, ex);

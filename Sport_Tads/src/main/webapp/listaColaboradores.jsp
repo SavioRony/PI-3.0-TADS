@@ -123,6 +123,7 @@
             </div>
             <br/>
             <div>
+                <a href="index.jsp">Voltar</a>
                 <a href="cadastrarColaborador.jsp"><button type="button" class="btn btn-primary" id="btn-novo-colaborador" style="float: right">Novo Colaborador</button></a>
             </div>
         </div>

@@ -6,14 +6,18 @@ public class Cliente {
     private String email;
     private String cpf;
     private int celular;
-    
+
     public Cliente(String nome, String cpf, String email, int celular) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.celular = celular;
     }
-    
+
+    public Cliente(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -45,7 +49,6 @@ public class Cliente {
     public void setCelular(int celular) {
         this.celular = celular;
     }
-
 
     @Override
     public String toString() {
