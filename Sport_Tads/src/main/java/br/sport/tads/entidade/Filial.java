@@ -3,15 +3,25 @@ package br.sport.tads.entidade;
 
 /**
  *
- * @author savio
+ * @author Rafael
  */
-public class Filial {
-   private int codFilial;
-   private String nomeFilial;
-   private String estado;
-   private String cidade;
 
-    public Filial(int codFilial, String nomeFilial, String estado, String cidade, String status) {
+public class Filial {
+    
+    private int codFilial;
+    private String nomeFilial;
+    private String estado;
+    private String cidade;
+    private int status;
+
+    public Filial(String nomeFilial, String estado, String cidade, int status) {
+        this.nomeFilial = nomeFilial;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.status = status; 
+    }
+
+    public Filial(int codFilial, String nomeFilial, String estado, String cidade, int status) {
         this.codFilial = codFilial;
         this.nomeFilial = nomeFilial;
         this.estado = estado;
@@ -51,12 +61,13 @@ public class Filial {
         this.cidade = cidade;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public void setStatus(String status) {
         this.status = status;
     }
-   private String status;
+   
+    public int getStatus() {
+        return status;
+    }
+
+
 }
