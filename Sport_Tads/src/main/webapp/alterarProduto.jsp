@@ -12,33 +12,58 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alterar Produto</title>
     </head>
-    <body class="container">
-        <h1>Alteração de Cadastro:${produto.nomeProduto} </h1>
-        <form action="AlterarProduto" method="POST">
-            
-            
-            <p>Código da filial</p>
-            <input class="form-control" name="filial" value="${prod.codFilial}"/><br/>
-            
-            <p>Código do produto</p>
-            <input class="form-control" name="codProduto" value="${prod.codProduto}" readonly="true"/><br/>
-            
-            <p>Nome</p>
-            <input class="form-control" name="nome" value="${prod.nomeProduto}"/><br/>
-            
-            <p>Marca</p>
-            <input class="form-control" name="marca" value="${prod.marcaProduto}"/><br/>
-            
-            <p>Categoria</p>
-            <input class="form-control" name="categoria" value="${prod.categoriaProduto}"/><br/>
-            
-            <p>Valor</p>
-            <input class="form-control" name="valor" value="${prod.valorProduto}"/><br/>
-            
-            <p>Quantidade em estoque</p>
-            <input class="form-control" name="qtd" value="${prod.quantidadeEmEstoque}"/><br/>
-            
-            
-            <button class="btn btn-primary" type="submit" >Salvar Alteração</button>
+    <style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
+            font-weight: bolder;
+            font-size: 18px;
+        }
+    </style>
+    <body>
+        <%@include file="cabecalho.jsp" %>
+        <div class="container">
+            <h1>Alteração de Cadastro: ${produto.nomeProduto}</h1>
+            <form action="AlterarProduto" method="POST">
+                <div class="row">
+                    <div class="form-group col-lg-3">
+                        <p>Código do produto</p>
+                        <input class="form-control" name="codProduto" value="${prod.codProduto}" readonly="true"/>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <p>Nome</p>
+                        <input class="form-control" name="nome" value="${prod.nomeProduto}"/>
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>Marca</p>
+                        <input class="form-control" name="marca" value="${prod.marcaProduto}"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <p>Categoria</p>
+                        <input class="form-control" name="categoria" value="${prod.categoriaProduto}"/>
+                    </div>
+                    <div class="form-group col-lg-2">
+                        <p>Código da filial</p>
+                        <input class="form-control" name="filial" value="${prod.codFilial}" readonly="true"/>
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>Valor</p>
+                        <input class="form-control" name="valor" value="${prod.valorProduto}"/>
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>Quantidade</p>
+                        <input class="form-control" name="qtd" value="${prod.quantidadeEmEstoque}"/>
+                    </div>
+                </div>
+                <br/>
+                <button class="btn btn-primary" type="submit" style="float: right">Salvar</button>
+            </form>
+        </div>
     </body>
 </html>

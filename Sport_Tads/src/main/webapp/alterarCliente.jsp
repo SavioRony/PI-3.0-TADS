@@ -14,7 +14,12 @@
         <title>Alterar Cliente</title> 
     </head>
     <style>
-        p {
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
             font-weight: bolder;
             font-size: 18px;
         }
@@ -22,25 +27,25 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Alteração de Cadastro: ${cliente.nome}</h1>
+            <h1>Alteração de Cadastro: ${cliente.nome}</h1>
             <form action="AlterarCliente" method="POST">
                 <div class="row">     
-                    <div class="form-group col-lg-12">
+                    <div class="form-group col-lg-8">
                         <p>Nome</p>
                         <input name="nome" class="form-control" value="${cliente.nome}" required="true"/>
                     </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="form-group col-lg-4">
-                        <p>Email</p>
-                        <input  name="email" class="form-control" value="${cliente.email}" required="true"/>                
-                    </div> 
                     <div class="form-group col-lg-4">
                         <p>CPF</p>      
                         <input name="cpf" class="form-control" value="${cliente.cpf}" readonly="true"/>    
                     </div>
-                    <div class="form-group col-lg-4">
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <p>Email</p>
+                        <input  name="email" class="form-control" value="${cliente.email}" required="true"/>                
+                    </div> 
+                    <div class="form-group col-lg-6">
                         <p>Celular</p>
                         <input name="celular" class="form-control" value="${cliente.celular}" required="true"/>
                     </div>

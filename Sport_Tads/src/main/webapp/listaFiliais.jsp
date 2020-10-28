@@ -11,8 +11,19 @@
     <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/estilo.css">
         <title>Lista de Filiais</title>
     </head>
+    <style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
     <script lang="text/javascript">
 
         $(document).ready(function () {
@@ -33,45 +44,28 @@
             });
         });
     </script>
-    <style>
-        .idade, .actions{
-            text-align: center;
-        }
-        #logo-sportstads{
-            width: 300px;
-            height: 100px;
-        }
-        #links-menus{
-            margin-left: 30px;
-            font-size: 22px;
-        }
-        li {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-    </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Lista de Filiais</h1>
+            <h1>Lista de Filiais</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th style="text-align: center">Código Filial</th>
-                        <th style="text-align: center">Nome Filial</th>
-                        <th style="text-align: center">Estado</th>
-                        <th style="text-align: center">Cidade</th>
-                        <th style="text-align: center">Ações</th>
+                        <th>Código Filial</th>
+                        <th>Nome Filial</th>
+                        <th>Estado</th>
+                        <th>Cidade</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="colaborador" items="${listaColaboradores}">
                         <tr>
-                            <td style="text-align: center">${colaborador.cpf}</td>
-                            <td style="text-align: center">${colaborador.nome}</td>
-                            <td style="text-align: center">${colaborador.email}</td>
-                            <td style="text-align: center">${colaborador.endereco}</td>
-                            <td style="text-align: center" class="actions">
+                            <td>${colaborador.cpf}</td>
+                            <td>${colaborador.nome}</td>
+                            <td>${colaborador.email}</td>
+                            <td>${colaborador.endereco}</td>
+                            <td class="actions">
                                 <a href="AlterarColaborador?cpf=${colaborador.cpf}">
                                     <button class="btn btn-default">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

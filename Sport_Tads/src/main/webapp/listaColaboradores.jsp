@@ -13,6 +13,31 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de Colaboradores</title>
     </head>
+    <style>
+        .idade, .actions{
+            text-align: center;
+        }
+        #logo-sportstads{
+            width: 300px;
+            height: 100px;
+        }
+        #links-menus{
+            margin-left: 30px;
+            font-size: 22px;
+        }
+        li {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
     <script lang="text/javascript">
         $(document).ready(function () {
 
@@ -34,50 +59,31 @@
                 window.location.href = "cadastrarColaborador.jsp";
             });
         });
-
     </script>
-    <style>
-        .idade, .actions{
-            text-align: center;
-        }
-        #logo-sportstads{
-            width: 300px;
-            height: 100px;
-        }
-        #links-menus{
-            margin-left: 30px;
-            font-size: 22px;
-        }
-        li {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-    </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Lista de Colaboradores</h1>
+            <h1>Lista de Colaboradores</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th style="text-align: center">CPF</th>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">Email</th>
-                        <th style="text-align: center">Cidade</th>
-                        <th style="text-align: center">Filial</th>
-                        <th style="text-align: center">Ações</th>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cidade</th>
+                        <th>Filial</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="colaborador" items="${listaColaboradores}">
                         <tr>
-                            <td style="text-align: center">${colaborador.cpf}</td>
-                            <td style="text-align: center">${colaborador.nome}</td>
-                            <td style="text-align: center">${colaborador.email}</td>
-                            <td style="text-align: center">${colaborador.cidade}</td>
-                            <td style="text-align: center">${colaborador.codFilial}</td>
-                            <td style="text-align: center" class="actions">
+                            <td>${colaborador.cpf}</td>
+                            <td>${colaborador.nome}</td>
+                            <td>${colaborador.email}</td>
+                            <td>${colaborador.cidade}</td>
+                            <td>${colaborador.codFilial}</td>
+                            <td class="actions">
                                 <a href="AlterarColaborador?cpf=${colaborador.cpf}">
                                     <button class="btn btn-default">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

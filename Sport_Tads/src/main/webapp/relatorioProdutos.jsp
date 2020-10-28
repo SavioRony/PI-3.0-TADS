@@ -13,10 +13,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Relatório de Produtos</title>
     </head>
+    <style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Top 10 Produtos mais vendidos</h1>
+            <h1>Top 10 Produtos mais vendidos</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>

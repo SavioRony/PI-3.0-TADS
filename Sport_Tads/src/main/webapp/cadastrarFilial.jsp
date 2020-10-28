@@ -13,7 +13,12 @@
         <title>Cadastrar Filial</title>
     </head>
     <style>
-        p {
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
             font-weight: bolder;
             font-size: 18px;
         }
@@ -21,7 +26,7 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Cadastro de Filial</h1>
+            <h1>Cadastro de Filial</h1>
             <form action="CadastrarCliente" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-6">
@@ -39,7 +44,7 @@
                 </div>
                 </br>
                 <button type="button" class="btn btn-primary" onclick="mostraCadastroCliente()" 
-                        style="float:right; width: 100px; margin-bottom: 30px">Salvar</button>
+                        style="float:right">Salvar</button>
                 <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">

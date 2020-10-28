@@ -14,11 +14,15 @@
         <title>Cadastrar Cliente</title>
     </head>
     <style>
-        p {
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
             font-weight: bolder;
             font-size: 18px;
         }
-
     </style>
     <script lang="text/javascript">
         function mostraCadastroCliente() {
@@ -34,7 +38,7 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Cadastro de Cliente</h1>
+            <h1>Cadastro de Cliente</h1>
             <form action="CadastrarCliente" method="POST">
                 <div id="area">
                     <div class="row">
@@ -58,6 +62,7 @@
                             <input name="celular" class="form-control cel-sp-mask" placeholder="(00)00000-0000" maxlength="11" required="true"/>
                         </div>
                     </div>
+                    <br/>
                     <button type="button" class="btn btn-primary" onclick="mostraCadastroCliente()" 
                             style="float:right; width: 100px; margin-bottom: 30px">Salvar</button>
                 </div>

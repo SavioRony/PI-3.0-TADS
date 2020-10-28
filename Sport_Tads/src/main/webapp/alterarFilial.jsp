@@ -13,7 +13,12 @@
         <title>Alterar Filial</title> 
     </head>
     <style>
-        p {
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
             font-weight: bolder;
             font-size: 18px;
         }
@@ -21,7 +26,7 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Alteração de Filial: ${cliente.nome}</h1>
+            <h1>Alteração de Filial: ${cliente.nome}</h1>
             <form action="AlterarCliente" method="POST">
                 <div class="row">     
                     <div class="form-group col-lg-6">

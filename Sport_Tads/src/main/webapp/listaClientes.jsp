@@ -7,12 +7,19 @@
     <%@include file="header.jsp"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilo.css">
         <title>Lista de Clientes</title>
     </head>
     <style>
         .mb-3, .my-3 {
             margin: 0px 10px 0px;
+        }
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
         }
     </style>
     <script lang="text/javascript">
@@ -34,7 +41,7 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div  class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 20px">Lista de Clientes</h1>
+            <h1>Lista de Clientes</h1>
             <form action="buscarCliente">
                 <div class="form-group col-lg-4" style="float: right">
                     <div class="input-group mb-3">
@@ -48,21 +55,21 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th style="text-align: center">CPF</th>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">Email</th>               
-                        <th style="text-align: center">Celular</th>
-                        <th style="text-align: center">Ações</th>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Email</th>               
+                        <th>Celular</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody> 
                     <c:forEach var="cliente" items="${listaClientes}">              
                         <tr class="table-light">
-                            <td scope="row" style="text-align: center">${cliente.cpf}</td>
-                            <td style="text-align: center">${cliente.nome}</td>
-                            <td style="text-align: center">${cliente.email}</td>
-                            <td style="text-align: center">${cliente.celular}</td>
-                            <td style="text-align: center">
+                            <td scope="row">${cliente.cpf}</td>
+                            <td>${cliente.nome}</td>
+                            <td>${cliente.email}</td>
+                            <td >${cliente.celular}</td>
+                            <td>
                                 <a href="AlterarCliente?cpf=${cliente.cpf}">
                                     <button class="btn btn-default">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="w3.org/2000/svg">
@@ -102,7 +109,7 @@
             </div>
             <br/>
             <div>
-                <a href="cadastrarCliente.jsp"> <button type="button" id="btn-novo-cliente" class="btn btn-primary" style="float: right">Novo Cliente</button></a>
+                <a href="cadastrarCliente.jsp"><button type="button" id="btn-novo-cliente" class="btn btn-primary" style="float: right">Novo Cliente</button></a>
             </div>
         </div>
     </body>

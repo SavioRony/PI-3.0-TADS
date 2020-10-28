@@ -13,6 +13,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de Produtos</title>   
     </head>
+    <style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
     <script lang="text/javascript">
 
         function mostrarModalExclusao(cProduto, nProduto) {
@@ -37,31 +47,31 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-bottom: 50px; margin-top: 50px">Lista de Produtos</h1>
+            <h1>Lista de Produtos</h1>
             <table class="table">
                 <thead class="thead-light" >
                     <tr>
-                        <th style="text-align: center">Código da filial </th>
-                        <th style="text-align: center">Código do produto</th>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">Marca</th>
-                        <th style="text-align: center">Categoria</th>
-                        <th style="text-align: center">Valor</th>
-                        <th style="text-align: center">Quantidade</th>
-                        <th style="text-align: center">Ações</th>
+                        <th>Código da filial </th>
+                        <th>Código do produto</th>
+                        <th>Nome</th>
+                        <th>Marca</th>
+                        <th>Categoria</th>
+                        <th>Valor</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody> 
                     <c:forEach var="produto" items="${listaProd}">
                         <tr>
-                            <td style="text-align: center">${produto.codFilial}</td>
-                            <td style="text-align: center">${produto.codProduto}</td>
-                            <td style="text-align: center">${produto.nomeProduto}</td>
-                            <td style="text-align: center">${produto.marcaProduto}</td>
-                            <td style="text-align: center">${produto.categoriaProduto}</td>
-                            <td style="text-align: center">${produto.valorProduto}</td>
-                            <td style="text-align: center">${produto.quantidadeEmEstoque}</td>
-                            <td style="text-align: center">
+                            <td>${produto.codFilial}</td>
+                            <td>${produto.codProduto}</td>
+                            <td>${produto.nomeProduto}</td>
+                            <td>${produto.marcaProduto}</td>
+                            <td>${produto.categoriaProduto}</td>
+                            <td>${produto.valorProduto}</td>
+                            <td>${produto.quantidadeEmEstoque}</td>
+                            <td>
                                 <a href="AlterarProduto?codProduto=${produto.codProduto}">
                                     <button class="btn btn-default">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="w3.org/2000/svg">
@@ -100,7 +110,7 @@
                 </div>
             </div>
             <br/>
-            <a href="cadastrarProduto.jsp" ><button type="button" class="btn btn-primary" style="float: right">Cadastrar Produto</button></a>
+            <a href="cadastrarProduto.jsp" ><button type="button" class="btn btn-primary" style="float: right">Novo Produto</button></a>
         </div>
     </body>
 </html>
