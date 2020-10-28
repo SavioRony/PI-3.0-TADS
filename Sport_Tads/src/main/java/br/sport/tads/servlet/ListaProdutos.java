@@ -22,6 +22,7 @@ public class ListaProdutos extends HttpServlet {
         
         List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
       
+        
         request.setAttribute("listaProd",listaProdutos);
         
          RequestDispatcher requestDispatcher = getServletContext()

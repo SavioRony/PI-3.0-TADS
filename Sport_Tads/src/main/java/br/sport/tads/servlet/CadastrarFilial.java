@@ -21,16 +21,16 @@ public class CadastrarFilial extends HttpServlet{
         String nomeFilial = request.getParameter("nomeFilial");
         String estado = request.getParameter("estado");
         String cidade = request.getParameter("cidade");
-        String statusFilial = request.getParameter("status");
+        String statusStr = request.getParameter("status");
         
-        int status = Integer.parseInt(statusFilial);
+        int status = Integer.parseInt(statusStr);
         
         Filial filial = new Filial(nomeFilial, estado, cidade, status);
         try {
             FilialDAO.cadastrarFilial(filial);
-            response.sendRedirect("CadastroFilial");
+            response.sendRedirect("ListarFiliais");
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(CadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CadastrarFilial.class.getName()).log(Level.SEVERE, null, ex);
             Utils.mostrarTelaErro(ex, request, response);
         }
     }

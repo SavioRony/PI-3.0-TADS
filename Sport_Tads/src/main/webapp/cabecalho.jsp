@@ -55,8 +55,8 @@
                             Filiais
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cadastrar Filial</a>
-                            <a class="dropdown-item" href="#">Listar Filiais</a>
+                            <a class="dropdown-item" href="incluirFilial.jsp">Cadastrar Filial</a>
+                            <a class="dropdown-item" href="ListarFiliais">Listar Filiais</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
@@ -75,7 +75,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="vendaCliente.jsp">Realizar Venda</a>
                             <a class="dropdown-item" href="relatorioFiliais.jsp">Relatório por Filial</a>
-                            <a class="dropdown-item" href="relatorioProdutos.jsp">Relatório por Categorias de Produtos</a>
+                            <a class="dropdown-item" href="RelatorioProdutosMaisVendidos">Relatório por Categorias de Produtos</a>
                             <a class="dropdown-item" href="relatorioClientes.jsp">Relatório por Cliente</a>
                         </div>
                     </li>

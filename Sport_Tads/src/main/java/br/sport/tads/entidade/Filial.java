@@ -28,7 +28,7 @@ public class Filial {
         this.cidade = cidade;
         this.status = status;
     }
-
+    
     public int getCodFilial() {
         return codFilial;
     }
@@ -61,13 +61,26 @@ public class Filial {
         this.cidade = cidade;
     }
 
+    public int getStatus() {
+        return status;
+    }
+    
     public void setStatus(int status) {
         this.status = status;
     }
    
-    public int getStatus() {
-        return status;
+    
+
+
+     @Override
+    public String toString() {
+        return String.format("codFilial %d <br> nomeFilial %s <br> estado %s <br/> cidade %s <br>"
+                + " status %d ",
+                this.getCodFilial(),this.getNomeFilial(),this.getEstado(),this.getCidade(),this.getStatus());
+        
+                
+                
     }
-
-
+    
+    
 }

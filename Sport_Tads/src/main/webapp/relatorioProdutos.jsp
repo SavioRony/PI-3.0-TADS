@@ -17,28 +17,35 @@
         <%@include file="cabecalho.jsp" %>
         <div class="container">
             <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Top 10 Produtos mais vendidos</h1>
-            <table class="table">
+            
+            <table class="table" >
                 <thead class="thead-light">
                     <tr>
-                        <th>Código Produto</th>
-                        <th>Nome</th>
-                        <th>Marca</th>
-                        <th>Valor Unitário</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
+                        <th style="text-align: center">Código Produto</th>
+                        <th style="text-align: center">Nome</th>
+                        <th style="text-align: center">Marca</th>
+                        <th style="text-align: center">Valor Unitário</th>
+                        <th style="text-align: center">Quantidade</th>
+                        <th style="text-align: center">Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>123456</td>
-                        <td>Bola de Futebol</td>
-                        <td>Nike</td>
-                        <td>R$ 82,99</td>
-                        <td>25</td>
-                        <td>R$ 2.074,75</td>
-                    </tr>
+                    <c:forEach var="produto" items="${listaProd}">
+                    <tr class="table-light">
+                       
+                        <td scope="row" style="text-align: center">${produto.codProduto}</td>
+                        <td style="text-align: center">${produto.nomeProduto}</td>
+                        <td style="text-align: center">${produto.marcaProduto}</td>
+                        <td style="text-align: center">R$ ${produto.valorProduto}</td>
+                        <td style="text-align: center">${produto.quantidade}</td>
+                        <td style="text-align: center">R$ ${produto.valorTotal}</td>
+                        
+                    </tr> 
+                     </c:forEach>
+                                  
                 </tbody>
             </table>
+            <a href="RelatorioProdutosMaisVendidos">
         </div>
     </body>
 </html>

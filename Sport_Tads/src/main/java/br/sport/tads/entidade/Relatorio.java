@@ -1,7 +1,7 @@
 
 package br.sport.tads.entidade;
-
 import java.util.Date;
+
 
 /**
  *
@@ -18,8 +18,10 @@ public class Relatorio {
     private double valorProduto;
     private double subTotal;
     private double valorTotal;
+    private String marcaProduto;
+    
 
-    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal, String marca) {
         this.codVenda = codVenda;
         this.dataVenda = dataVenda;
         this.cpfCliente = cpfCliente;
@@ -30,8 +32,39 @@ public class Relatorio {
         this.valorProduto = valorProduto;
         this.subTotal = subTotal;
         this.valorTotal = valorTotal;
+        this.marcaProduto=marca;
     }
 
+    public Relatorio(int codProduto, String nomeProduto, String marcaProduto,
+                       double valorProduto, int quantidade, double valorTotal) {
+        
+        this.codProduto = codProduto;
+        this.nomeProduto = nomeProduto;
+        this.marcaProduto = marcaProduto;
+        this.valorProduto = valorProduto;
+        this.quantidade = quantidade;
+        this.valorTotal = valorTotal;
+        
+    }
+
+    public Relatorio(int codVenda, String dataForma, String cpf, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
+   
+
+      
+    public String getMarcaProduto() {
+        return marcaProduto;
+    }
+
+    public void setMarcaProduto(String marca) {
+        this.marcaProduto = marca;
+    }
+
+    
     public int getCodVenda() {
         return codVenda;
     }

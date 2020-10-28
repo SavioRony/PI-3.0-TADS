@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.FilialDAO;
@@ -11,17 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ListarFiliais extends HttpServlet{
-    
-        @Override
+public class ListarFiliais extends HttpServlet {
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         List<Filial> listaFiliais = FilialDAO.listarFiliais();
+
         request.setAttribute("listaFiliais", listaFiliais);
-        
-         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaFiliais.jsp");
-         requestDispatcher.forward(request, response);
+
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaFiliais.jsp");
+        requestDispatcher.forward(request, response); 
     }
-    
+
 }

@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ClienteDAO;
