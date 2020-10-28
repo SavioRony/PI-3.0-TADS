@@ -1,7 +1,7 @@
 <%-- 
     Document   : cadastrarCliente
-    Created on : Sep 18, 2020, 15:30:59 PM
-    Author     : savio
+    Created on : 12/10/2020
+    Author     : Savio
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,13 +21,11 @@
 
     </style>
     <script lang="text/javascript">
-
         function mostraCadastroCliente() {
             $('#modalCadastro').modal('show');
         }
         function CadastrarCliente() {
             $.get("CadastrarCliente", function () {
-                $.notify("Cliente Cadastrado com sucesso", "success");
                 $('#modalCadastro').modal('hide');
                 window.location.reload();
             });
@@ -42,21 +40,22 @@
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <p>Nome</p>
-                            <input name="nome" class="form-control" placeholder="Nome Completo" required="true"/><br/>
+                            <input name="nome" class="form-control" placeholder="Nome Completo" required="true"/>
                         </div>
                     </div>
+                    <br/>
                     <div class="row">
                         <div class="form-group col-lg-4">
                             <p>Email</p>
-                            <input  name="email" class="form-control" placeholder="exemplo@exemplo.com.br" required="true"/><br/>                
+                            <input  name="email" class="form-control" placeholder="exemplo@exemplo.com.br" required="true"/>               
                         </div> 
                         <div class="form-group col-lg-4">
                             <p>CPF</p>      
-                            <input name="cpf" class="form-control cpf-mask" placeholder="000.000.000-00" maxlength="11" required="true"/><br/>    
+                            <input name="cpf" class="form-control cpf-mask" placeholder="000.000.000-00" maxlength="11" required="true"/>    
                         </div>
                         <div class="form-group col-lg-4">
                             <p>Celular</p>
-                            <input name="celular" class="form-control cel-sp-mask" placeholder="(00)00000-0000" required="true"/><br/>
+                            <input name="celular" class="form-control cel-sp-mask" placeholder="(00)00000-0000" maxlength="11" required="true"/>
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="mostraCadastroCliente()" 
@@ -72,7 +71,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <label id="nomeCliente">Confirmar Cadastro do cliente </label> ?
+                                <label id="nomeCliente">Confirmar Cadastro do cliente?</label>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

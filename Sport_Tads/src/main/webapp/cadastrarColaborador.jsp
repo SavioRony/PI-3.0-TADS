@@ -1,6 +1,6 @@
 <%-- 
     Document   : cadastrarColaborador
-    Created on : Out 16, 2020, 23:00:00 AM
+    Created on : 16/10/2020
     Author     : Hugo Souza Araujo
 --%>
 

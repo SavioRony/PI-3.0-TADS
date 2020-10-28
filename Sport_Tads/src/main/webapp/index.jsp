@@ -11,20 +11,37 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/estilo.css">
-        <title>Pagina inicial</title>
+        <title>Home SportTads</title>
     </head>
-    <body class="container">
+    <style>
+        #logo{
+            width: 350px;
+            height: 125px;
+        }
+        li {
+            font-size: 20px;
+        }
+    </style>
+    <body>
         <%@include file="cabecalho.jsp" %>
-        <section class="menu-opcoes">
-            <h1><img src="img/Logo.png" alt="Logo da SportTads"></h1>
-            <h2>Menu</h2>
-            <nav>
-                    <a href="ListarClientes">Cliente</a><br/>
-                    <a href="ListaProdutos">Produto</a><br/>
-                    <a href="vendaCliente.jsp">Venda</a><br/>
-                    <a href="ListarColaboradores">Colaborador</a><br/>
-                    <a href="">Filial</a><br/>
-            </nav> 
-        </section>
+        <div class="container">
+            <h1 style="margin-top: 100px; margin-bottom: 100px; text-align: center">Sobre a SportTads</h1>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <ul>
+                        <li>Fundada em 2009 pelos irmãos Antônio e Joana Tads</li>
+                        <li>Empresa de Nacional de administração familiar</li>
+                        <li>Sede localizada em São Paulo</li>
+                        <li>Atuação no ramo esportivo</li>
+                        <li>Ponto comercial de venda de produtos esportivos</li>
+                    </ul>
+                </div>
+                <div class="form-group col-lg-6">
+                    <center>
+                        <img id="logo" src="img\logo.png">
+                    </center>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

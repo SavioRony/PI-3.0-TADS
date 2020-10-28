@@ -1,7 +1,7 @@
 <%-- 
-    Document   : listaColaboradores
-    Created on : 17/10/2020
-    Author     : Hugo Souza Araujo
+    Document   : listaFiliais
+    Created on : 27/10/2020
+    Author     : Rafael Souza Araujo
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,17 +11,16 @@
     <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista de Colaboradores</title>
+        <title>Lista de Filiais</title>
     </head>
     <script lang="text/javascript">
-        $(document).ready(function () {
 
+        $(document).ready(function () {
             function mostrarModalExclusao(cpf, nome) {
                 $("#nomeColaborador").html(nome);
                 $("#cpfColaborador").val(cpf);
                 $('#modalExclusao').modal('show');
             }
-
             function excluirCliente() {
                 var cpf = $("#cpfColaborador").val();
                 $.get("ExcluirColaborador?cpf=" + cpf, function (resposta) {
@@ -29,12 +28,10 @@
                     window.location.reload();
                 });
             }
-
-            $("#btn-novo-colaborador").click(function () {
-                window.location.href = "cadastrarColaborador.jsp";
+            $("#btn-nova-filial").click(function () {
+                window.location.href = "cadastrarFilial.jsp";
             });
         });
-
     </script>
     <style>
         .idade, .actions{
@@ -52,20 +49,18 @@
             margin-left: 10px;
             margin-right: 10px;
         }
-
     </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Lista de Colaboradores</h1>
+            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Lista de Filiais</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th style="text-align: center">CPF</th>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">Email</th>
+                        <th style="text-align: center">Código Filial</th>
+                        <th style="text-align: center">Nome Filial</th>
+                        <th style="text-align: center">Estado</th>
                         <th style="text-align: center">Cidade</th>
-                        <th style="text-align: center">Filial</th>
                         <th style="text-align: center">Ações</th>
                     </tr>
                 </thead>
@@ -75,8 +70,7 @@
                             <td style="text-align: center">${colaborador.cpf}</td>
                             <td style="text-align: center">${colaborador.nome}</td>
                             <td style="text-align: center">${colaborador.email}</td>
-                            <td style="text-align: center">${colaborador.cidade}</td>
-                            <td style="text-align: center">${colaborador.codFilial}</td>
+                            <td style="text-align: center">${colaborador.endereco}</td>
                             <td style="text-align: center" class="actions">
                                 <a href="AlterarColaborador?cpf=${colaborador.cpf}">
                                     <button class="btn btn-default">
@@ -105,8 +99,9 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Confirmar exclusão do colaborador:  <label id="nomeColaborador"></label>?
+                            Confirmar exclusão de filial  <label id="nomeColaborador"></label> ?
                             <input id="cpfColaborador" hidden="true" />
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -117,7 +112,7 @@
             </div>
             <br/>
             <div>
-                <a href="cadastrarColaborador.jsp"><button type="button" class="btn btn-primary" id="btn-novo-colaborador" style="float: right">Novo Colaborador</button></a>
+                <button type="button" class="btn btn-primary" id="btn-nova-filial" style="float: right">Nova Filial</button>
             </div>
         </div>
     </body>

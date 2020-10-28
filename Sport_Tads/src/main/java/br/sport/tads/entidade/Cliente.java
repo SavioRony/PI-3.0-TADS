@@ -5,9 +5,9 @@ public class Cliente {
     private String nome;
     private String email;
     private String cpf;
-    private int celular;
+    private long celular;
 
-    public Cliente(String nome, String cpf, String email, int celular) {
+    public Cliente(String nome, String cpf, String email, long celular) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -42,11 +42,11 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public int getCelular() {
+    public long getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(long celular) {
         this.celular = celular;
     }
 

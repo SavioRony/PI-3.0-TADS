@@ -10,24 +10,18 @@
     <%@include file="header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Editar Colaborador</title>
+        <title>Alterar Colaborador</title>
     </head>
     <style>
         p {
             font-weight: bolder;
             font-size: 18px;
         }
-
     </style>
-    <script>
-        $(document).ready(function () {
-            // $.notify("Colaborador salvo com sucesso", "success");
-        });
-    </script>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Editar Dados do Colaborador: ${colaborador.nome}</h1>
+            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Editar dados do colaborador: ${colaborador.nome}</h1>
             <form action="AlterarColaborador" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-8">
@@ -77,7 +71,7 @@
                         <input name="senha" class="form-control" value="${colaborador.senha}" required="true"/><br/>
                     </div>
                 </div>
-                <button type="submit" style="float: right; width: 100px; margin-bottom: 30px" class="btn btn-primary"><strong>Salvar</strong></button>
+                <button type="submit" style="float: right; width: 100px; margin-bottom: 30px" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </body>

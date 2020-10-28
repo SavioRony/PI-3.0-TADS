@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/estilo.css">
-        <title>Cliente</title>
+        <title>Lista de Clientes</title>
     </head>
     <style>
         .mb-3, .my-3 {
@@ -16,25 +16,25 @@
         }
     </style>
     <script lang="text/javascript">
-       
-            function mostrarModalExclusao(cpf, nome) {
-                $("#nomeCliente").html(nome);
-                $("#cpfCliente").val(cpf);
-                $('#modalExclusao').modal('show');
-            }
+        function mostrarModalExclusao(cpf, nome) {
+            $("#nomeCliente").html(nome);
+            $("#cpfCliente").val(cpf);
+            $('#modalExclusao').modal('show');
+        }
 
-            function excluirCliente() {
-                var cpf = $("#cpfCliente").val();
-                $.get("ExcluirCliente?cpf=" + cpf, function () {
-                    $('#modalExclusao').modal('hide')
-                    window.location.reload();
-                });
-            }
+        function excluirCliente() {
+            var cpf = $("#cpfCliente").val();
+            $.get("ExcluirCliente?cpf=" + cpf, function () {
+                $('#modalExclusao').modal('hide')
+                window.location.reload();
+                $.notify("Cliente excluído com sucesso!", "success");
+            });
+        }
     </script>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div  class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Lista de Clientes</h1><br>
+            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 20px">Lista de Clientes</h1>
             <form action="buscarCliente">
                 <div class="form-group col-lg-4" style="float: right">
                     <div class="input-group mb-3">
@@ -58,7 +58,7 @@
                 <tbody> 
                     <c:forEach var="cliente" items="${listaClientes}">              
                         <tr class="table-light">
-                            <th scope="row" style="text-align: center">${cliente.cpf}</th>
+                            <td scope="row" style="text-align: center">${cliente.cpf}</td>
                             <td style="text-align: center">${cliente.nome}</td>
                             <td style="text-align: center">${cliente.email}</td>
                             <td style="text-align: center">${cliente.celular}</td>
@@ -90,7 +90,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Confirmar exclusão do cliente  <label id="nomeCliente"></label> ?
+                            Confirmar exclusão do cliente: <label id="nomeCliente"></label>?
                             <input id="cpfCliente" hidden="true"/>
                         </div>
                         <div class="modal-footer">
