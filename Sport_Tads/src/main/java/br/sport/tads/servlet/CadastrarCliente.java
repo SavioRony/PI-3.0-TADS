@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ClienteDAO;
@@ -14,15 +13,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CadastrarCliente extends HttpServlet {
-   
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String cpf = request.getParameter("cpf");
         String celularStr = request.getParameter("celular");
-        int celular = Integer.parseInt(celularStr);
-        
+        long celular = Long.parseLong(celularStr);
+
         Cliente cliente = new Cliente(nome, cpf, email, celular);
         try {
             ClienteDAO.addCliente(cliente);
@@ -32,6 +31,4 @@ public class CadastrarCliente extends HttpServlet {
             Utils.mostrarTelaErro(ex, request, response);
         }
     }
-
-    
 }

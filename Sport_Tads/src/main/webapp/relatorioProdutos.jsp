@@ -13,12 +13,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Relatório de Produtos</title>
     </head>
+    <style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
+      }
+    </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Top 10 Produtos mais vendidos</h1>
-            
-            <table class="table" >
+            <h1>Top 10 Produtos mais vendidos</h1>
+            <table class="table">
                 <thead class="thead-light">
                     <tr>
                         <th style="text-align: center">Código Produto</th>
@@ -31,18 +40,15 @@
                 </thead>
                 <tbody>
                     <c:forEach var="produto" items="${listaProd}">
-                    <tr class="table-light">
-                       
+                    <tr class="table-light">                       
                         <td scope="row" style="text-align: center">${produto.codProduto}</td>
                         <td style="text-align: center">${produto.nomeProduto}</td>
                         <td style="text-align: center">${produto.marcaProduto}</td>
                         <td style="text-align: center">R$ ${produto.valorProduto}</td>
                         <td style="text-align: center">${produto.quantidade}</td>
-                        <td style="text-align: center">R$ ${produto.valorTotal}</td>
-                        
+                        <td style="text-align: center">R$ ${produto.valorTotal}</td>                        
                     </tr> 
-                     </c:forEach>
-                                  
+                     </c:forEach>                                  
                 </tbody>
             </table>
             <a href="RelatorioProdutosMaisVendidos">

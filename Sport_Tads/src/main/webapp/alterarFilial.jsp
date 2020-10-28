@@ -1,7 +1,7 @@
 <%-- 
-    Document   : alterarFilial
-    Created on : 28/10/2020, 16:29:29
-    Author     : Fernando
+    Created on : 27/10/2020
+    Author     : Rafael Souza Araujo
+
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,9 +12,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alterar filial</title>
     </head>
+<style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
+            font-weight: bolder;
+            font-size: 18px;
+        }
+    </style>
     <body>
-         <%@include file="cabecalho.jsp" %>
-         
+         <%@include file="cabecalho.jsp" %>         
          <div class="container">
              <center> <h1> Alteração da Filiail: ${filial.estado}</h1></center>
             <form action="AlterarFilial" method="POST">
@@ -22,8 +32,7 @@
                         <p>Código da filial</p>
                         <input name="codFilial" class="form-control" value="${filial.codFilial}" readonly="true" />
                     </div>
-                <div class="row">
-                    
+                <div class="row">                    
                     <div class="form-group col-lg-6">
                         <p>Nome da filial</p>
                         <input name="nomeFilial" class="form-control" value="${filial.nomeFilial}" required="true"/>
@@ -43,9 +52,7 @@
                         <input name="status" class="form-control"  value="${filial.status}" required="true"/>
                     </div>
                 </div>
-               
-                    
-                <button type="submit" style="float: right; width: 100px; margin-bottom: 30px; margin-top: 25px" class="btn btn-primary">Salvar</button>
+              <button type="submit" style="float: right; width: 100px; margin-bottom: 30px; margin-top: 25px" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </body> 

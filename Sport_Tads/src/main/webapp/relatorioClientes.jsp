@@ -1,5 +1,5 @@
 <%-- 
-    Document   : relatorioFiliais
+    Document   : relatorioClientes
     Created on : Out 22, 2020, 20:00
     Author     : Hugo Souza Araujo
 --%>
@@ -13,10 +13,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Relatório por Cliente</title>
     </head>
+    <style>
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Vendas por Cliente</h1>
+            <h1>Vendas por Cliente</h1>
             <form action="RelatorioCliente">
                 <div class="form-group col-lg-4" style="float: right">
                     <div class="input-group mb-3">
@@ -30,31 +40,31 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th style="text-align: center">Código Venda</th>
-                        <th style="text-align: center">Data da compra</th>
-                        <th style="text-align: center">CPF Cliente</th>
-                        <th style="text-align: center">Nome Cliente</th>
-                        <th style="text-align: center">Código Produto</th>
-                        <th style="text-align: center">Nome Produto</th>
-                        <th style="text-align: center">Quantidade</th>
-                        <th style="text-align: center">Valor Produto</th>
-                        <th style="text-align: center">Sub-Total</th>
-                        <th style="text-align: center">Valor Total</th>                       
+                        <th>Código Venda</th>
+                        <th>Data da compra</th>
+                        <th>CPF Cliente</th>
+                        <th>Nome Cliente</th>
+                        <th>Código Produto</th>
+                        <th>Nome Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor Produto</th>
+                        <th>Sub-Total</th>
+                        <th>Valor Total</th>                       
                     </tr>
                 </thead>
                 <tbody>
-                 <c:forEach var="relatorioCliente" items="${listaClientes}">              
+                    <c:forEach var="relatorioCliente" items="${listaClientes}">              
                         <tr class="table-light">
-                            <th scope="row" style="text-align: center">${relatorioCliente.codVenda}</th>
-                            <td style="text-align: center">${relatorioCliente.dataVenda}</td>
-                            <td style="text-align: center">${relatorioCliente.cpfCliente}</td>
-                            <td style="text-align: center">${relatorioCliente.nomeCliente}</td>
-                            <td style="text-align: center">${relatorioCliente.codProduto}</td>
-                            <td style="text-align: center">${relatorioCliente.nomeProduto}</td>
-                            <td style="text-align: center">${relatorioCliente.quantidade}</td>
-                            <td style="text-align: center">${relatorioCliente.valorProduto}</td>
-                            <td style="text-align: center">${relatorioCliente.subTotal}</td>
-                            <td style="text-align: center">${relatorioCliente.valorTotal}</td>               
+                            <td>${relatorioCliente.codVenda}</td>
+                            <td">${relatorioCliente.dataVenda}</td>
+                            <td>${relatorioCliente.cpfCliente}</td>
+                            <td>${relatorioCliente.nomeCliente}</td>
+                            <td>${relatorioCliente.codProduto}</td>
+                            <td>${relatorioCliente.nomeProduto}</td>
+                            <td>${relatorioCliente.quantidade}</td>
+                            <td>${relatorioCliente.valorProduto}</td>
+                            <td>${relatorioCliente.subTotal}</td>
+                            <td>${relatorioCliente.valorTotal}</td>               
                         </tr>
                     </c:forEach>
                 </tbody>

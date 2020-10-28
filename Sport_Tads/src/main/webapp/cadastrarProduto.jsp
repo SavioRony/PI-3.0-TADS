@@ -13,7 +13,12 @@
         <title>Cadastrar Produto</title>
     </head>
     <style>
-        p {
+        div h1{
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        p{
             font-weight: bolder;
             font-size: 18px;
         }
@@ -21,7 +26,7 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Cadastro de Produto</h1>
+            <h1>Cadastro de Produto</h1>
             <form action="IncluirProduto" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-6">
@@ -33,6 +38,7 @@
                         <input name="marca" class="form-control" required="true"/>
                     </div>
                 </div>
+                <br/>
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Categoria</p>
@@ -43,6 +49,7 @@
                         <input name="qtd" class="form-control" required="true"/>
                     </div>
                 </div>
+                <br/>
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Valor</p>
@@ -53,7 +60,8 @@
                         <input name="filial" class="form-control" required="true"/>
                     </div>
                 </div>
-                <button type="submit" style="float: right; width: 100px; margin-bottom: 30px; margin-top: 25px" class="btn btn-primary">Salvar</button>
+                <br/>
+                <button type="submit" style="float: right" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </body>

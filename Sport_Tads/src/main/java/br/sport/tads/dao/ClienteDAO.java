@@ -7,8 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -29,7 +27,7 @@ public class ClienteDAO {
                 String cpf = rs.getString("cpf");
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
-                int celular = rs.getInt("celular");
+                long celular = rs.getLong("celular");
                 listaClientes.add(new Cliente(nome, cpf, email, celular));
             }
         } catch (ClassNotFoundException ex) {
@@ -57,7 +55,7 @@ public class ClienteDAO {
                 cpf = rs.getString("cpf");
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
-                int celular = rs.getInt("celular");
+                long celular = rs.getLong("celular");
                 listaClientes.add(new Cliente(nome, cpf, email, celular));
             }
         } catch (ClassNotFoundException ex) {
@@ -79,10 +77,9 @@ public class ClienteDAO {
             ps.setString(1, cliente.getNome());
             ps.setString(2, cliente.getCpf());
             ps.setString(3, cliente.getEmail());
-            ps.setInt(4, cliente.getCelular());
+            ps.setLong(4, cliente.getCelular());
             ps.execute();
 
-            
         } catch (SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
@@ -98,7 +95,7 @@ public class ClienteDAO {
             ps = con.prepareStatement(query);
             ps.setString(1, cliente.getNome());
             ps.setString(2, cliente.getEmail());
-            ps.setInt(3, cliente.getCelular());
+            ps.setLong(3, cliente.getCelular());
             ps.setString(4, cliente.getCpf());
             ps.execute();
         } catch (SQLException ex) {
@@ -122,13 +119,11 @@ public class ClienteDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static Cliente getCliente(String cpf) {
         PreparedStatement ps = null;
         Cliente cliente = null;
-
         try {
             Connection con = ConexaoDB.getConexao();
             String query = "select * from tb_cliente where cpf=?";
@@ -138,9 +133,8 @@ public class ClienteDAO {
             if (rs.next()) {
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
-                int celular = rs.getInt("celular");
+                long celular = rs.getLong("celular");
                 cliente = new Cliente(nome, cpf, email, celular);
-
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);

@@ -4,7 +4,6 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
 .menu-opcoes {
     font-weight: bold;
     text-transform: uppercase;
@@ -13,9 +12,8 @@ body {
     margin-top: 10px;
     float: left;
     clear: left;
- 
-}
 
+}
 .menu-opcoes a{
     color: #333333;
     margin-top: 20px;
@@ -29,3 +27,4 @@ body {
 .menu-opcoes h1{
     padding-left: 30px;
 }
+

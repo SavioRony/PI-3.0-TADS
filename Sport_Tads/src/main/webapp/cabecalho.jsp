@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : Sep 25, 2020, 9:09:13 PM
-    Author     : tscarton
+    Document   : Cabeçalho
+    Created on : Oct 15, 2020, 9:09:13 PM
+    Author     : HUGO SOUZA
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,7 +28,9 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div>
-                <img id="logo-sportstads" src="img\logo.png">
+                <a href="index.jsp">
+                    <img id="logo-sportstads" src="img\logo.png">
+                </a>
             </div>
             <div id="links-menus">
                 <ul class="navbar-nav">
@@ -55,8 +57,11 @@
                             Filiais
                         </a>
                         <div class="dropdown-menu">
+
                             <a class="dropdown-item" href="incluirFilial.jsp">Cadastrar Filial</a>
                             <a class="dropdown-item" href="ListarFiliais">Listar Filiais</a>
+
+                            
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
@@ -65,7 +70,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="cadastrarProduto.jsp">Cadastrar Produto</a>
-                            <a class="dropdown-item" href="ListaProdutos">Listar Produtos</a>
+                            <a class="dropdown-item" href="listaProdutos.jsp">Listar Produtos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
