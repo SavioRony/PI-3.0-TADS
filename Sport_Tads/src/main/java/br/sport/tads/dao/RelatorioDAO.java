@@ -107,11 +107,14 @@ public class RelatorioDAO {
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = " select fil.codFilial, fil.nomeFilial, sum(ven.codFilial) as quantidadeVendida, sum(ven.total) as totalFaturado  \n"
-                    + "from tb_filial fil\n"
-                    + "inner join tb_venda ven\n"
-                    + "on ven.codFilial = fil.CodFilial\n"
-                    + "group by fil.codFilial ";
+            String query = "select f.codFilial, f.nomeFilial, sum(i.quantidade) as quantidadeVendida, sum(v.total) as totalFaturado\n"
+                    + "from tb_filial f\n"
+                    + "inner join tb_venda v\n"
+                    + "on v.codFilial = f.CodFilial\n"
+                    + "inner join tb_itemVenda i\n"
+                    + "on i.codVenda = v.codVenda\n"
+                    + "group by f.codFilial\n"
+                    + "order by totalFaturado desc;";
 
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
