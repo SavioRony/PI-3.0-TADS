@@ -1,13 +1,13 @@
-
 package br.sport.tads.entidade;
-import java.util.Date;
 
+import java.util.Date;
 
 /**
  *
  * @author savio
  */
 public class Relatorio {
+
     private int codVenda;
     private String dataVenda;
     private String cpfCliente;
@@ -19,9 +19,11 @@ public class Relatorio {
     private double subTotal;
     private double valorTotal;
     private String marcaProduto;
-    
+    private int codFilial;
+    private String nomeFilial;
+    private double totalFaturado;
 
-    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal, String marca) {
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
         this.codVenda = codVenda;
         this.dataVenda = dataVenda;
         this.cpfCliente = cpfCliente;
@@ -32,30 +34,54 @@ public class Relatorio {
         this.valorProduto = valorProduto;
         this.subTotal = subTotal;
         this.valorTotal = valorTotal;
-        this.marcaProduto=marca;
     }
 
     public Relatorio(int codProduto, String nomeProduto, String marcaProduto,
-                       double valorProduto, int quantidade, double valorTotal) {
-        
+            double valorProduto, int quantidade, double valorTotal) {
+
         this.codProduto = codProduto;
         this.nomeProduto = nomeProduto;
         this.marcaProduto = marcaProduto;
         this.valorProduto = valorProduto;
         this.quantidade = quantidade;
         this.valorTotal = valorTotal;
-        
+
     }
 
-    public Relatorio(int codVenda, String dataForma, String cpf, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Relatorio(int codFilial, String nomeFilial, int quantidade, double totalFaturado) {
+        this.quantidade = quantidade;
+        this.codFilial = codFilial;
+        this.nomeFilial = nomeFilial;
+        this.totalFaturado = totalFaturado;
     }
 
-    
+//    public Relatorio(int codVenda, String dataForma, String cpf, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+    public int getCodFilial() {
+        return codFilial;
+    }
 
-   
+    public void setCodFilial(int codFilial) {
+        this.codFilial = codFilial;
+    }
 
-      
+    public String getNomeFilial() {
+        return nomeFilial;
+    }
+
+    public void setNomeFilial(String nomeFilial) {
+        this.nomeFilial = nomeFilial;
+    }
+
+    public double getTotalFaturado() {
+        return totalFaturado;
+    }
+
+    public void setTotalFaturado(double totalFaturado) {
+        this.totalFaturado = totalFaturado;
+    }
+
     public String getMarcaProduto() {
         return marcaProduto;
     }
@@ -64,7 +90,6 @@ public class Relatorio {
         this.marcaProduto = marca;
     }
 
-    
     public int getCodVenda() {
         return codVenda;
     }
@@ -144,5 +169,5 @@ public class Relatorio {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
-    
+
 }

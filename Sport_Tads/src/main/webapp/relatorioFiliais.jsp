@@ -26,23 +26,25 @@
     <body>
         <%@include file="cabecalho.jsp" %>
         <div class="container">
-            <h1>Faturamento/Vendas Mensal por Filial</h1>
+            <h1>Faturamento por Filial</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th>Código Filial</th>
+                        <th>ID Filial</th>
                         <th>Nome</th>
                         <th>Quantidade de Vendas</th>
                         <th>Total Faturado</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>147258</td>
-                        <td>Filial Dubai</td>
-                        <td>550</td>
-                        <td>R$ 125.458,05</td>
-                    </tr>
+                    <c:forEach var="filial" items="${listaFiliais}">
+                        <tr class="table-light">
+                            <td>${filial.codFilial}</td>
+                            <td>${filial.nomeFilial}</td>
+                            <td>${filial.quantidade}</td>
+                            <td>R$ ${filial.totalFaturado}</td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>

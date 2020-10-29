@@ -64,11 +64,9 @@ public class RelatorioDAO {
     }
 
     public static List<Relatorio> relatorioDezMaisVendidos() {
-       
-        
+
         List<Relatorio> relatorioDez = new ArrayList();
-        
-       
+
         try {
             Connection con = ConexaoDB.getConexao();
             String query = " select \n"
@@ -87,20 +85,20 @@ public class RelatorioDAO {
                     + "group by codProduto \n"
                     + "order by quantidade DESC \n"
                     + "limit 10";
-           PreparedStatement ps = con.prepareStatement(query);
+            PreparedStatement ps = con.prepareStatement(query);
 
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                
+
                 int codProduto = rs.getInt("codProduto");
                 String nomeProduto = rs.getString("nomeProduto");
-                String  marcaProd = rs.getString("marcaProduto");
+                String marcaProd = rs.getString("marcaProduto");
                 Double valorUn = rs.getDouble("valorProduto");
                 int quantidade = rs.getInt("quantidade");
                 Double valorTotal = rs.getDouble("valorTotal");
-                                
-                relatorioDez.add(new Relatorio(codProduto,nomeProduto, marcaProd,valorUn,quantidade,valorTotal));
+
+                relatorioDez.add(new Relatorio(codProduto, nomeProduto, marcaProd, valorUn, quantidade, valorTotal));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -113,9 +111,37 @@ public class RelatorioDAO {
         return relatorioDez;
     }
 
-     
-     
-     
-     
-     
+    public static List<Relatorio> relatorioFiliais() {
+
+        List<Relatorio> relatorioFiliais = new ArrayList();
+
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = " select fil.codFilial, fil.nomeFilial, sum(ven.codFilial) as quantidadeVendida, sum(ven.total) as totalFaturado  \n"
+                    + "from tb_filial fil\n"
+                    + "inner join tb_venda ven\n"
+                    + "on ven.codFilial = fil.CodFilial\n"
+                    + "group by fil.codFilial ";
+
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int codFilial = rs.getInt("codFilial");
+                String nomeFilial = rs.getString("nomeFilial");
+                int quantidadeVendida = rs.getInt("quantidadeVendida");
+                double totalFaturado = rs.getDouble("totalFaturado");
+                relatorioFiliais.add(new Relatorio(codFilial, nomeFilial, quantidadeVendida, totalFaturado));
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+
+        return relatorioFiliais;
+    }
+
 }

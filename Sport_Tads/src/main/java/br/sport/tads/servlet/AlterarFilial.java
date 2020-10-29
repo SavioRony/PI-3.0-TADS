@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 public class AlterarFilial extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
         Filial filial = FilialDAO.getFilial(codFilial);
         request.setAttribute("filial", filial);
@@ -27,19 +27,17 @@ public class AlterarFilial extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
         String nomeFilial = request.getParameter("nomeFilial");
         String estado = request.getParameter("estado");
         String cidade = request.getParameter("cidade");
-        int status = Integer.parseInt(request.getParameter("status"));
-        
+
         Filial filial = FilialDAO.getFilial(codFilial);
         filial.setNomeFilial(nomeFilial);
         filial.setEstado(estado);
         filial.setCidade(cidade);
-        filial.setStatus(status);
-        
+
         try {
             FilialDAO.alterarFilial(filial);
             response.sendRedirect("ListarFiliais");
@@ -50,4 +48,3 @@ public class AlterarFilial extends HttpServlet {
     }
 
 }
-

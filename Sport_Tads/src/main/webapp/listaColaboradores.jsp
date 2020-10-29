@@ -14,21 +14,6 @@
         <title>Lista de Colaboradores</title>
     </head>
     <style>
-        .idade, .actions{
-            text-align: center;
-        }
-        #logo-sportstads{
-            width: 300px;
-            height: 100px;
-        }
-        #links-menus{
-            margin-left: 30px;
-            font-size: 22px;
-        }
-        li {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
         div h1{
             text-align: center;
             margin-bottom: 50px;
@@ -39,26 +24,19 @@
         }
     </style>
     <script lang="text/javascript">
-        $(document).ready(function () {
+        function mostrarModalExclusao(cpf, nome) {
+            $("#nomeColaborador").html(nome);
+            $("#cpfColaborador").val(cpf);
+            $('#modalExclusao').modal('show');
+        }
 
-            function mostrarModalExclusao(cpf, nome) {
-                $("#nomeColaborador").html(nome);
-                $("#cpfColaborador").val(cpf);
-                $('#modalExclusao').modal('show');
-            }
-
-            function excluirCliente() {
-                var cpf = $("#cpfColaborador").val();
-                $.get("ExcluirColaborador?cpf=" + cpf, function (resposta) {
-                    $('#modalExclusao').modal('hide')
-                    window.location.reload();
-                });
-            }
-
-            $("#btn-novo-colaborador").click(function () {
-                window.location.href = "cadastrarColaborador.jsp";
+        function excluirCliente() {
+            var cpf = $("#cpfColaborador").val();
+            $.get("ExcluirColaborador?cpf=" + cpf, function (resposta) {
+                $('#modalExclusao').modal('hide')
+                window.location.reload();
             });
-        });
+        }
     </script>
     <body>
         <%@include file="cabecalho.jsp" %>
@@ -77,7 +55,7 @@
                 </thead>
                 <tbody>
                     <c:forEach var="colaborador" items="${listaColaboradores}">
-                        <tr>
+                        <tr class="table-light">
                             <td>${colaborador.cpf}</td>
                             <td>${colaborador.nome}</td>
                             <td>${colaborador.email}</td>

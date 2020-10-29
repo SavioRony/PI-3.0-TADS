@@ -10,9 +10,6 @@
         <title>Lista de Clientes</title>
     </head>
     <style>
-        .mb-3, .my-3 {
-            margin: 0px 10px 0px;
-        }
         div h1{
             text-align: center;
             margin-bottom: 50px;
@@ -43,7 +40,7 @@
         <div  class="container">
             <h1>Lista de Clientes</h1>
             <form action="buscarCliente">
-                <div class="form-group col-lg-4" style="float: right">
+                <div class="form-group col-lg-4" style="float: right; margin-right: -10px">
                     <div class="input-group mb-3">
                         <input name="cpf" class="form-control" placeholder="CPF Cliente" aria-describedby="button-addon2">
                         <div class="input-group-append">

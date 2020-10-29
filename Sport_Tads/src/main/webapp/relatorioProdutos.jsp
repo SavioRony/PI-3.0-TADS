@@ -21,7 +21,7 @@
         }
         table{
             text-align: center;
-      }
+        }
     </style>
     <body>
         <%@include file="cabecalho.jsp" %>
@@ -30,28 +30,27 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th style="text-align: center">Código Produto</th>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">Marca</th>
-                        <th style="text-align: center">Valor Unitário</th>
-                        <th style="text-align: center">Quantidade</th>
-                        <th style="text-align: center">Total</th>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Marca</th>
+                        <th>Valor Unitário</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="produto" items="${listaProd}">
-                    <tr class="table-light">                       
-                        <td scope="row" style="text-align: center">${produto.codProduto}</td>
-                        <td style="text-align: center">${produto.nomeProduto}</td>
-                        <td style="text-align: center">${produto.marcaProduto}</td>
-                        <td style="text-align: center">R$ ${produto.valorProduto}</td>
-                        <td style="text-align: center">${produto.quantidade}</td>
-                        <td style="text-align: center">R$ ${produto.valorTotal}</td>                        
-                    </tr> 
-                     </c:forEach>                                  
+                        <tr class="table-light">                       
+                            <td>${produto.codProduto}</td>
+                            <td>${produto.nomeProduto}</td>
+                            <td>${produto.marcaProduto}</td>
+                            <td>R$ ${produto.valorProduto}</td>
+                            <td>${produto.quantidade}</td>
+                            <td>R$ ${produto.valorTotal}</td>                        
+                        </tr> 
+                    </c:forEach>                                  
                 </tbody>
             </table>
-            <a href="RelatorioProdutosMaisVendidos">
         </div>
     </body>
 </html>

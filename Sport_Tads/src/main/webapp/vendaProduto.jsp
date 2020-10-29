@@ -1,5 +1,5 @@
 <%-- 
-    Document   : vendasPasso2
+    Document   : vendaProduto
     Created on : 24/10/2020, 20:22:54
     Author     : Fernando
 --%>
@@ -49,8 +49,8 @@
             <table id="tabelaProduto" class="table">
                 <thead class="thead-light" >
                     <tr>
-                        <th>Código da filial</th>
-                        <th>Código do produto</th>
+                        <th>ID Filial</th>
+                        <th>ID Produto</th>
                         <th>Nome</th>
                         <th>Marca</th>
                         <th>Categoria</th>

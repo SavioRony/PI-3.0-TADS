@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.FilialDAO;
@@ -13,19 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+public class CadastrarFilial extends HttpServlet {
 
-public class CadastrarFilial extends HttpServlet{
-    
-    @Override 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nomeFilial = request.getParameter("nomeFilial");
         String estado = request.getParameter("estado");
         String cidade = request.getParameter("cidade");
-        String statusStr = request.getParameter("status");
-        
-        int status = Integer.parseInt(statusStr);
-        
-        Filial filial = new Filial(nomeFilial, estado, cidade, status);
+
+        Filial filial = new Filial(nomeFilial, estado, cidade);
         try {
             FilialDAO.cadastrarFilial(filial);
             response.sendRedirect("ListarFiliais");
@@ -34,5 +29,4 @@ public class CadastrarFilial extends HttpServlet{
             Utils.mostrarTelaErro(ex, request, response);
         }
     }
-    
 }

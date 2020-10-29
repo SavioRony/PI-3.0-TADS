@@ -24,7 +24,6 @@
         }
     </style>
     <script lang="text/javascript">
-
         function mostrarModalExclusao(cProduto, nProduto) {
             $("#codProduto").val(cProduto);
             $("#nomeProduto").html(nProduto);
@@ -51,8 +50,8 @@
             <table class="table">
                 <thead class="thead-light" >
                     <tr>
-                        <th>Código da filial </th>
-                        <th>Código do produto</th>
+                        <th>ID Filial</th>
+                        <th>ID Produto</th>
                         <th>Nome</th>
                         <th>Marca</th>
                         <th>Categoria</th>
@@ -63,7 +62,7 @@
                 </thead>
                 <tbody> 
                     <c:forEach var="produto" items="${listaProd}">
-                        <tr>
+                        <tr class="table-light">
                             <td>${produto.codFilial}</td>
                             <td>${produto.codProduto}</td>
                             <td>${produto.nomeProduto}</td>
@@ -99,7 +98,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Confirmar exclusão do produto  <label id="nomeProduto"></label> ?
+                            Confirmar exclusão do produto: <label id="nomeProduto"></label>?
                             <input id="codProduto" hidden="true" />
                         </div>
                         <div class="modal-footer">
