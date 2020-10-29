@@ -24,7 +24,7 @@ public class RelatorioDAO {
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select tb_venda.codVenda, tb_venda.dt_hr_Venda, tb_cliente.cpf, tb_cliente.nome, tb_produto.codProduto, tb_produto.nomeProduto, \n"
+            String query = "select tb_venda.codVenda, tb_venda.dtVenda, tb_cliente.cpf, tb_cliente.nome, tb_produto.codProduto, tb_produto.nomeProduto, \n"
                     + "tb_itemvenda.quantidade, tb_produto.valorProduto, tb_itemvenda.subTotal, tb_venda.total from tb_venda\n"
                     + "inner join tb_itemvenda on tb_itemvenda.codVenda = tb_venda.codVenda\n"
                     + "inner join tb_cliente on tb_cliente.cpf = tb_venda.cpfCliente\n"
@@ -36,7 +36,7 @@ public class RelatorioDAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int codVenda = rs.getInt("codVenda");
-                Date data = rs.getDate("dt_hr_Venda");
+                Date data = rs.getDate("dtVenda");
                 String dataForma = formatador.format(data);
                 cpf = rs.getString("cpf");
                 String nomeCliente = rs.getString("nome");
