@@ -1,13 +1,7 @@
-
 package br.sport.tads.entidade;
 
-import java.util.Date;
-
-/**
- *
- * @author savio
- */
 public class Relatorio {
+
     private int codVenda;
     private String dataVenda;
     private String cpfCliente;
@@ -18,6 +12,10 @@ public class Relatorio {
     private double valorProduto;
     private double subTotal;
     private double valorTotal;
+    private String marcaProduto;
+    private int codFilial;
+    private String nomeFilial;
+    private double totalFaturado;
 
     public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
         this.codVenda = codVenda;
@@ -30,6 +28,55 @@ public class Relatorio {
         this.valorProduto = valorProduto;
         this.subTotal = subTotal;
         this.valorTotal = valorTotal;
+    }
+
+    public Relatorio(int codProduto, String nomeProduto, String marcaProduto,
+            double valorProduto, int quantidade, double valorTotal) {
+        this.codProduto = codProduto;
+        this.nomeProduto = nomeProduto;
+        this.marcaProduto = marcaProduto;
+        this.valorProduto = valorProduto;
+        this.quantidade = quantidade;
+        this.valorTotal = valorTotal;
+    }
+
+    public Relatorio(int codFilial, String nomeFilial, int quantidade, double totalFaturado) {
+        this.quantidade = quantidade;
+        this.codFilial = codFilial;
+        this.nomeFilial = nomeFilial;
+        this.totalFaturado = totalFaturado;
+    }
+
+    public int getCodFilial() {
+        return codFilial;
+    }
+
+    public void setCodFilial(int codFilial) {
+        this.codFilial = codFilial;
+    }
+
+    public String getNomeFilial() {
+        return nomeFilial;
+    }
+
+    public void setNomeFilial(String nomeFilial) {
+        this.nomeFilial = nomeFilial;
+    }
+
+    public double getTotalFaturado() {
+        return totalFaturado;
+    }
+
+    public void setTotalFaturado(double totalFaturado) {
+        this.totalFaturado = totalFaturado;
+    }
+
+    public String getMarcaProduto() {
+        return marcaProduto;
+    }
+
+    public void setMarcaProduto(String marca) {
+        this.marcaProduto = marca;
     }
 
     public int getCodVenda() {
@@ -111,5 +158,4 @@ public class Relatorio {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
-    
 }

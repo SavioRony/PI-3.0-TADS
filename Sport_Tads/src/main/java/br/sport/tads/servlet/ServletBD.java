@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class ServletBD extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -21,24 +20,17 @@ public class ServletBD extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletBD</title>");            
+            out.println("<title>Servlet ServletBD</title>");
             out.println("</head>");
             out.println("<body>");
-            
-            
+
             List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
-            for(Produto produto: listaProdutos) {
-                
-                
+            for (Produto produto : listaProdutos) {
                 out.println(produto);
                 out.println("<br/>");
             }
-                   
-            
-            
             out.println("</body>");
             out.println("</html>");
         }
     }
-
 }

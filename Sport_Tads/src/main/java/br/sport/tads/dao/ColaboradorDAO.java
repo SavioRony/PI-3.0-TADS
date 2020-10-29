@@ -1,11 +1,4 @@
-/*    
-Document   : ColaboradorDAO
-Created on : 21/10/2020
-Author     : Savio Rony
-*/
-
 package br.sport.tads.dao;
-
 
 import br.sport.tads.bd.ConexaoDB;
 import br.sport.tads.entidade.Colaborador;
@@ -27,7 +20,7 @@ public class ColaboradorDAO {
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from db_sportstads.tb_colaborador where status = 1";
+            String query = "select * from tb_colaborador where status = 1";
             preparedStatement = con.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -129,7 +122,7 @@ public class ColaboradorDAO {
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "update tb_colaborador set nomeCompleto=?, email=?, senha=?, cargo=?, codFilial=?, endereco=?, numero=?, cep=?, cidade=? where cpf=? " ;
+            String query = "update tb_colaborador set nomeCompleto=?, email=?, senha=?, cargo=?, codFilial=?, endereco=?, numero=?, cep=?, cidade=? where cpf=? ";
             ps = con.prepareStatement(query);
             ps.setString(1, colaborador.getNome());
             ps.setString(2, colaborador.getEmail());

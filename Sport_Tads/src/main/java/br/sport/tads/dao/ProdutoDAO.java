@@ -13,17 +13,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Fernando
- */
 public class ProdutoDAO {
 
     public static void incluirProduto(Produto produto) throws SQLException, ClassNotFoundException {
         PreparedStatement ps = null;
         try {
             Connection con = ConexaoDB.getConexao();
-
             ps = con.prepareStatement("insert into TB_PRODUTO (codfilial,nomeproduto,marcaproduto,categoriaproduto, valorproduto,quantidadeemestoque) values (?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
 
             ps.setInt(1, produto.getCodFilial());
@@ -66,11 +61,9 @@ public class ProdutoDAO {
         PreparedStatement ps = con.prepareStatement(query);
         ps.setInt(1, codProd);
         ps.execute();
-
     }
 
     public static List<Produto> getListaProdutos() {
-
         List<Produto> listaProdutos = new ArrayList();
 
         try {
@@ -90,7 +83,6 @@ public class ProdutoDAO {
                 Double valor = rs.getDouble("valorProduto");
 
                 listaProdutos.add(new Produto(codProduto, filial, nomeProduto, marca, categoria, qtdEstoque, valor));
-
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -99,12 +91,10 @@ public class ProdutoDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return listaProdutos;
     }
 
     public static Produto getProduto(int codProduto) {
-
         Produto produto = null;
 
         try {
@@ -125,7 +115,6 @@ public class ProdutoDAO {
                 int qtdEstoque = rs.getInt("quantidadeEmEstoque");
 
                 produto = new Produto(codProd, filial, nomeProduto, marca, categoria, valor, qtdEstoque);
-
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -136,7 +125,6 @@ public class ProdutoDAO {
     }
 
     public static List<Produto> getListaProdutos(int codFilial, int codProduto) {
-
         List<Produto> listaProdutos = new ArrayList();
 
         try {
@@ -148,7 +136,6 @@ public class ProdutoDAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
                 int codProd = rs.getInt("codProduto");
                 int filial = rs.getInt("codFilial");
                 String nomeProduto = rs.getString("nomeProduto");
@@ -158,7 +145,6 @@ public class ProdutoDAO {
                 Double valor = rs.getDouble("valorProduto");
 
                 listaProdutos.add(new Produto(codProd, filial, nomeProduto, marca, categoria, qtdEstoque, valor));
-
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -167,8 +153,6 @@ public class ProdutoDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return listaProdutos;
     }
-
 }

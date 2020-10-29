@@ -2,13 +2,6 @@ package br.sport.tads.entidade;
 
 import java.util.Date;
 
-
-
-
-/**
- *
- * @author Fernando
- */
 public class Venda {
 
     int codVenda;
@@ -22,22 +15,18 @@ public class Venda {
     }
 
     public Venda(String cpfCliente, int codFilial, Date dataDaVenda) {
-        
         this.cpfCliente = cpfCliente;
         this.codFilial = codFilial;
         this.dataDaVenda = dataDaVenda;
-        
     }
 
     public Venda(String cpfCliente, int codFilial, int codVendedor, Date data_Venda, int codVenda, double total) {
-
         this.cpfCliente = cpfCliente;
         this.codFilial = codFilial;
         this.codVendedor = codVendedor;
         this.dataDaVenda = data_Venda;
-        this.codVenda=codVenda;
+        this.codVenda = codVenda;
         this.total = total;
-
     }
 
     public int getCodVenda() {
@@ -94,7 +83,5 @@ public class Venda {
                 + " dataDaVenda %d <br> total %f <br/> ",
                 this.getCodVenda(), this.getCpfCliente(), this.getCodFilial(), this.getCodVendedor(),
                 this.getDataDaVenda(), this.getTotal());
-
     }
-
 }

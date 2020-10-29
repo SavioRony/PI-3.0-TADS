@@ -18,33 +18,22 @@ public class VendaGerarPedido extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String cpf = request.getParameter("cpf");
         String filialStr = request.getParameter("filial");
         Date dataAtual = new Date();
         int codFilial = Integer.parseInt(filialStr);
-
         Venda venda = new Venda(cpf, codFilial, dataAtual);
-        
+
         try {
             venda = VendaDAO.GerarPedidoVenda(venda);
             int codVenda = venda.getCodVenda();
-     
-            request.setAttribute( "codFilial", codFilial);
-            request.setAttribute( "codVenda", codVenda);
-             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaProduto.jsp");
-               requestDispatcher.forward(request, response);
-            
-            
-           
+            request.setAttribute("codFilial", codFilial);
+            request.setAttribute("codVenda", codVenda);
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaProduto.jsp");
+            requestDispatcher.forward(request, response);
         } catch (SQLException | ClassNotFoundException ex) {
-
             Logger.getLogger(VendaGerarPedido.class.getName()).log(Level.SEVERE, null, ex);
-
             Utils.mostrarTelaErro(ex, request, response);
         }
- 
     }
-
-    
 }

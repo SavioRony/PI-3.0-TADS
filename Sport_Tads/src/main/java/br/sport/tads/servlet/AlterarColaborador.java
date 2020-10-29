@@ -1,9 +1,3 @@
-/*    
-Document   : AlterarColaborador
-Created on : 21/10/2020
-Author     : Savio Rony
-*/
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ColaboradorDAO;
@@ -19,20 +13,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class AlterarColaborador extends HttpServlet {
 
-     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
         Colaborador colaborador = ColaboradorDAO.getColaborador(cpf);
         request.setAttribute("colaborador", colaborador);
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarColaborador.jsp");
-        rd.forward(request, response);  
+        rd.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String endereco = request.getParameter("endereco");
@@ -43,7 +36,7 @@ public class AlterarColaborador extends HttpServlet {
         int filial = Integer.parseInt(request.getParameter("filial"));
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        
+
         Colaborador colaborador = ColaboradorDAO.getColaborador(cpf);
         colaborador.setNome(nome);
         colaborador.setEndereco(endereco);
@@ -63,7 +56,6 @@ public class AlterarColaborador extends HttpServlet {
             Utils.mostrarTelaErro(ex, request, response);
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        
+        }
     }
 }

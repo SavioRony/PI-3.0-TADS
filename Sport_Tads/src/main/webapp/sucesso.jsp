@@ -1,9 +1,3 @@
-<%-- 
-    Document   : sucesso
-    Created on : Sep 25, 2020, 9:37:51 PM
-    Author     : tscarton
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

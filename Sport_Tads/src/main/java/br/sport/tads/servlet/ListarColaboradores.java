@@ -1,6 +1,5 @@
 package br.sport.tads.servlet;
 
-//
 import br.sport.tads.dao.ColaboradorDAO;
 import br.sport.tads.entidade.Colaborador;
 import java.io.IOException;
@@ -11,16 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Hugo Souza Araujo
- */
 public class ListarColaboradores extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         List<Colaborador> listaColaboradores = ColaboradorDAO.getColaboradores();
         request.setAttribute("listaColaboradores", listaColaboradores);
 

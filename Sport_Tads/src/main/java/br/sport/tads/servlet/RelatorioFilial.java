@@ -10,15 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RelatorioCliente extends HttpServlet {
+public class RelatorioFilial extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cpf = request.getParameter("cpf");
-        List<Relatorio> listRelatorio = RelatorioDAO.getRelatorioCliente(cpf);
-        request.setAttribute("listaClientes", listRelatorio);
+        List<Relatorio> listaFiliais = RelatorioDAO.relatorioFiliais();
+        request.setAttribute("listaFiliais", listaFiliais);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/relatorioClientes.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/relatorioFiliais.jsp");
         requestDispatcher.forward(request, response);
     }
 }

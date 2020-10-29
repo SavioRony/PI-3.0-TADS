@@ -12,10 +12,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author savio
- */
 public class ItemVendaDAO {
 
     public static void inserirItemVenda(ItemVenda item) throws SQLException, ClassNotFoundException {
@@ -23,7 +19,6 @@ public class ItemVendaDAO {
         PreparedStatement ps = null;
         try {
             Connection con = ConexaoDB.getConexao();
-
             ps = con.prepareStatement("insert into tb_itemvenda (codVenda,codProduto,quantidade,subTotal) values (?,?,?,?)");
 
             ps.setInt(1, item.getCodVenda());
@@ -36,7 +31,6 @@ public class ItemVendaDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static List<ItemVenda> getItemVenda(int codVenda) {
@@ -59,7 +53,7 @@ public class ItemVendaDAO {
                 int quantidade = rs.getInt("quantidade");
                 double valorProduto = rs.getDouble("valorProduto");
                 double subTotal = rs.getDouble("subTotal");
-                listaItemVenda.add(new ItemVenda(codItemVenda, codProduto, nomeProduto, marcaProduto, quantidade,valorProduto, subTotal));
+                listaItemVenda.add(new ItemVenda(codItemVenda, codProduto, nomeProduto, marcaProduto, quantidade, valorProduto, subTotal));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -68,23 +62,20 @@ public class ItemVendaDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return listaItemVenda;
     }
-    
-         public static void excluirItemVenda(int idItem, int codProduto, int quantidade) throws SQLException, ClassNotFoundException {
-            
-            Connection con = ConexaoDB.getConexao();
-            String query = "update tb_produto set quantidadeEmEstoque = quantidadeEmEstoque + ? where codProduto=?";
-            PreparedStatement ps= con.prepareStatement(query);
-            ps.setInt(1, quantidade);
-            ps.setInt(2, codProduto);
-            ps.execute(); 
 
-            query = "delete from tb_itemVenda where idItem=?";
-            ps= con.prepareStatement(query);
-            ps.setInt(1, idItem);
-            ps.execute();
-            
-        }
+    public static void excluirItemVenda(int idItem, int codProduto, int quantidade) throws SQLException, ClassNotFoundException {
+        Connection con = ConexaoDB.getConexao();
+        String query = "update tb_produto set quantidadeEmEstoque = quantidadeEmEstoque + ? where codProduto=?";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setInt(1, quantidade);
+        ps.setInt(2, codProduto);
+        ps.execute();
+
+        query = "delete from tb_itemVenda where idItem=?";
+        ps = con.prepareStatement(query);
+        ps.setInt(1, idItem);
+        ps.execute();
+    }
 }

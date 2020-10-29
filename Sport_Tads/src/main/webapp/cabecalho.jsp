@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Sep 25, 2020, 9:09:13 PM
-    Author     : tscarton
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +22,9 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div>
-                <img id="logo-sportstads" src="img\logo.png">
+                <a href="index.jsp">
+                    <img id="logo-sportstads" src="img\logo.png">
+                </a>
             </div>
             <div id="links-menus">
                 <ul class="navbar-nav">
@@ -55,8 +51,8 @@
                             Filiais
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cadastrar Filial</a>
-                            <a class="dropdown-item" href="#">Listar Filiais</a>
+                            <a class="dropdown-item" href="incluirFilial.jsp">Cadastrar Filial</a>
+                            <a class="dropdown-item" href="ListarFiliais">Listar Filiais</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown" >
@@ -74,8 +70,8 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="vendaCliente.jsp">Realizar Venda</a>
-                            <a class="dropdown-item" href="relatorioFiliais.jsp">Relatório por Filial</a>
-                            <a class="dropdown-item" href="relatorioProdutos.jsp">Relatório por Categorias de Produtos</a>
+                            <a class="dropdown-item" href="RelatorioFilial">Relatório por Filial</a>
+                            <a class="dropdown-item" href="RelatorioProdutosMaisVendidos">Relatório por Categorias de Produtos</a>
                             <a class="dropdown-item" href="relatorioClientes.jsp">Relatório por Cliente</a>
                         </div>
                     </li>

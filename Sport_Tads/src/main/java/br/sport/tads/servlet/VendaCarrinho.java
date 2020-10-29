@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ItemVendaDAO;
@@ -11,12 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author savio
- */
 public class VendaCarrinho extends HttpServlet {
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,16 +18,13 @@ public class VendaCarrinho extends HttpServlet {
         int codVenda = Integer.parseInt(codVendaStr);
         String codFilialStr = request.getParameter("codFilial");
         int codFilial = Integer.parseInt(codFilialStr);
- 
+
         List<ItemVenda> listaItemVenda = ItemVendaDAO.getItemVenda(codVenda);
-        
-        request.setAttribute("listaItemVenda",listaItemVenda);
-        request.setAttribute("codVenda",codVenda);
-        request.setAttribute("codFilial",codFilial);
+        request.setAttribute("listaItemVenda", listaItemVenda);
+        request.setAttribute("codVenda", codVenda);
+        request.setAttribute("codFilial", codFilial);
 
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaCarrinho.jsp");
         requestDispatcher.forward(request, response);
     }
-
-
 }

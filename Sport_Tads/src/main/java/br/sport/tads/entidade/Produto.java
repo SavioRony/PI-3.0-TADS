@@ -1,25 +1,19 @@
 package br.sport.tads.entidade;
 
 public class Produto {
-    
+
     private int codProduto;
-    
     private int codFilial;
-
     private String nomeProduto;
-
     private String marcaProduto;
-
     private String categoriaProduto;
-    
     private Double valorProduto;
-        
     private int quantidadeEmEstoque;
 
     public Produto() {
     }
 
-    public Produto(int codProduto, int codFilial, String nomeProduto, String marcaProduto, String categoriaProduto,int quantidadeEmEstoque,Double valorProduto) {
+    public Produto(int codProduto, int codFilial, String nomeProduto, String marcaProduto, String categoriaProduto, int quantidadeEmEstoque, Double valorProduto) {
         this.codProduto = codProduto;
         this.codFilial = codFilial;
         this.nomeProduto = nomeProduto;
@@ -103,17 +97,12 @@ public class Produto {
     public void setQuantidadeEmEstoque(int quantidadeEmEstoque) {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
-    
-    
-    
-    
-      @Override
+
+    @Override
     public String toString() {
         return String.format("codProduto %d <br> codFilial %d <br> nomeProduto %s <br/> marcaProduto %s <br>"
                 + " categoriaProduto %s <br> valorProduto %f <br/> quantidadeEmEstoque %d",
-                this.getCodProduto(),this.getCodFilial(),this.getNomeProduto(),this.getMarcaProduto(),
-                this.getCategoriaProduto(),this.getValorProduto(),this.getQuantidadeEmEstoque());
-                
+                this.getCodProduto(), this.getCodFilial(), this.getNomeProduto(), this.getMarcaProduto(),
+                this.getCategoriaProduto(), this.getValorProduto(), this.getQuantidadeEmEstoque());
     }
-    
 }

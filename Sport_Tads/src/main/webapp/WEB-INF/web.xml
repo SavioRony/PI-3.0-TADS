@@ -5,6 +5,10 @@
         <servlet-class>br.sport.tads.servlet.ServletBD</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ListarFiliais</servlet-name>
+        <servlet-class>br.sport.tads.servlet.ListarFiliais</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ListarClientes</servlet-name>
         <servlet-class>br.sport.tads.servlet.ListarClientes</servlet-class>
     </servlet>
@@ -89,6 +93,10 @@
         <servlet-class>br.sport.tads.servlet.VendaInserirProduto</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>RelatorioProdutosMaisVendidos</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioProdutosMaisVendidos</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>VendaCarrinho</servlet-name>
         <servlet-class>br.sport.tads.servlet.VendaCarrinho</servlet-class>
     </servlet>
@@ -104,6 +112,30 @@
         <servlet-name>RelatorioCliente</servlet-name>
         <servlet-class>br.sport.tads.servlet.RelatorioCliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RelatorioFilial</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioFilial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarFilial</servlet-name>
+        <servlet-class>br.sport.tads.servlet.CadastrarFilial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlterarFilial</servlet-name>
+        <servlet-class>br.sport.tads.servlet.AlterarFilial</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarFilial</servlet-name>
+        <url-pattern>/AlterarFilial</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ExcluirFilial</servlet-name>
+        <servlet-class>br.sport.tads.servlet.ExcluirFilial</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExcluirFilial</servlet-name>
+        <url-pattern>/ExcluirFilial</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -111,6 +143,10 @@
     <servlet-mapping>
         <servlet-name>ListarClientes</servlet-name>
         <url-pattern>/ListarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarFilial</servlet-name>
+        <url-pattern>/CadastrarFilial</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarColaboradores</servlet-name>
@@ -131,6 +167,10 @@
     <servlet-mapping>
         <servlet-name>AlterarCliente</servlet-name>
         <url-pattern>/AlterarCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarFiliais</servlet-name>
+        <url-pattern>/ListarFiliais</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>IncluirProduto</servlet-name>
@@ -203,6 +243,14 @@
     <servlet-mapping>
         <servlet-name>RelatorioCliente</servlet-name>
         <url-pattern>/RelatorioCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioFilial</servlet-name>
+        <url-pattern>/RelatorioFilial</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioProdutosMaisVendidos</servlet-name>
+        <url-pattern>/RelatorioProdutosMaisVendidos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

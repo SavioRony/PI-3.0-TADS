@@ -1,9 +1,3 @@
-<%-- 
-    Document   : vendas
-    Created on : Out 21, 2020, 22:45
-    Author     : Hugo Souza Araujo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.VendaDAO;
@@ -8,15 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author savio
- */
 public class VendaFinalizar extends HttpServlet {
 
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String codVendaStr = request.getParameter("codVenda");
         int codVenda = Integer.parseInt(codVendaStr);
         String valorTotalStr = request.getParameter("valorTotal");
@@ -24,6 +18,4 @@ public class VendaFinalizar extends HttpServlet {
         VendaDAO.finalizarVenda(valorTotal, codVenda);
         response.sendRedirect("sucesso.jsp");
     }
-
-
 }

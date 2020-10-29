@@ -1,12 +1,7 @@
-
 package br.sport.tads.entidade;
 
-/**
- *
- * @author Fernando
- */
 public class ItemVenda {
-    
+
     private int idItem;
     private String nomeProduto;
     private String marcaProduto;
@@ -28,7 +23,6 @@ public class ItemVenda {
         this.quantidade = quantidade;
         this.subTotal = subTotal;
     }
-
 
     public ItemVenda(int codVenda, int codProduto, int quantidade, Double subTotal) {
         this.codVenda = codVenda;
@@ -100,5 +94,4 @@ public class ItemVenda {
     public void setSubTotal(double subTotal) {
         this.subTotal = subTotal;
     }
-
 }
