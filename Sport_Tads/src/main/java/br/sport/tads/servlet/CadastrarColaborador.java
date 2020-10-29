@@ -1,9 +1,3 @@
-/*    
-Document   : ExcluirColaborador
-Created on : 21/10/2020
-Author     : Savio Rony
-*/
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ColaboradorDAO;
@@ -18,9 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+public class CadastrarColaborador extends HttpServlet {
 
-public class CadastrarColaborador extends HttpServlet{
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String endereco = request.getParameter("endereco");
@@ -31,8 +25,8 @@ public class CadastrarColaborador extends HttpServlet{
         int filial = Integer.parseInt(request.getParameter("filial"));
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        
-        Colaborador colaborador = new Colaborador(nome,cpf,endereco, numero, cep, cidade, cargo, filial, email, senha);
+
+        Colaborador colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, filial, email, senha);
         try {
             ColaboradorDAO.addColadorador(colaborador);
             response.sendRedirect("ListarColaboradores");
@@ -42,5 +36,5 @@ public class CadastrarColaborador extends HttpServlet{
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-    } 
+    }
 }

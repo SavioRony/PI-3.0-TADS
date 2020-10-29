@@ -10,10 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author savio
- */
 public class VendaExcluirItem extends HttpServlet {
 
     @Override
@@ -26,12 +22,11 @@ public class VendaExcluirItem extends HttpServlet {
         String quantidadeStr = request.getParameter("quantidade");
         int quantidade = Integer.parseInt(quantidadeStr);
         try {
-            ItemVendaDAO.excluirItemVenda(idItem, codProduto, quantidade );
+            ItemVendaDAO.excluirItemVenda(idItem, codProduto, quantidade);
             response.getWriter().print(true);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ExcluirProduto.class.getName()).log(Level.SEVERE, null, ex);
             response.getWriter().print(false);
         }
     }
-
 }

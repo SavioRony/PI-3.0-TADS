@@ -10,23 +10,18 @@ public class ConexaoDB {
 
     static {
         try {
-
-            Class.forName("com.mysql.cj.jdbc.Driver");  // org.apache.derby.jdbc.EmbeddedDriver
-
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexaoDB.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static Connection getConexao() throws ClassNotFoundException, SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/db_sporttads?useTimezone=true&serverTimezone=UTC&useSSL=false";  // jdbc:derby://localhost:1527/teste
+        String url = "jdbc:mysql://localhost:3306/db_sporttads?useTimezone=true&serverTimezone=UTC&useSSL=false";
         String user = "root";
         String password = "";
-
         return DriverManager.getConnection(url, user, password);
     }
-
 }

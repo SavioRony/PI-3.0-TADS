@@ -17,7 +17,6 @@ public class AlterarFilial extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
         Filial filial = FilialDAO.getFilial(codFilial);
         request.setAttribute("filial", filial);
@@ -27,7 +26,6 @@ public class AlterarFilial extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
         String nomeFilial = request.getParameter("nomeFilial");
         String estado = request.getParameter("estado");
@@ -46,5 +44,4 @@ public class AlterarFilial extends HttpServlet {
             Utils.mostrarTelaErro(ex, request, response);
         }
     }
-
 }

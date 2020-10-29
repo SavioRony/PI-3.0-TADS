@@ -1,8 +1,3 @@
-/*    
-Document   : ColaboradorDAO
-Created on : 21/10/2020
-Author     : Savio Rony
- */
 package br.sport.tads.dao;
 
 import br.sport.tads.bd.ConexaoDB;

@@ -10,26 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author tscarton
- */
 public class ExcluirCliente extends HttpServlet {
 
-    
-
-   @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
-       try {
-           ClienteDAO.deleteCliente(cpf);
-           response.getWriter().print(true);
-       } catch (ClassNotFoundException | SQLException ex) {
-           Logger.getLogger(ExcluirCliente.class.getName()).log(Level.SEVERE, null, ex);
-           response.getWriter().print(false);
-       } 
-        
+        try {
+            ClienteDAO.deleteCliente(cpf);
+            response.getWriter().print(true);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ExcluirCliente.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().print(false);
+        }
     }
-
 }

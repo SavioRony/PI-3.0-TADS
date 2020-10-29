@@ -15,10 +15,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author savio
- */
 public class RelatorioDAO {
 
     public static List<Relatorio> getRelatorioCliente(String cpf) {
@@ -59,12 +55,10 @@ public class RelatorioDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return listaRelatorioCliente;
     }
 
     public static List<Relatorio> relatorioDezMaisVendidos() {
-
         List<Relatorio> relatorioDez = new ArrayList();
 
         try {
@@ -85,19 +79,17 @@ public class RelatorioDAO {
                     + "group by codProduto \n"
                     + "order by quantidade DESC \n"
                     + "limit 10";
-            PreparedStatement ps = con.prepareStatement(query);
 
+            PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
                 int codProduto = rs.getInt("codProduto");
                 String nomeProduto = rs.getString("nomeProduto");
                 String marcaProd = rs.getString("marcaProduto");
                 Double valorUn = rs.getDouble("valorProduto");
                 int quantidade = rs.getInt("quantidade");
                 Double valorTotal = rs.getDouble("valorTotal");
-
                 relatorioDez.add(new Relatorio(codProduto, nomeProduto, marcaProd, valorUn, quantidade, valorTotal));
             }
         } catch (ClassNotFoundException ex) {
@@ -107,12 +99,10 @@ public class RelatorioDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return relatorioDez;
     }
 
     public static List<Relatorio> relatorioFiliais() {
-
         List<Relatorio> relatorioFiliais = new ArrayList();
 
         try {
@@ -140,8 +130,6 @@ public class RelatorioDAO {
             Logger.getLogger(ServletBD.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return relatorioFiliais;
     }
-
 }

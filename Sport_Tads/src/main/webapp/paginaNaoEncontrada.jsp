@@ -1,9 +1,3 @@
-<%-- 
-    Document   : paginaNaoEncontrada
-    Created on : Oct 2, 2020, 7:43:59 PM
-    Author     : tscarton
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

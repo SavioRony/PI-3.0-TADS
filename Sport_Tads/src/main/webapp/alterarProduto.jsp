@@ -1,9 +1,3 @@
-<%-- 
-    Document   : alterarProduto
-    Created on : 18/10/2020, 21:35:49
-    Author     : Fernando
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

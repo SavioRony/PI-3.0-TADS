@@ -1,9 +1,3 @@
-<%-- 
-    Document   : incluirFilial
-    Created on : 27/10/2020, 23:21:32
-    Author     : Fernando
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

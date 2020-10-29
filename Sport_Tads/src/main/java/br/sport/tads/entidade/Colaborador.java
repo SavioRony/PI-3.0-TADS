@@ -1,5 +1,5 @@
 package br.sport.tads.entidade;
-//
+
 public class Colaborador {
 
     private int codColaborador;
@@ -122,5 +122,4 @@ public class Colaborador {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
 }

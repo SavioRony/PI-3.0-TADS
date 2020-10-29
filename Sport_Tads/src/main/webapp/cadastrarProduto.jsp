@@ -1,9 +1,3 @@
-<%-- 
-    Document   : cadastrarProduto
-    Created on : 15/10/2020, 18:05:21
-    Author     : Fernando
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

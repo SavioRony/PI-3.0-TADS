@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Cabeçalho
-    Created on : Oct 15, 2020, 9:09:13 PM
-    Author     : HUGO SOUZA
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

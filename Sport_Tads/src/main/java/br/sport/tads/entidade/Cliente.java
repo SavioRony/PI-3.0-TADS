@@ -55,5 +55,4 @@ public class Cliente {
         return String.format("Nome %s <br/> Email %s <br/> CPF %d",
                 this.getNome(), this.getEmail(), this.getCpf());
     }
-
 }

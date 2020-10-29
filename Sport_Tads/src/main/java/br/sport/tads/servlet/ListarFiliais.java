@@ -15,13 +15,10 @@ public class ListarFiliais extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         List<Filial> listaFiliais = FilialDAO.listarFiliais();
-
         request.setAttribute("listaFiliais", listaFiliais);
 
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaFiliais.jsp");
-        requestDispatcher.forward(request, response); 
+        requestDispatcher.forward(request, response);
     }
-
 }

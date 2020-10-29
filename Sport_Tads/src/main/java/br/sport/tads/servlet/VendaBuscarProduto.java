@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.VendaDAO;
@@ -13,31 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Fernando
- */
 public class VendaBuscarProduto extends HttpServlet {
 
-   
-       
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         String codProdStr = request.getParameter("codProduto");
         int codProd = Integer.parseInt(codProdStr);
-        
-      //  List <Produto> liProduto = VendasDAO.buscarProdutoVenda(codProd);
-      //  request.setAttribute("listaProd", liProduto);
-        
+
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendas.jsp");
         requestDispatcher.forward(request, response);
     }
-        
-        
-    }
-
-   
-
-
+}

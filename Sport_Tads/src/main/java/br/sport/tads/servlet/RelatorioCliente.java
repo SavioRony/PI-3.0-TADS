@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.RelatorioDAO;
@@ -11,20 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author savio
- */
 public class RelatorioCliente extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
         List<Relatorio> listRelatorio = RelatorioDAO.getRelatorioCliente(cpf);
         request.setAttribute("listaClientes", listRelatorio);
-        
+
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/relatorioClientes.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

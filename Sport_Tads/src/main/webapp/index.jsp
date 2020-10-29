@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 10/10/2020
-    Author     : Savio Rony
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

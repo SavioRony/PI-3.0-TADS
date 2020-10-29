@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ClienteDAO;
@@ -12,16 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ListarClientes extends HttpServlet {
-   
-     @Override
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         List<Cliente> listaClientes = ClienteDAO.getClientes();
         request.setAttribute("listaClientes", listaClientes);
-        
-         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaClientes.jsp");
-         requestDispatcher.forward(request, response);
-    }
 
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaClientes.jsp");
+        requestDispatcher.forward(request, response);
+    }
 }

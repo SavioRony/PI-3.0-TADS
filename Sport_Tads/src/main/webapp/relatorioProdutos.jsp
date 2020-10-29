@@ -1,9 +1,3 @@
-<%-- 
-    Document   : relatorioProdutos
-    Created on : Out 22, 2020, 19:30
-    Author     : Hugo Souza Araujo
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

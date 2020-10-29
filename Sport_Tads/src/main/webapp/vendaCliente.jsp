@@ -1,8 +1,3 @@
-<%-- 
-    Document   : vendaCliente
-    Created on : 20/10/2020, 17:34:54
-    Author     : Fernando
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

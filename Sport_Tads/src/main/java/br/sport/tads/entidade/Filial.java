@@ -1,9 +1,5 @@
 package br.sport.tads.entidade;
 
-/**
- *
- * @author Rafael
- */
 public class Filial {
 
     private int codFilial;
@@ -71,7 +67,5 @@ public class Filial {
         return String.format("codFilial %d <br> nomeFilial %s <br> estado %s <br/> cidade %s <br>"
                 + " status %d ",
                 this.getCodFilial(), this.getNomeFilial(), this.getEstado(), this.getCidade(), this.getStatus());
-
     }
-
 }

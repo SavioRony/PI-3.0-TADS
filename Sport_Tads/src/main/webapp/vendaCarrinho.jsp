@@ -1,8 +1,3 @@
-<%-- 
-    Document   : vendaCarrinho
-    Created on : 25/10/2020, 17:18:32
-    Author     : savio
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

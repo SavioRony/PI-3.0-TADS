@@ -10,27 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Fernando
- */
 public class ListaProdutos extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
-      
-        
-        request.setAttribute("listaProd",listaProdutos);
-        
-         RequestDispatcher requestDispatcher = getServletContext()
-                 .getRequestDispatcher("/listaProdutos.jsp");
-                requestDispatcher.forward(request, response);
+        request.setAttribute("listaProd", listaProdutos);
+
+        RequestDispatcher requestDispatcher = getServletContext()
+                .getRequestDispatcher("/listaProdutos.jsp");
+        requestDispatcher.forward(request, response);
     }
-   
-
 }
-
-

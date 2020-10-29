@@ -1,9 +1,3 @@
-<%-- 
-    Document   : cadastrarCliente
-    Created on : 12/10/2020
-    Author     : Savio
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

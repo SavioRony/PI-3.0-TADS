@@ -1,9 +1,3 @@
-<%-- 
-    Document   : cadastrarColaborador
-    Created on : Out 16, 2020, 23:00:00 AM
-    Author     : Hugo Souza Araujo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

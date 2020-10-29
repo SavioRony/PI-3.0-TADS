@@ -1,9 +1,3 @@
-<%-- 
-    Document   : listaColaboradores
-    Created on : 17/10/2020
-    Author     : Hugo Souza Araujo
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
