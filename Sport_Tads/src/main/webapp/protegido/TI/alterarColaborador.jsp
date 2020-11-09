@@ -1,7 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="header.jsp" %>
+    <%@include file="../../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alterar Colaborador</title>
@@ -18,7 +19,7 @@
         }
     </style>
     <body>
-        <%@include file="cabecalho.jsp" %>
+        <%@include file="../../cabecalho.jsp"%>
         <div class="container">
             <h1>Editar dados do colaborador: ${colaborador.nome}</h1>
             <form action="AlterarColaborador" method="POST">
@@ -65,8 +66,8 @@
                 <br/>
                 <div class="row">
                     <div class="form-group col-lg-8">
-                        <p>Email</p>
-                        <input name="email" class="form-control" value="${colaborador.email}" required="true"/>
+                        <p>Usuario</p>
+                        <input name="usuario" class="form-control" value="${colaborador.email}" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Senha</p>

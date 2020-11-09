@@ -22,7 +22,7 @@ public class VendaProduto extends HttpServlet {
         request.setAttribute("listaProd", listaProdutos);
         request.setAttribute("codFilial", codFilial);
         request.setAttribute("codVenda", codVenda);
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaProduto.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaProduto.jsp");
         requestDispatcher.forward(request, response);
     }
 }

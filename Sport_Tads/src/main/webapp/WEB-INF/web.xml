@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <filter-class>br.sport.tads.filter.AutorizacaoFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <url-pattern>/protegido/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>ServletBD</servlet-name>
         <servlet-class>br.sport.tads.servlet.ServletBD</servlet-class>
@@ -73,14 +81,6 @@
         <servlet-class>br.sport.tads.servlet.VendaGerarPedido</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VendaBuscarProduto</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaBuscarProduto</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VendaListarCpf</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaListarCpf</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>VendaProduto</servlet-name>
         <servlet-class>br.sport.tads.servlet.VendaProduto</servlet-class>
     </servlet>
@@ -123,6 +123,14 @@
     <servlet>
         <servlet-name>AlterarFilial</servlet-name>
         <servlet-class>br.sport.tads.servlet.AlterarFilial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>br.sport.tads.servlet.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>br.sport.tads.servlet.Logout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AlterarFilial</servlet-name>
@@ -209,14 +217,6 @@
         <url-pattern>/VendaGerarPedido</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>VendaBuscarProduto</servlet-name>
-        <url-pattern>/VendaBuscarProduto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaListarCpf</servlet-name>
-        <url-pattern>/VendaListarCpf</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>VendaProduto</servlet-name>
         <url-pattern>/VendaProduto</url-pattern>
     </servlet-mapping>
@@ -252,6 +252,14 @@
         <servlet-name>RelatorioProdutosMaisVendidos</servlet-name>
         <url-pattern>/RelatorioProdutosMaisVendidos</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -265,4 +273,7 @@
         <error-code>403</error-code>
         <location>/acessoProibido.jsp</location>
     </error-page>
+    <welcome-file-list>
+        <welcome-file>protegido/index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

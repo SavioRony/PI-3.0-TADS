@@ -21,14 +21,14 @@ public class VendaPesquisarFilial extends HttpServlet {
         List<Filial> listaFilial = FilialDAO.buscaFilial(codFilial);
         request.setAttribute("listaFilial", listaFilial);
         request.setAttribute("cpf", cpf);
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaFilial.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaFilial.jsp");
         requestDispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
         request.setAttribute("cpf", cpf);
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaFilial.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/vendaFilial.jsp");
         requestDispatcher.forward(request, response);
     }
 }

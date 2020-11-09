@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="header.jsp" %>
+    <%@include file="../../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Relatório de Filiais</title>
@@ -18,7 +18,7 @@
         }
     </style>
     <body>
-        <%@include file="cabecalho.jsp" %>
+        <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Faturamento por Filial</h1>
             <table class="table">
@@ -30,6 +30,27 @@
                         <th>Total Faturado</th>
                     </tr>
                 </thead>
+                
+                
+                
+                
+                
+                
+                
+<!--                2.	Relatório consolidado de vendas das filiais -> Carregar as vendas de todas as filiais 
+                a)	Pesquisar por data.
+                b)	Acrescentar um campo “ Faturamento consolidado ” 
+                        no final da tabela somando o valor de vendas de todas as filiais.
+                c)	Acrescentar também uma coluna exibindo o cálculo percentual 
+                        do faturamento de cada filial em relação ao Faturamento consolidado.  
+                        Permissão: Gerente global 
+
+-->
+                
+                
+                
+                
+                
                 <tbody>
                     <c:forEach var="filial" items="${listaFiliais}">
                         <tr class="table-light">

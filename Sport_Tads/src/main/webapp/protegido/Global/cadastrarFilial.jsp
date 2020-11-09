@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="header.jsp" %>
+    <%@include file="../../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Filial</title>
@@ -18,7 +18,7 @@
         }
     </style>
     <body>
-        <%@include file="cabecalho.jsp" %>
+        <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Cadastro de Filial</h1>
             <form action="CadastrarCliente" method="POST">

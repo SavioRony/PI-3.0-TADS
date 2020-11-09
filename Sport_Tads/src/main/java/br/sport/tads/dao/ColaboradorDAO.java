@@ -34,9 +34,9 @@ public class ColaboradorDAO {
                 String cidade = resultSet.getString("cidade");
                 String cargo = resultSet.getString("cargo");
                 int codigoFilial = resultSet.getInt("codFilial");
-                String email = resultSet.getString("email");
-                String senha = resultSet.getString("senha");
-                colaboradores.add(new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, codigoFilial, email, senha));
+                String usuario = resultSet.getString("usuario");
+                String perfil = resultSet.getString("perfil");
+                colaboradores.add(new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, codigoFilial, usuario, perfil));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -48,15 +48,49 @@ public class ColaboradorDAO {
         return colaboradores;
     }
 
+    public static Colaborador getColaboradores(String login, String senha) {
+        PreparedStatement ps = null;
+        Colaborador colaborador = null;
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_colaborador where usuario = ? and senha = ?";
+            ps = con.prepareStatement(query);
+            ps.setString(1, login);
+            ps.setString(2, senha);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+
+                String nome = resultSet.getString("nomeCompleto");
+                String cpf = resultSet.getString("cpf");
+                String endereco = resultSet.getString("endereco");
+                int numero = resultSet.getInt("numero");
+                int cep = resultSet.getInt("cep");
+                String cidade = resultSet.getString("cidade");
+                String cargo = resultSet.getString("cargo");
+                int codigoFilial = resultSet.getInt("codFilial");
+                String perfil = resultSet.getString("perfil");
+                colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, codigoFilial, login, perfil);
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+        return colaborador;
+    }
+    
     public static void addColadorador(Colaborador colaborador) throws SQLException, ClassNotFoundException {
         PreparedStatement ps = null;
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "insert into tb_colaborador (nomeCompleto, cpf, email, senha, cargo, codFilial, endereco, numero, cep, cidade, status ) values (?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "insert into tb_colaborador (nomeCompleto, cpf, usuario, senha, cargo, codFilial, endereco, numero, cep, cidade, status,perfil ) values (?,?,?,?,?,?,?,?,?,?,?,?)";
             ps = con.prepareStatement(query);
             ps.setString(1, colaborador.getNome());
             ps.setString(2, colaborador.getCpf());
-            ps.setString(3, colaborador.getEmail());
+            ps.setString(3, colaborador.getUsuario());
             ps.setString(4, colaborador.getSenha());
             ps.setString(5, colaborador.getCargo());
             ps.setInt(6, colaborador.getCodFilial());
@@ -65,6 +99,7 @@ public class ColaboradorDAO {
             ps.setInt(9, colaborador.getCep());
             ps.setString(10, colaborador.getCidade());
             ps.setInt(11, 1);
+            ps.setString(12, colaborador.getPerfil());
             ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(ServletBD.class.getName()).
@@ -105,9 +140,10 @@ public class ColaboradorDAO {
                 String cidade = resultSet.getString("cidade");
                 String cargo = resultSet.getString("cargo");
                 int codigoFilial = resultSet.getInt("codFilial");
-                String email = resultSet.getString("email");
+                String usuario = resultSet.getString("usuario");
                 String senha = resultSet.getString("senha");
-                colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, codigoFilial, email, senha);
+                String perfil = resultSet.getString("perfil");
+                colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, codigoFilial, usuario, senha, perfil);
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -122,10 +158,10 @@ public class ColaboradorDAO {
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "update tb_colaborador set nomeCompleto=?, email=?, senha=?, cargo=?, codFilial=?, endereco=?, numero=?, cep=?, cidade=? where cpf=? ";
+            String query = "update tb_colaborador set nomeCompleto=?, usuario=?, senha=?, cargo=?, codFilial=?, endereco=?, numero=?, cep=?, cidade=? where cpf=? ";
             ps = con.prepareStatement(query);
             ps.setString(1, colaborador.getNome());
-            ps.setString(2, colaborador.getEmail());
+            ps.setString(2, colaborador.getUsuario());
             ps.setString(3, colaborador.getSenha());
             ps.setString(4, colaborador.getCargo());
             ps.setInt(5, colaborador.getCodFilial());

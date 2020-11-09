@@ -18,7 +18,7 @@ public class ListarFiliais extends HttpServlet {
         List<Filial> listaFiliais = FilialDAO.listarFiliais();
         request.setAttribute("listaFiliais", listaFiliais);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaFiliais.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Global/listaFiliais.jsp");
         requestDispatcher.forward(request, response);
     }
 }

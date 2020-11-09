@@ -17,7 +17,7 @@ public class RelatorioProdutosMaisVendidos extends HttpServlet {
         List<Relatorio> listaProdutos = RelatorioDAO.relatorioDezMaisVendidos();
         request.setAttribute("listaProd", listaProdutos);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/relatorioProdutos.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Regional/relatorioProdutos.jsp");
         requestDispatcher.forward(request, response);
     }
 }

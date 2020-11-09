@@ -1,11 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@include file="header.jsp" %>
+<%@include file="../../header.jsp" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Venda Filial</title>
+        <title style="text-align: center">Gerar Pedido</title>
     </head>
     <style>
         body {
@@ -26,33 +26,31 @@
         }
     </style>
     <body>
-        <%@include file="cabecalho.jsp" %>
+        <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Gerar Pedido</h1>
             <center>
                 <div class="panel">
-                    <form action="VendaPesquisarFilial" method="GET">
-                        <h3 style="text-align: center; margin-bottom: 20px; margin-top: 20px">Filial</h3>
+                    <form action="<c:url value="/VendaPesquisarCliente"/>" method="GET">
+                        <h3 style="text-align: center; margin-bottom: 20px; margin-top: 20px">Cliente</h3>
                         <div class="form-group col-lg-12" >
                             <div class="input-group mb-3">
-                                <input name="codFilial" class="form-control" placeholder="Codigo Filial" aria-describedby="button-addon2">
+                                <input name="cpf" class="form-control" placeholder="CPF Cliente" aria-describedby="button-addon2">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
                                 </div>
                             </div>
-                        </div>
-                        <input type="hidden" name="cpf" value="${cpf}"> 
-                        <c:forEach var="filial" items="${listaFilial}"> 
-                            <b>CPF: </b>${filial.codFilial}<br>
-                            <b>Nome: </b>${filial.nomeFilial}<br>
+                        </div>   
+                        <c:forEach var="cliente" items="${listaCliente}"> 
+                            <b>CPF: </b>${cliente.cpf}<br>
+                            <b>Nome: </b>${cliente.nome}<br>
                         </c:forEach>
                     </form>
-                    <form action="VendaGerarPedido" method="POST">
-                        <input type="hidden" name="cpf" value="${cpf}">             
-                        <c:forEach var="filial" items="${listaFilial}"> 
-                            <input type="hidden" name="filial" value="${filial.codFilial}">
+                    <br/>
+                    <form action="VendaPesquisarCliente" method="POST">
+                        <c:forEach var="cliente" items="${listaCliente}"> 
+                            <input type="hidden" name="cpf" value="${cliente.cpf}">
                         </c:forEach>
-                        <br/>   
                         <button type="submit" class="btn btn-primary" style="float: right; margin-right: 15px">Avançar</button>
                     </form> 
                 </div>

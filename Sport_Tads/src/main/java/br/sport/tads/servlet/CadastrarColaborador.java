@@ -23,10 +23,11 @@ public class CadastrarColaborador extends HttpServlet {
         String cidade = request.getParameter("cidade");
         String cargo = request.getParameter("cpf");
         int filial = Integer.parseInt(request.getParameter("filial"));
-        String email = request.getParameter("email");
+        String usuario = request.getParameter("usuario");
         String senha = request.getParameter("senha");
+        String perfil = request.getParameter("perfil");
 
-        Colaborador colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, filial, email, senha);
+        Colaborador colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, filial, usuario, senha, perfil);
         try {
             ColaboradorDAO.addColadorador(colaborador);
             response.sendRedirect("ListarColaboradores");

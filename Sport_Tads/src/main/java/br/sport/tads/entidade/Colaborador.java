@@ -12,12 +12,12 @@ public class Colaborador {
     private String cargo;
     private int codFilial;
     private int status;
-    private String email;
+    private String usuario;
     private String senha;
+    private String perfil;
 
     public Colaborador(String nome, String cpf, String endereco, int numero,
-            int cep, String cidade, String cargo, int codFilial, String email, String senha) {
-        this.codColaborador = 0;
+            int cep, String cidade, String cargo, int codFilial, String usuario, String perfil) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -27,8 +27,33 @@ public class Colaborador {
         this.cargo = cargo;
         this.codFilial = codFilial;
         this.status = 1;
-        this.email = email;
+        this.usuario = usuario;
+        this.perfil = perfil;
+    }
+
+    
+        public Colaborador(String nome, String cpf, String endereco, int numero,
+            int cep, String cidade, String cargo, int codFilial, String usuario, String senha, String perfil) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.cargo = cargo;
+        this.codFilial = codFilial;
+        this.status = 1;
+        this.usuario = usuario;
         this.senha = senha;
+        this.perfil = perfil;
+    }
+        
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
 
     public Integer getCodigoColaborador() {
@@ -107,12 +132,12 @@ public class Colaborador {
         this.status = status;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsuario(String email) {
+        this.usuario = email;
     }
 
     public String getSenha() {
@@ -121,5 +146,21 @@ public class Colaborador {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    public boolean isGlobal(){
+        return this.perfil.equalsIgnoreCase("Global");
+    }
+    public boolean isRegional(){
+        return this.perfil.equalsIgnoreCase("Regional");
+    }
+    public boolean isVendas() {
+        return this.perfil.equalsIgnoreCase("Vendas");
+    }
+    public boolean isBackoffice(){
+        return this.perfil.equalsIgnoreCase("Backoffice");
+    }
+    public boolean isTi(){
+        return this.perfil.equalsIgnoreCase("Ti");
     }
 }

@@ -18,7 +18,7 @@ public class RelatorioCliente extends HttpServlet {
         List<Relatorio> listRelatorio = RelatorioDAO.getRelatorioCliente(cpf);
         request.setAttribute("listaClientes", listRelatorio);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/relatorioClientes.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Regional/relatorioClientes.jsp");
         requestDispatcher.forward(request, response);
     }
 }
