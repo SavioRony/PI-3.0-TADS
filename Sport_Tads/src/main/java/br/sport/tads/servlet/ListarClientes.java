@@ -18,7 +18,7 @@ public class ListarClientes extends HttpServlet {
         List<Cliente> listaClientes = ClienteDAO.getClientes();
         request.setAttribute("listaClientes", listaClientes);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/listaClientes.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/listaClientes.jsp");
         requestDispatcher.forward(request, response);
     }
 }

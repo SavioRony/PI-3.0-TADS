@@ -27,7 +27,7 @@ public class VendaInserirProduto extends HttpServlet {
             ItemVendaDAO.inserirItemVenda(item);
             request.setAttribute("codFilial", codFilial);
             request.setAttribute("codVenda", codVenda);
-            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaProduto.jsp");
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaProduto.jsp");
             requestDispatcher.forward(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(VendaProduto.class.getName()).log(Level.SEVERE, null, ex);

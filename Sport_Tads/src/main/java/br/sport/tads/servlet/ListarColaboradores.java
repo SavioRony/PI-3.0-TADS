@@ -18,8 +18,7 @@ public class ListarColaboradores extends HttpServlet {
         List<Colaborador> listaColaboradores = ColaboradorDAO.getColaboradores();
         request.setAttribute("listaColaboradores", listaColaboradores);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(
-                "/listaColaboradores.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/TI/listaColaboradores.jsp");
         requestDispatcher.forward(request, response);
     }
 

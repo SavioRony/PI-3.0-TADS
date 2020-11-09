@@ -20,7 +20,7 @@ public class AlterarCliente extends HttpServlet {
         String cpf = request.getParameter("cpf");
         Cliente cliente = ClienteDAO.getCliente(cpf);
         request.setAttribute("cliente", cliente);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarCliente.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/protegido/Vendas/alterarCliente.jsp");
         rd.forward(request, response);
     }
 

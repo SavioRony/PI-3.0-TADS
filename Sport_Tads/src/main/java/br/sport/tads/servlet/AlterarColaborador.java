@@ -20,7 +20,7 @@ public class AlterarColaborador extends HttpServlet {
         String cpf = request.getParameter("cpf");
         Colaborador colaborador = ColaboradorDAO.getColaborador(cpf);
         request.setAttribute("colaborador", colaborador);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarColaborador.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/protegido/TI/alterarColaborador.jsp");
         rd.forward(request, response);
     }
 
@@ -34,7 +34,7 @@ public class AlterarColaborador extends HttpServlet {
         String cidade = request.getParameter("cidade");
         String cargo = request.getParameter("cargo");
         int filial = Integer.parseInt(request.getParameter("filial"));
-        String email = request.getParameter("email");
+        String usuario = request.getParameter("email");
         String senha = request.getParameter("senha");
 
         Colaborador colaborador = ColaboradorDAO.getColaborador(cpf);
@@ -45,7 +45,7 @@ public class AlterarColaborador extends HttpServlet {
         colaborador.setCidade(cidade);
         colaborador.setCargo(cargo);
         colaborador.setCodFilial(filial);
-        colaborador.setEmail(email);
+        colaborador.setUsuario(usuario);
         colaborador.setSenha(senha);
         colaborador.setCpf(cpf);
         try {

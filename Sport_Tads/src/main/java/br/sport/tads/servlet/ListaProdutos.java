@@ -19,7 +19,7 @@ public class ListaProdutos extends HttpServlet {
         request.setAttribute("listaProd", listaProdutos);
 
         RequestDispatcher requestDispatcher = getServletContext()
-                .getRequestDispatcher("/listaProdutos.jsp");
+                .getRequestDispatcher("/protegido/Backoffice/listaProdutos.jsp");
         requestDispatcher.forward(request, response);
     }
 }

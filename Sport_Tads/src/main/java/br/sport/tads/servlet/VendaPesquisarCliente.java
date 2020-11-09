@@ -17,14 +17,14 @@ public class VendaPesquisarCliente extends HttpServlet {
         String cpf = request.getParameter("cpf");
         List<Cliente> listaClientes = ClienteDAO.getClientes(cpf);
         request.setAttribute("listaCliente", listaClientes);
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaCliente.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/vendaCliente.jsp");
         requestDispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
         request.setAttribute("cpf", cpf);
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaFilial.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaFilial.jsp");
         requestDispatcher.forward(request, response);
     }
 }

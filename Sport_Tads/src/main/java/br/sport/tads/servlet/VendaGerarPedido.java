@@ -29,7 +29,7 @@ public class VendaGerarPedido extends HttpServlet {
             int codVenda = venda.getCodVenda();
             request.setAttribute("codFilial", codFilial);
             request.setAttribute("codVenda", codVenda);
-            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaProduto.jsp");
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaProduto.jsp");
             requestDispatcher.forward(request, response);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(VendaGerarPedido.class.getName()).log(Level.SEVERE, null, ex);

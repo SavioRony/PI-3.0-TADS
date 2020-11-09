@@ -24,7 +24,7 @@ public class VendaCarrinho extends HttpServlet {
         request.setAttribute("codVenda", codVenda);
         request.setAttribute("codFilial", codFilial);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/vendaCarrinho.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaCarrinho.jsp");
         requestDispatcher.forward(request, response);
     }
 }

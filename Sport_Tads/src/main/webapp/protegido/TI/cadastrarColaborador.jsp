@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="header.jsp" %>
+    <%@include file="../../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Colaborador</title>
@@ -23,10 +23,10 @@
         });
     </script>
     <body>
-        <%@include file="cabecalho.jsp" %>
+        <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Cadastro de Colaborador</h1>
-            <form action="CadastrarColaborador" method="POST">
+            <form action=" <c:url value="/CadastrarColaborador"/>" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-8">
                         <p>Nome</p>
@@ -70,13 +70,24 @@
                 <br/>
                 <div class="row">
                     <div class="form-group col-lg-8">
-                        <p>Email</p>
-                        <input name="email" class="form-control" required="true"/>
+                        <p>Usuario</p>
+                        <input name="usuario" class="form-control" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Senha</p>
                         <input name="senha" class="form-control" required="true"/>
                     </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <label>Perfil:</label>
+                    <select name="perfil">
+                        <option value="Global">Global</option>
+                        <option value="Regional">Regional</option>
+                        <option value="Vendas">Vendas</option>
+                        <option value="TI">TI</option>
+                        <option value="Backoffice">BackOffice</option>
+                    </select>
                 </div>
                 <br/>
                 <button type="submit" style="float: right; margin-bottom: 30px" class="btn btn-primary">Salvar</button>

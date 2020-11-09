@@ -20,7 +20,7 @@ public class AlterarFilial extends HttpServlet {
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
         Filial filial = FilialDAO.getFilial(codFilial);
         request.setAttribute("filial", filial);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarFilial.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/protegido/Global/alterarFilial.jsp");
         rd.forward(request, response);
     }
 

@@ -21,7 +21,7 @@ public class AlterarProduto extends HttpServlet {
         int codProd = Integer.parseInt(request.getParameter("codProduto"));
         Produto produto = ProdutoDAO.getProduto(codProd);
         request.setAttribute("prod", produto);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarProduto.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/protegido/Backoffice/alterarProduto.jsp");
         rd.forward(request, response);
     }
 

@@ -1,7 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
-    <%@include file="header.jsp" %>
+    <%@include file="../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/estilo.css">
@@ -17,8 +17,9 @@
         }
     </style>
     <body>
-        <%@include file="cabecalho.jsp" %>
+       <%@include file="../cabecalho.jsp" %>
         <div class="container">
+            <h3>Bem Vindo, ${sessionScope.colaborador.nome} </h3>
             <h1 style="margin-top: 100px; margin-bottom: 100px; text-align: center">Sobre a SportTads</h1>
             <div class="row">
                 <div class="form-group col-lg-6">
@@ -32,7 +33,7 @@
                 </div>
                 <div class="form-group col-lg-6">
                     <center>
-                        <img id="logo" src="img\logo.png">
+                        <img id="logo" src="..\img\lg.png">
                     </center>
                 </div>
             </div>
