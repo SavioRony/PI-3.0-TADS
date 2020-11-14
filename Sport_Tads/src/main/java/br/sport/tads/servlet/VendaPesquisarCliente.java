@@ -17,7 +17,7 @@ public class VendaPesquisarCliente extends HttpServlet {
         String cpf = request.getParameter("cpf");
         List<Cliente> listaClientes = ClienteDAO.getClientes(cpf);
         request.setAttribute("listaCliente", listaClientes);
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/vendaCliente.jsp");
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/vendaCliente.jsp");
         requestDispatcher.forward(request, response);
     }
 

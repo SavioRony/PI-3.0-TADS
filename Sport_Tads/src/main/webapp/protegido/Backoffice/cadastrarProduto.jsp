@@ -21,7 +21,7 @@
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Cadastro de Produto</h1>
-            <form action="IncluirProduto" method="POST">
+            <form action="<c:url value="/IncluirProduto"/>" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Nome</p>
