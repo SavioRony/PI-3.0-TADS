@@ -33,7 +33,8 @@
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Cadastro de Cliente</h1>
-            <form action="CadastrarCliente" method="POST">
+            
+            <form action="<c:url value="/CadastrarCliente"/>" method="POST">
                 <div id="area">
                     <div class="row">
                         <div class="form-group col-lg-12">

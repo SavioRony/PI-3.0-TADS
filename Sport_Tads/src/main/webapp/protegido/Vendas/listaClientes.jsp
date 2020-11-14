@@ -104,7 +104,7 @@
             </div>
             <br/>
             <div>
-                <a href="protegido/cadastrarCliente.jsp"><button type="button" id="btn-novo-cliente" class="btn btn-primary" style="float: right">Novo Cliente</button></a>
+                <a href="protegido/Vendas/cadastrarCliente.jsp"><button type="button" id="btn-novo-cliente" class="btn btn-primary" style="float: right">Novo Cliente</button></a>
             </div>
         </div>
     </body>

@@ -48,7 +48,46 @@ public class ColaboradorDAO {
         return colaboradores;
     }
 
-    public static Colaborador getColaboradores(String login, String senha) {
+    
+    public static Colaborador getColaboradores(String login) {
+        PreparedStatement ps = null;
+        Colaborador colaborador = null;
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_colaborador where usuario = ? ";
+            ps = con.prepareStatement(query);
+            ps.setString(1, login);
+                        
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                
+                String nome = resultSet.getString("nomeCompleto");
+                String cargo = resultSet.getString("cargo");
+                String usuario = resultSet.getString("usuario");
+                String perfil = resultSet.getString("perfil");
+                String senha = resultSet.getString("senha");
+                
+                colaborador = new Colaborador();
+                colaborador.setNome(nome);
+                colaborador.setCargo(cargo);
+                colaborador.setPerfil(perfil);
+                colaborador.setUsuario(usuario);
+                colaborador.setSenha(senha);
+                                
+                
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+        return colaborador;
+    }
+    
+/*    public static Colaborador getColaboradores(String login, String senha) {
         PreparedStatement ps = null;
         Colaborador colaborador = null;
         try {
@@ -80,7 +119,7 @@ public class ColaboradorDAO {
                     log(Level.SEVERE, null, ex);
         }
         return colaborador;
-    }
+    } */
     
     public static void addColadorador(Colaborador colaborador) throws SQLException, ClassNotFoundException {
         PreparedStatement ps = null;

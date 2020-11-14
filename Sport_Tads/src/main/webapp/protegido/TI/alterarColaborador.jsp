@@ -22,7 +22,8 @@
         <%@include file="../../cabecalho.jsp"%>
         <div class="container">
             <h1>Editar dados do colaborador: ${colaborador.nome}</h1>
-            <form action="AlterarColaborador" method="POST">
+            
+                <form action="<c:url value="/AlterarColaborador"/>" method="POST">
                 <div class="row">
                     <div class="form-group col-lg-8">
                         <p>Nome Completo</p>
@@ -67,13 +68,25 @@
                 <div class="row">
                     <div class="form-group col-lg-8">
                         <p>Usuario</p>
-                        <input name="usuario" class="form-control" value="${colaborador.email}" required="true"/>
+                        <input name="usuario" class="form-control" value="${colaborador.usuario}" required="true"/>
                     </div>
-                    <div class="form-group col-lg-4">
+                     <div class="form-group col-lg-4">
                         <p>Senha</p>
-                        <input name="senha" class="form-control" value="${colaborador.senha}" required="true"/>
+                        <input type="password" name="senha" class="form-control" value="${colaborador.senha}" required="true"/>
                     </div>
+                    
                 </div>
+                     <div class="row">
+                    <label>Perfil:</label>
+                    <select name="perfil" >
+                        <option value="Global">Global</option>
+                        <option value="Regional">Regional</option>
+                        <option value="Vendas">Vendas</option>
+                        <option value="TI">TI</option>
+                        <option value="Backoffice">BackOffice</option>
+                    </select>
+                </div>
+                   
                 <br/>
                 <button type="submit" style="float: right; margin-bottom: 30px" class="btn btn-primary">Salvar</button>
             </form>

@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Senha</p>
-                        <input name="senha" class="form-control" required="true"/>
+                        <input type="password" name="senha" class="form-control" required="true"/>
                     </div>
                 </div>
                 <br/>

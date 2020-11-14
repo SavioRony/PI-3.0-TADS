@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 public class CadastrarColaborador extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        Colaborador colaborador = new Colaborador();
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String endereco = request.getParameter("endereco");
@@ -24,10 +26,10 @@ public class CadastrarColaborador extends HttpServlet {
         String cargo = request.getParameter("cpf");
         int filial = Integer.parseInt(request.getParameter("filial"));
         String usuario = request.getParameter("usuario");
-        String senha = request.getParameter("senha");
+        String senha = colaborador.codificarSenha(request.getParameter("senha"));
         String perfil = request.getParameter("perfil");
 
-        Colaborador colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, filial, usuario, senha, perfil);
+        colaborador = new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, filial, usuario, senha, perfil);
         try {
             ColaboradorDAO.addColadorador(colaborador);
             response.sendRedirect("ListarColaboradores");

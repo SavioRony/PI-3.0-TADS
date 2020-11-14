@@ -1,5 +1,7 @@
 package br.sport.tads.entidade;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
+
 public class Colaborador {
 
     private int codColaborador;
@@ -16,6 +18,10 @@ public class Colaborador {
     private String senha;
     private String perfil;
 
+    public Colaborador() {
+    }
+
+    
     public Colaborador(String nome, String cpf, String endereco, int numero,
             int cep, String cidade, String cargo, int codFilial, String usuario, String perfil) {
         this.nome = nome;
@@ -163,4 +169,15 @@ public class Colaborador {
     public boolean isTi(){
         return this.perfil.equalsIgnoreCase("Ti");
     }
+    
+    public String codificarSenha(String senha) {
+        return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
+    }
+    
+    public boolean validarSenha(String senha) {
+        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), this.senha);
+        return response.verified;
+    }
+
+
 }
