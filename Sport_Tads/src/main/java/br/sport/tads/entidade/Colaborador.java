@@ -21,7 +21,6 @@ public class Colaborador {
     public Colaborador() {
     }
 
-    
     public Colaborador(String nome, String cpf, String endereco, int numero,
             int cep, String cidade, String cargo, int codFilial, String usuario, String perfil) {
         this.nome = nome;
@@ -37,8 +36,7 @@ public class Colaborador {
         this.perfil = perfil;
     }
 
-    
-        public Colaborador(String nome, String cpf, String endereco, int numero,
+    public Colaborador(String nome, String cpf, String endereco, int numero,
             int cep, String cidade, String cargo, int codFilial, String usuario, String senha, String perfil) {
         this.nome = nome;
         this.cpf = cpf;
@@ -53,7 +51,7 @@ public class Colaborador {
         this.senha = senha;
         this.perfil = perfil;
     }
-        
+
     public String getPerfil() {
         return perfil;
     }
@@ -153,31 +151,34 @@ public class Colaborador {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public boolean isGlobal(){
+
+    public boolean isGlobal() {
         return this.perfil.equalsIgnoreCase("Global");
     }
-    public boolean isRegional(){
+
+    public boolean isRegional() {
         return this.perfil.equalsIgnoreCase("Regional");
     }
+
     public boolean isVendas() {
         return this.perfil.equalsIgnoreCase("Vendas");
     }
-    public boolean isBackoffice(){
+
+    public boolean isBackoffice() {
         return this.perfil.equalsIgnoreCase("Backoffice");
     }
-    public boolean isTi(){
+
+    public boolean isTi() {
         return this.perfil.equalsIgnoreCase("Ti");
     }
-    
+
     public String codificarSenha(String senha) {
         return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
     }
-    
+
     public boolean validarSenha(String senha) {
         BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), this.senha);
         return response.verified;
     }
-
 
 }

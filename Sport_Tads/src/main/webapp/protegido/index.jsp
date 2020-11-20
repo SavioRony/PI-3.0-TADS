@@ -17,9 +17,9 @@
         }
     </style>
     <body>
-       <%@include file="../cabecalho.jsp" %>
+        <%@include file="../cabecalho.jsp" %>
         <div class="container">
-            <h3>Bem Vindo, ${sessionScope.colaborador.nome} </h3>
+            <h3 style="margin-top: 20px; margin-bottom: 20px; text-align: center">Bem Vindo(a), ${sessionScope.colaborador.nome}!</h3>
             <h1 style="margin-top: 100px; margin-bottom: 100px; text-align: center">Sobre a SportTads</h1>
             <div class="row">
                 <div class="form-group col-lg-6">

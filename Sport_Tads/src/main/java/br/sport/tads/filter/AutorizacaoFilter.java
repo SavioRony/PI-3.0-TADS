@@ -1,4 +1,3 @@
-
 package br.sport.tads.filter;
 
 import br.sport.tads.entidade.Colaborador;
