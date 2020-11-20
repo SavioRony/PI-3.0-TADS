@@ -7,9 +7,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <style>
-        #logo-sportstads{
-            width: 300px;
-            height: 100px;
+        #logo-sporttads{
+            width: 200px;
+            height: 80px;
         }
         #links-menus{
             margin-left: 30px;
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div>
                 <a href="<c:url value="protegido/index.jsp"/>">
-                    <img id="logo-sportstads" src="..\..\img\lg.png">
+                    <img id="logo-sporttads" src="../img/lg.png">
                 </a>
             </div>
             <div id="links-menus">
@@ -90,27 +90,27 @@
                     <c:if test="${sessionScope.colaborador.global}">
                         <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                Vendas
+                                Relatórios
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="<c:url value="/protegido/Global/relatorioVendasFiliais.jsp"/>">Relatório de Vendas consolidados das Filiais</a>
-                                <a class="dropdown-item" href="<c:url value="/protegido/Global/relatorioFilial.jsp"/>">Relatório individuais das Filiais</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Global/relatorioConsolidadoVendasPorFilial.jsp"/>">Relatório Consolidado de Vendas Por Filial</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Global/relatorioVendasGlobal.jsp"/>">Relatório de Vendas Por Filial</a>
                             </div>
                         </li>
                     </c:if>
                     <c:if test="${sessionScope.colaborador.regional}">
                         <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                Vendas
+                                Relatórios
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="<c:url value="/protegido/Vendas/vendaCliente.jsp"/>">Realizar Venda</a>
-                                <a class="dropdown-item" href="<c:url value="/protegido/Regional/RelatorioVendasRegional.jsp"/>">Relatório por Filial</a>
-                                <a class="dropdown-item" href="<c:url value="/RelatorioProdutosMaisVendidos"/>">Relatório por Categorias de Produtos</a>
-                                <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioClientes.jsp"/>">Relatório por Cliente</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioVendasRegional.jsp"/>">Relatório de Vendas Regional</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioVendasCategoriaProduto.jsp"/>">Relatório de Vendas Por Categoria de Produtos</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioVendasCliente.jsp"/>">Relatório de Vendas Por Cliente</a>
                             </div>
                         </li>
-                        </c:if>                        
+                    </c:if>                        
 
                     <li class="nav-item dropdown" >
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">

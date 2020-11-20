@@ -10,14 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RelatorioProdutosMaisVendidos extends HttpServlet {
+public class RelatorioVendasGlobal extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Relatorio> listaProdutos = RelatorioDAO.relatorioDezMaisVendidos();
-        request.setAttribute("listaProd", listaProdutos);
 
-        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Regional/relatorioProdutos.jsp");
+        String dataInicio = request.getParameter("dataInicio");
+        String dataFinal = request.getParameter("dataFinal");
+        int codFilial = Integer.parseInt(request.getParameter("codFilial"));
+
+        List<Relatorio> listaVendasGlobal = RelatorioDAO.novoRelatorioVendasFilial(codFilial, dataInicio, dataFinal);
+        request.setAttribute("vendas", listaVendasGlobal);
+
+        RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Global/relatorioVendasGlobal.jsp");
         requestDispatcher.forward(request, response);
     }
+
 }

@@ -93,8 +93,8 @@
         <servlet-class>br.sport.tads.servlet.VendaInserirProduto</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RelatorioProdutosMaisVendidos</servlet-name>
-        <servlet-class>br.sport.tads.servlet.RelatorioProdutosMaisVendidos</servlet-class>
+        <servlet-name>RelatorioVendasCategoriaProduto</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioVendasCategoriaProduto</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>VendaCarrinho</servlet-name>
@@ -109,12 +109,12 @@
         <servlet-class>br.sport.tads.servlet.VendaFinalizar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RelatorioCliente</servlet-name>
-        <servlet-class>br.sport.tads.servlet.RelatorioCliente</servlet-class>
+        <servlet-name>RelatorioVendasCliente</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioVendasCliente</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RelatorioFilial</servlet-name>
-        <servlet-class>br.sport.tads.servlet.RelatorioFilial</servlet-class>
+        <servlet-name>RelatorioConsolidadoVendasPorFilial</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioConsolidadoVendasPorFilial</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CadastrarFilial</servlet-name>
@@ -131,6 +131,14 @@
     <servlet>
         <servlet-name>Logout</servlet-name>
         <servlet-class>br.sport.tads.servlet.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioVendasRegional</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioVendasRegional</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioVendasGlobal</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioVendasGlobal</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AlterarFilial</servlet-name>
@@ -241,16 +249,16 @@
         <url-pattern>/VendaFinalizar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RelatorioCliente</servlet-name>
-        <url-pattern>/RelatorioCliente</url-pattern>
+        <servlet-name>RelatorioVendasCliente</servlet-name>
+        <url-pattern>/RelatorioVendasCliente</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RelatorioFilial</servlet-name>
-        <url-pattern>/RelatorioFilial</url-pattern>
+        <servlet-name>RelatorioConsolidadoVendasPorFilial</servlet-name>
+        <url-pattern>/RelatorioConsolidadoVendasPorFilial</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RelatorioProdutosMaisVendidos</servlet-name>
-        <url-pattern>/RelatorioProdutosMaisVendidos</url-pattern>
+        <servlet-name>RelatorioVendasCategoriaProduto</servlet-name>
+        <url-pattern>/RelatorioVendasCategoriaProduto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -259,6 +267,14 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioVendasRegional</servlet-name>
+        <url-pattern>/RelatorioVendasRegional</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioVendasGlobal</servlet-name>
+        <url-pattern>/RelatorioVendasGlobal</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

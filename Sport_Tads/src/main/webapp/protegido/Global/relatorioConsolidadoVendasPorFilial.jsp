@@ -20,44 +20,44 @@
     <body>
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
-            <h1>Faturamento por Filial</h1>
+            <h1>Relatório Consolidado de Vendas Por Filial</h1>
+            <form action="<c:url value="/RelatorioConsolidadoVendasPorFilial"/>" method="GET">
+                <div class="row">
+                    <div class="form-group col-lg-3">
+                        <p>Data inicial</p>
+                        <input type="date" name="dataInicio" class="form-control" required="true"/>
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>Data final</p>
+                        <input type="date" name="dataFinal" class="form-control" required="true"/>             
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>&nbsp;</p>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div> 
+                </div>
+                </br>
+            </form>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
                         <th>ID Filial</th>
                         <th>Nome</th>
-                        <th>Quantidade de Vendas</th>
-                        <th>Total Faturado</th>
+                        <th>Data Venda</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                        <th>Percentual</th>                        
                     </tr>
                 </thead>
-                
-                
-                
-                
-                
-                
-                
-<!--                2.	Relatório consolidado de vendas das filiais -> Carregar as vendas de todas as filiais 
-                a)	Pesquisar por data.
-                b)	Acrescentar um campo “ Faturamento consolidado ” 
-                        no final da tabela somando o valor de vendas de todas as filiais.
-                c)	Acrescentar também uma coluna exibindo o cálculo percentual 
-                        do faturamento de cada filial em relação ao Faturamento consolidado.  
-                        Permissão: Gerente global 
-
--->
-                
-                
-                
-                
-                
                 <tbody>
                     <c:forEach var="filial" items="${listaFiliais}">
                         <tr class="table-light">
                             <td>${filial.codFilial}</td>
                             <td>${filial.nomeFilial}</td>
+                            <td>${filial.dataVenda}</td>
                             <td>${filial.quantidade}</td>
-                            <td>R$ ${filial.totalFaturado}</td>
+                            <td>R$ ${filial.valorTotal}</td>
+                            <td>${filial.percentual}%</td>
                         </tr>
                     </c:forEach>
                 </tbody>

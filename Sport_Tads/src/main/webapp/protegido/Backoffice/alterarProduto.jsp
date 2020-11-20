@@ -40,7 +40,11 @@
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <p>Categoria</p>
-                        <input class="form-control" name="categoria" value="${prod.categoriaProduto}"/>
+                        <select name="categoria"class="browser-default custom-select" required="true">
+                            <option value="${prod.categoriaProduto}" disabled selected>Selecione</option>
+                            <option value="Basquete">Basquete</option>
+                            <option value="Futebol">Futebol</option>
+                        </select>
                     </div>
                     <div class="form-group col-lg-2">
                         <p>ID Filial</p>
