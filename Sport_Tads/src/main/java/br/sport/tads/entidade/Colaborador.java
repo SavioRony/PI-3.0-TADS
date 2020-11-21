@@ -22,7 +22,7 @@ public class Colaborador {
     }
 
     public Colaborador(String nome, String cpf, String endereco, int numero,
-            int cep, String cidade, String cargo, int codFilial, String usuario, String perfil) {
+            int cep, String cidade, String cargo, int codFilial, String usuario, String perfil, int codColaborador) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -34,6 +34,7 @@ public class Colaborador {
         this.status = 1;
         this.usuario = usuario;
         this.perfil = perfil;
+        this.codColaborador = codColaborador;
     }
 
     public Colaborador(String nome, String cpf, String endereco, int numero,
@@ -60,9 +61,26 @@ public class Colaborador {
         this.perfil = perfil;
     }
 
-    public Integer getCodigoColaborador() {
+    public int getCodigoColaborador() {
         return codColaborador;
     }
+
+    public void setCodColaborador(int codColaborador) {
+        this.codColaborador = codColaborador;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setCodFilial(int codFilial) {
+        this.codFilial = codFilial;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+    
 
     public String getNome() {
         return nome;
