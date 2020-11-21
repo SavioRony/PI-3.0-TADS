@@ -23,8 +23,8 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div>
-                <a href="<c:url value="protegido/index.jsp"/>">
-                    <img id="logo-sportstads" src="..\..\img\lg.png">
+                <a href="<c:url value="/protegido/index.jsp"/>">
+                    <img id="logo-sportstads" src="..\img\lg.png">
                 </a>
             </div>
             <div id="links-menus">
@@ -83,7 +83,7 @@
                                 Vendas
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="<c:url value="/protegido/Vendas/vendaCliente.jsp"/>">Realizar Venda</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Vendas/venda.jsp"/>">Realizar Venda</a>
                             </div>
                         </li>
                     </c:if>

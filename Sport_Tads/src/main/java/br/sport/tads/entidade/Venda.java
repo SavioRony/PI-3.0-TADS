@@ -29,6 +29,14 @@ public class Venda {
         this.total = total;
     }
 
+    public Venda(String cpfCliente, int codFilial, int codVendedor, Date dataDaVenda, double total) {
+        this.cpfCliente = cpfCliente;
+        this.codFilial = codFilial;
+        this.codVendedor = codVendedor;
+        this.dataDaVenda = dataDaVenda;
+        this.total = total;
+    }
+
     public int getCodVenda() {
         return codVenda;
     }
