@@ -67,6 +67,9 @@ public class ColaboradorDAO {
                 String usuario = resultSet.getString("usuario");
                 String perfil = resultSet.getString("perfil");
                 String senha = resultSet.getString("senha");
+                int codigoFilial = resultSet.getInt("codFilial");
+                String cpf = resultSet.getString("cpf");
+                
                 
                 colaborador = new Colaborador();
                 colaborador.setNome(nome);
@@ -74,6 +77,8 @@ public class ColaboradorDAO {
                 colaborador.setPerfil(perfil);
                 colaborador.setUsuario(usuario);
                 colaborador.setSenha(senha);
+                colaborador.setCodFilial(codigoFilial);
+                colaborador.setCpf(cpf);
                                 
                 
             }

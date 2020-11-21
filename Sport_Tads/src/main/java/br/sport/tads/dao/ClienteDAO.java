@@ -41,6 +41,43 @@ public class ClienteDAO {
         return listaClientes;
     }
 
+    public static Cliente getClienteVenda(String cpf) {
+        PreparedStatement ps = null;
+        
+        Cliente cliente = null;
+
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_cliente where cpf=?";
+            ps = con.prepareStatement(query);
+            ps.setString(1, cpf);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+
+                String nome = rs.getString("nome");
+                String Cpf = rs.getString("cpf");
+                long celular = rs.getLong("celular");
+                String email = rs.getString("email");
+
+                cliente = new Cliente();
+                cliente.setNome(nome);
+                cliente.setCpf(Cpf);
+                cliente.setCelular(celular);
+                cliente.setEmail(email);
+
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+
+        return cliente;
+    }
+
     public static List<Cliente> getClientes(String cpf) {
         PreparedStatement ps = null;
         List<Cliente> listaClientes = new ArrayList();

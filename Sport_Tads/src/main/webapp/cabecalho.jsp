@@ -84,6 +84,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="<c:url value="/protegido/Vendas/vendaCliente.jsp"/>">Realizar Venda</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Vendas/vendasPrincipal.jsp"/>">Venda Sessao</a>
                             </div>
                         </li>
                     </c:if>

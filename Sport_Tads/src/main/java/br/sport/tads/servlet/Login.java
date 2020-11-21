@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
         String senha = request.getParameter("senha");
         
         Colaborador colaborador = ColaboradorDAO.getColaboradores(login);
-
+       
         if(colaborador == null || !colaborador.validarSenha(senha) ){
             response.sendRedirect(request.getContextPath() + "/login.jsp?erro=UserNotFound");
         }else{
