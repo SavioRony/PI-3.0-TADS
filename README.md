@@ -1,10 +1,13 @@
-# PI-3.0-TADS
+# Projeto Integrador - 3º Semestre
+
+Sistema Web para venda de artigos esportivos
+
 Nome do Grupo: Os batutinhas
 
 Integrantes:
-Savio Rony Lima Dos Santos 
-Hugo Souza Araújo
-Rafael Souza Araújo
+Savio Rony Lima Dos Santos; 
+Hugo Souza Araújo;
+Rafael Souza Araújo;
 Fernando Matos Pereira
 
-Area de atuação: Esportes
+Área de atuação: Esportes

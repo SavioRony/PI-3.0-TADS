@@ -5,7 +5,7 @@
     <%@include file="../../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Relatório de Vendas Regional</title>
+        <title>Relatório de Vendas Por Categoria de Produtos</title>
     </head>
     <style>
         div h1{
@@ -20,8 +20,8 @@
     <body>
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
-            <h1>Relatório de Vendas Regional</h1>
-            <form action="<c:url value="/RelatorioVendasRegional"/>" method="GET">
+            <h1>Relatório de Vendas Por Categoria de Produtos</h1>
+            <form action="<c:url value="/RelatorioVendasCategoriaProduto"/>" method="GET">
                 <div class="row">
                     <div class="form-group col-lg-3">
                         <p>Data inicial</p>
@@ -32,9 +32,17 @@
                         <input type="date" name="dataFinal" class="form-control" required="true"/>             
                     </div>
                     <div class="form-group col-lg-3">
+                        <p>Categoria</p>
+                        <select name="categoria"class="browser-default custom-select" required="true">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Basquete">Basquete</option>
+                            <option value="Futebol">Futebol</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-3">
                         <p>&nbsp;</p>
                         <button type="submit" class="btn btn-primary">Pesquisar</button>
-                    </div>
+                    </div> 
                 </div>
                 <input type="hidden" name="codFilial" value="${sessionScope.colaborador.codFilial}"/>
                 </br>
@@ -43,36 +51,30 @@
                 <thead class="thead-light">
                     <tr>
                         <th>ID</th>
+                        <th>Nome</th>
+                        <th>Marca</th>
+                        <th>Categoria</th>
+                        <th>Valor Unitário</th>
+                        <th>Quantidade</th>
                         <th>Data Venda</th>
-                        <th>CPF Cliente</th>
-                        <th>ID Vendedor</th>
-                        <th>Nome Vendedor</th>
-                        <th>ID Produto</th>
-                        <th>Qtd.</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="relatorioRegional" items="${vendas}">              
-                        <tr class="table-light">
-                            <td>${relatorioRegional.codVenda}</td>
-                            <td>${relatorioRegional.dataVenda}</td>
-                            <td>${relatorioRegional.cpfCliente}</td>
-                            <td>${relatorioRegional.codVendedor}</td>
-                            <td>${relatorioRegional.nomeCliente}</td>
-                            <td>${relatorioRegional.codProduto}</td>
-                            <td>${relatorioRegional.quantidade}</td>
-                            <td>${relatorioRegional.valorTotal}</td>
-                        </tr>
-                    </c:forEach>
+                    <c:forEach var="produto" items="${listaProd}">
+                        <tr class="table-light">                       
+                            <td>${produto.codProduto}</td>
+                            <td>${produto.nomeProduto}</td>
+                            <td>${produto.marcaProduto}</td>
+                            <td>${produto.categoriaProduto}</td>
+                            <td>R$ ${produto.valorProduto}</td>
+                            <td>${produto.quantidade}</td>
+                            <td>${produto.dataVenda}</td>
+                            <td>R$ ${produto.valorTotal}</td>                        
+                        </tr> 
+                    </c:forEach>                                  
                 </tbody>
             </table>
-            <br/>
-            <div class="form-inline" style="float:right">
-                <h6>Total: &nbsp</h6>
-                <input style="width: 200px; text-align: center" name="valorTotal" 
-                       class="form-control" value="R$ " id="valorTotal" readonly="true">
-            </div>
         </div>
     </body>
 </html>

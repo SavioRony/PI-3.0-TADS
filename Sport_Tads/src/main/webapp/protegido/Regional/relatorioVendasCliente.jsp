@@ -5,7 +5,7 @@
     <%@include file="../../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Relatório por Cliente</title>
+        <title>Relatório de Vendas Por Cliente</title>
     </head>
     <style>
         div h1{
@@ -29,27 +29,37 @@
     <body>
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
-            <h1>Vendas por Cliente</h1>
-            <form action="RelatorioCliente">
-                <div class="form-group col-lg-4" style="float: right; margin-right: -10px">
-                    <div class="input-group mb-3">
-                        <input name="cpf" class="form-control" placeholder="CPF Cliente" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
-                        </div>
+            <h1>Relatório de Vendas Por Cliente</h1>
+            <form action="<c:url value="/RelatorioVendasCliente"/>" method="GET">
+                <div class="row">
+                    <div class="form-group col-lg-3">
+                        <p>Data inicial</p>
+                        <input type="date" name="dataInicio" class="form-control" required="true"/>
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>Data final</p>
+                        <input type="date" name="dataFinal" class="form-control" required="true"/>             
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>CPF Cliente</p>
+                        <input name="cpf" class="form-control" placeholder="000.000.000-00" aria-describedby="button-addon2">
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <p>&nbsp;</p>
+                        <button type="submit" class="btn btn-primary">Pesquisar</button>
                     </div>
                 </div>
+                <input type="hidden" name="codFilial" value="${sessionScope.colaborador.codFilial}"/>
+                </br>
             </form>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th>ID Venda</th>
-                        <th>Data da compra</th>
-                        <th>Nome Cliente</th>
-                        <th>Nome Produto</th>
-                        <th>Quantidade</th>
-                        <th>Valor Produto</th>
-                        <th>Sub-Total</th>
+                        <th>ID</th>
+                        <th>Data Venda</th>
+                        <th>CPF</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,11 +67,9 @@
                         <tr class="table-light">
                             <td>${relatorioCliente.codVenda}</td>
                             <td>${relatorioCliente.dataVenda}</td>
+                            <td>${relatorioCliente.cpfCliente}</td>
                             <td>${relatorioCliente.nomeCliente}</td>
-                            <td>${relatorioCliente.nomeProduto}</td>
-                            <td>${relatorioCliente.quantidade}</td>
-                            <td>${relatorioCliente.valorProduto}</td>
-                            <td class="valor-calculado">${relatorioCliente.subTotal}</td>
+                            <td>${relatorioCliente.valorTotal}</td>
                         </tr>
                     </c:forEach>
                 </tbody>

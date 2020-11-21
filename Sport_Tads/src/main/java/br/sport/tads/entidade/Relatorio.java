@@ -15,18 +15,16 @@ public class Relatorio {
     private String marcaProduto;
     private int codFilial;
     private String nomeFilial;
+    private int percentual;
     private double totalFaturado;
+    private int codVendedor;
+    private String categoriaProduto;
 
-    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, String nomeProduto, int quantidade, double valorProduto, double subTotal, double valorTotal) {
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, double valorTotal) {
         this.codVenda = codVenda;
         this.dataVenda = dataVenda;
         this.cpfCliente = cpfCliente;
         this.nomeCliente = nomeCliente;
-        this.codProduto = codProduto;
-        this.nomeProduto = nomeProduto;
-        this.quantidade = quantidade;
-        this.valorProduto = valorProduto;
-        this.subTotal = subTotal;
         this.valorTotal = valorTotal;
     }
 
@@ -47,6 +45,55 @@ public class Relatorio {
         this.totalFaturado = totalFaturado;
     }
 
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, double valorTotal, int codVendedor) {
+        this.codVenda = codVenda;
+        this.dataVenda = dataVenda;
+        this.cpfCliente = cpfCliente;
+        this.nomeCliente = nomeCliente;
+        this.valorTotal = valorTotal;
+        this.codVendedor = codVendedor;
+    }
+
+    public Relatorio(String dataVenda, int quantidade, double subTotal, double valorTotal, int codFilial, String nomeFilial, int percentual) {
+        this.dataVenda = dataVenda;
+        this.quantidade = quantidade;
+        this.subTotal = subTotal;
+        this.valorTotal = valorTotal;
+        this.codFilial = codFilial;
+        this.nomeFilial = nomeFilial;
+        this.percentual = percentual;
+    }
+
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, int quantidade, double valorTotal, int codVendedor) {
+        this.codVenda = codVenda;
+        this.dataVenda = dataVenda;
+        this.cpfCliente = cpfCliente;
+        this.nomeCliente = nomeCliente;
+        this.codProduto = codProduto;
+        this.quantidade = quantidade;
+        this.valorTotal = valorTotal;
+        this.codVendedor = codVendedor;
+    }
+
+    public Relatorio(String dataVenda, int codProduto, String nomeProduto, int quantidade, double valorProduto, double valorTotal, String marcaProduto, String categoriaProduto) {
+        this.dataVenda = dataVenda;
+        this.codProduto = codProduto;
+        this.nomeProduto = nomeProduto;
+        this.quantidade = quantidade;
+        this.valorProduto = valorProduto;
+        this.valorTotal = valorTotal;
+        this.marcaProduto = marcaProduto;
+        this.categoriaProduto = categoriaProduto;
+    }
+
+    public int getCodVendedor() {
+        return codVendedor;
+    }
+
+    public void setCodVendedor(int codVendedor) {
+        this.codVendedor = codVendedor;
+    }
+
     public int getCodFilial() {
         return codFilial;
     }
@@ -61,6 +108,22 @@ public class Relatorio {
 
     public void setNomeFilial(String nomeFilial) {
         this.nomeFilial = nomeFilial;
+    }
+
+    public int getPercentual() {
+        return percentual;
+    }
+
+    public void setPercentual(int percentual) {
+        this.percentual = percentual;
+    }
+
+    public String getCategoriaProduto() {
+        return categoriaProduto;
+    }
+
+    public void setCategoriaProduto(String categoriaProduto) {
+        this.categoriaProduto = categoriaProduto;
     }
 
     public double getTotalFaturado() {

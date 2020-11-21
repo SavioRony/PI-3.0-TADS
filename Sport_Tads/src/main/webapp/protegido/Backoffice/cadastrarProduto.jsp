@@ -36,7 +36,11 @@
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Categoria</p>
-                        <input name="categoria" class="form-control" required="true"/>
+                        <select name="categoria"class="browser-default custom-select" required="true">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Basquete">Basquete</option>
+                            <option value="Futebol">Futebol</option>
+                        </select>
                     </div>
                     <div class="form-group col-lg-6">
                         <p>Quantidade</p>
