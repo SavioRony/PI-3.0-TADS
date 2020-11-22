@@ -279,8 +279,8 @@ public class RelatorioDAO {
                 String nomeCompleto = rs.getString("nomeCompleto");
                 int codProduto = rs.getInt("codProduto");
                 int quantidade = rs.getInt("quantidade");
-                double total = rs.getDouble("subTotal");
-                listaRelatorioVendasPorRegional.add(new Relatorio(codVenda, dtVenda, cpfCliente, nomeCompleto, codProduto, quantidade, total, codVendedor));
+                double subTotal = rs.getDouble("subTotal");
+                listaRelatorioVendasPorRegional.add(new Relatorio(codVenda, dtVenda, cpfCliente, nomeCompleto, codProduto, quantidade, subTotal, codVendedor));
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ServletBD.class.getName()).

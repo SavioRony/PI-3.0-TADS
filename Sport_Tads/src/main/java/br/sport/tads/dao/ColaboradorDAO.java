@@ -14,14 +14,15 @@ import java.util.logging.Logger;
 
 public class ColaboradorDAO {
 
-    public static List<Colaborador> getColaboradores() {
+    public static List<Colaborador> getColaboradores(int codFilial) {
         PreparedStatement preparedStatement = null;
         List<Colaborador> colaboradores = new ArrayList();
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_colaborador where status = 1";
+            String query = "select * from tb_colaborador where status = 1 and codFilial = ?";
             preparedStatement = con.prepareStatement(query);
+            preparedStatement.setInt(1, codFilial);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {

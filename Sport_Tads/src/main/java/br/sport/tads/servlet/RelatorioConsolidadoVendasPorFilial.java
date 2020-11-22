@@ -18,12 +18,13 @@ public class RelatorioConsolidadoVendasPorFilial extends HttpServlet {
 
         String dataInicio = request.getParameter("dataInicio");
         String dataFinal = request.getParameter("dataFinal");
-
-        System.out.println("Data inicio " + dataInicio + "data fim " + dataFinal);
-
+        double totalFaturado=0;
         List<Relatorio> listaFiliais = RelatorioDAO.novoRelatorioConsolidadoVendasPorFilial(dataInicio, dataFinal);
+        for (Relatorio r : listaFiliais) {
+            totalFaturado += r.getSubTotal();
+        }
         request.setAttribute("listaFiliais", listaFiliais);
-
+        request.setAttribute("totalFaturado", totalFaturado);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Global/relatorioConsolidadoVendasPorFilial.jsp");
         requestDispatcher.forward(request, response);
     }

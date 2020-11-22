@@ -53,10 +53,7 @@
                         <p>Valor</p>
                         <input name="valor" class="form-control" required="true"/>
                     </div>
-                    <div class="form-group col-lg-6">
-                        <p>Código da filial</p>
-                        <input name="filial" class="form-control" required="true"/>
-                    </div>
+                    <input type="hidden" name="filial" class="form-control" value="${sessionScope.colaborador.codFilial}" readonly="true"/>
                 </div>
                 <br/>
                 <button type="submit" style="float: right" class="btn btn-primary">Salvar</button>

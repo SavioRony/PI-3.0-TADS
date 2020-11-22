@@ -63,13 +63,14 @@ public class ProdutoDAO {
         ps.execute();
     }
 
-    public static List<Produto> getListaProdutos() {
+    public static List<Produto> getListaProdutos(int codFilial) {
         List<Produto> listaProdutos = new ArrayList();
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_produto";
+            String query = "select * from tb_produto where codFilial=?";
             PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, codFilial);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {

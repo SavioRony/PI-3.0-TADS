@@ -62,10 +62,7 @@
                         <p>Cargo</p>
                         <input name="cargo" class="form-control" required="true"/>
                     </div>
-                    <div class="form-group col-lg-4">
-                        <p>Filial</p>
-                        <input name="filial" class="form-control" required="true"/>
-                    </div>
+                        <input type="hidden" name="filial" class="form-control" value="${sessionScope.colaborador.codFilial}" readonly="true"/>
                 </div>
                 <br/>
                 <div class="row">

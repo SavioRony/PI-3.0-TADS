@@ -59,10 +59,7 @@
                         <p>Cargo</p>
                         <input name="cargo" class="form-control" value="${colaborador.cargo}" required="true"/>
                     </div>
-                    <div class="form-group col-lg-4">
-                        <p>Filial</p>
-                        <input name="filial" class="form-control" value="${colaborador.codFilial}" required="true"/>
-                    </div>
+                    <input type="hidden" name="filial" class="form-control" value="${colaborador.codFilial}" readonly="true"/>
                 </div>
                 <br/>
                 <div class="row">
