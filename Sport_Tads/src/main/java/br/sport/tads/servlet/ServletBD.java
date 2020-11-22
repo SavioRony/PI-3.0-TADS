@@ -24,11 +24,11 @@ public class ServletBD extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-            List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
+            /*            List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
             for (Produto produto : listaProdutos) {
-                out.println(produto);
-                out.println("<br/>");
-            }
+            out.println(produto);
+            out.println("<br/>");
+            }*/
             out.println("</body>");
             out.println("</html>");
         }

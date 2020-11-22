@@ -19,10 +19,14 @@ public class RelatorioVendasCliente extends HttpServlet {
         String dataFinal = request.getParameter("dataFinal");
         String cpf = request.getParameter("cpf");
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
+        double valorTotal = 0;
 
         List<Relatorio> listRelatorio = RelatorioDAO.novoRelatorioVendasPorCliente(cpf, dataInicio, dataFinal, codFilial);
+        for(Relatorio r : listRelatorio){    
+            valorTotal += r.getValorTotal();
+        }
         request.setAttribute("listaClientes", listRelatorio);
-
+        request.setAttribute("valorTotal", valorTotal);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Regional/relatorioVendasCliente.jsp");
         requestDispatcher.forward(request, response);
     }
