@@ -66,25 +66,25 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="form-group col-lg-8">
+                    <div class="form-group col-lg-6">
                         <p>Usuario</p>
                         <input name="usuario" class="form-control" required="true"/>
                     </div>
-                    <div class="form-group col-lg-4">
+                    <div class="form-group col-lg-3">
                         <p>Senha</p>
                         <input type="password" name="senha" class="form-control" required="true"/>
                     </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <label>Perfil:</label>
-                    <select name="perfil">
-                        <option value="Global">Global</option>
-                        <option value="Regional">Regional</option>
-                        <option value="Vendas">Vendas</option>
-                        <option value="TI">TI</option>
-                        <option value="Backoffice">BackOffice</option>
-                    </select>
+                    <div class="form-group col-lg-3">
+                        <p>Perfil</p>
+                        <select name="perfil" class="browser-default custom-select" required="true">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="GLOBAL">Global</option>
+                            <option value="REGIONAL">Regional</option>
+                            <option value="VENDAS">Vendas</option>
+                            <option value="TI">TI</option>
+                            <option value="BACKOFFICE">BackOffice</option>
+                        </select>
+                    </div>
                 </div>
                 <br/>
                 <button type="submit" style="float: right; margin-bottom: 30px" class="btn btn-primary">Salvar</button>
