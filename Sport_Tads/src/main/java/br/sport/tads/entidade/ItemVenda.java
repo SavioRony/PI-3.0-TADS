@@ -31,6 +31,17 @@ public class ItemVenda {
         this.subTotal = subTotal;
     }
 
+    public ItemVenda(int codProduto, String nomeProduto, String marcaProduto, double valorProduto, int quantidade, double subTotal) {
+        this.nomeProduto = nomeProduto;
+        this.marcaProduto = marcaProduto;
+        this.valorProduto = valorProduto;
+        this.codProduto = codProduto;
+        this.quantidade = quantidade;
+        this.subTotal = subTotal;
+    }
+    
+    
+    
     public int getIdItem() {
         return idItem;
     }

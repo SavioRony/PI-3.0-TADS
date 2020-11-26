@@ -64,14 +64,14 @@ public class Relatorio {
         this.percentual = percentual;
     }
 
-    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, int quantidade, double valorTotal, int codVendedor) {
+    public Relatorio(int codVenda, String dataVenda, String cpfCliente, String nomeCliente, int codProduto, int quantidade, double subTotal, int codVendedor) {
         this.codVenda = codVenda;
         this.dataVenda = dataVenda;
         this.cpfCliente = cpfCliente;
         this.nomeCliente = nomeCliente;
         this.codProduto = codProduto;
         this.quantidade = quantidade;
-        this.valorTotal = valorTotal;
+        this.valorTotal = subTotal;
         this.codVendedor = codVendedor;
     }
 

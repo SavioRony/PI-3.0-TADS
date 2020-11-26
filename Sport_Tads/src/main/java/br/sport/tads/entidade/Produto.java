@@ -7,7 +7,7 @@ public class Produto {
     private String nomeProduto;
     private String marcaProduto;
     private String categoriaProduto;
-    private Double valorProduto;
+    private double valorProduto;
     private int quantidadeEmEstoque;
 
     public Produto() {
@@ -82,11 +82,11 @@ public class Produto {
         this.categoriaProduto = categoriaProduto;
     }
 
-    public Double getValorProduto() {
+    public double getValorProduto() {
         return valorProduto;
     }
 
-    public void setValorProduto(Double valorProduto) {
+    public void setValorProduto(double valorProduto) {
         this.valorProduto = valorProduto;
     }
 

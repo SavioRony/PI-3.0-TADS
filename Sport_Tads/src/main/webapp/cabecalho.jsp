@@ -30,7 +30,7 @@
             <div id="links-menus">
                 <ul class="navbar-nav">
 
-                    <c:if test="${sessionScope.colaborador.vendas || sessionScope.colaborador.regional}">
+                    <c:if test="${sessionScope.colaborador.vendas}">
                         <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 Clientes
@@ -64,7 +64,7 @@
                             </div>
                         </li>
                     </c:if>
-                    <c:if test="${sessionScope.colaborador.backoffice || sessionScope.colaborador.regional}"> 
+                    <c:if test="${sessionScope.colaborador.backoffice}"> 
                         <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 Produtos
@@ -83,7 +83,7 @@
                                 Vendas
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="<c:url value="/protegido/Vendas/vendaCliente.jsp"/>">Realizar Venda</a>
+                                <a class="dropdown-item" href="<c:url value="/protegido/Vendas/venda.jsp"/>">Realizar Venda</a>
                             </div>
                         </li>
                     </c:if>
@@ -104,7 +104,6 @@
                                 Relatórios
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="<c:url value="/protegido/Vendas/vendaCliente.jsp"/>">Realizar Venda</a>
                                 <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioVendasRegional.jsp"/>">Relatório de Vendas Regional</a>
                                 <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioVendasCategoriaProduto.jsp"/>">Relatório de Vendas Por Categoria de Produtos</a>
                                 <a class="dropdown-item" href="<c:url value="/protegido/Regional/relatorioVendasCliente.jsp"/>">Relatório de Vendas Por Cliente</a>

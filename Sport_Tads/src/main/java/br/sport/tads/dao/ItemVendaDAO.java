@@ -14,14 +14,14 @@ import java.util.logging.Logger;
 
 public class ItemVendaDAO {
 
-    public static void inserirItemVenda(ItemVenda item) throws SQLException, ClassNotFoundException {
+    public static void inserirItemVenda(ItemVenda item, int idVenda) throws SQLException, ClassNotFoundException {
 
         PreparedStatement ps = null;
         try {
             Connection con = ConexaoDB.getConexao();
             ps = con.prepareStatement("insert into tb_itemvenda (codVenda,codProduto,quantidade,subTotal) values (?,?,?,?)");
 
-            ps.setInt(1, item.getCodVenda());
+            ps.setInt(1, idVenda);
             ps.setInt(2, item.getCodProduto());
             ps.setInt(3, item.getQuantidade());
             ps.setDouble(4, item.getSubTotal());

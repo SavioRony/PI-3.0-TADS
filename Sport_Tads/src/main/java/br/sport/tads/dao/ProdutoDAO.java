@@ -63,13 +63,14 @@ public class ProdutoDAO {
         ps.execute();
     }
 
-    public static List<Produto> getListaProdutos() {
+    public static List<Produto> getListaProdutos(int codFilial) {
         List<Produto> listaProdutos = new ArrayList();
 
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_produto";
+            String query = "select * from tb_produto where codFilial=?";
             PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, codFilial);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -93,15 +94,44 @@ public class ProdutoDAO {
         }
         return listaProdutos;
     }
-
-    public static Produto getProduto(int codProduto) {
+    
+   public static Produto getProduto(int codProduto) {
         Produto produto = null;
-
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_produto where codProduto=?";
+            String query = "select * from tb_produto where codProduto=? ";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, codProduto);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                int codProd = rs.getInt("codproduto");
+                int filial = rs.getInt("codfilial");
+                String nomeProduto = rs.getString("nomeProduto");
+                String marca = rs.getString("marcaProduto");
+                String categoria = rs.getString("categoriaProduto");
+                Double valor = rs.getDouble("valorProduto");
+                int qtdEstoque = rs.getInt("quantidadeEmEstoque");
+
+                produto = new Produto(codProd, filial, nomeProduto, marca, categoria, valor, qtdEstoque);
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return produto;
+    }
+   
+    public static Produto getProduto(int codProduto, int codFilial) {
+        Produto produto = null;
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_produto where codProduto=? and codFilial=?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, codProduto);
+            ps.setInt(2, codFilial);
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {

@@ -46,10 +46,7 @@
                             <option value="Futebol">Futebol</option>
                         </select>
                     </div>
-                    <div class="form-group col-lg-2">
-                        <p>ID Filial</p>
-                        <input class="form-control" name="filial" value="${prod.codFilial}" readonly="true"/>
-                    </div>
+                        <input type="hidden" class="form-control" name="filial" value="${prod.codFilial}" readonly="true"/>
                     <div class="form-group col-lg-3">
                         <p>Valor</p>
                         <input class="form-control" name="valor" value="${prod.valorProduto}"/>

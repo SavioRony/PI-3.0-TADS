@@ -76,14 +76,14 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th>ID</th>
+                        <th>Codigo do Pedido</th>
                         <th>Data Venda</th>
                         <th>CPF Cliente</th>
                         <th>ID Vendedor</th>
                         <th>Nome Vendedor</th>
                         <th>ID Produto</th>
                         <th>Qtd.</th>
-                        <th>Total</th>
+                        <th>Sub-Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,9 +103,7 @@
             </table>
             <br/>
             <div class="form-inline" style="float:right">
-                <h6>Total: &nbsp</h6>
-                <input style="width: 200px; text-align: center" name="valorTotal" 
-                       class="form-control" value="R$ " id="valorTotal" readonly="true">
+                <h3><b>Total:</b> R$ ${valorTotal}</h3>
             </div>
         </div>
     </body>

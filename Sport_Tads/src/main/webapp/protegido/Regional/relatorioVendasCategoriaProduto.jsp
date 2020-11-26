@@ -87,7 +87,6 @@
                         <th>Categoria</th>
                         <th>Valor Unitário</th>
                         <th>Quantidade</th>
-                        <th>Data Venda</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -100,7 +99,6 @@
                             <td>${produto.categoriaProduto}</td>
                             <td>R$ ${produto.valorProduto}</td>
                             <td>${produto.quantidade}</td>
-                            <td>${produto.dataVenda}</td>
                             <td>R$ ${produto.valorTotal}</td>                        
                         </tr> 
                     </c:forEach>                                  

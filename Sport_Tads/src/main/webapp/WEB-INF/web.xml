@@ -73,16 +73,16 @@
         <servlet-class>br.sport.tads.servlet.AlterarProduto</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VendaPesquisarCliente</servlet-name>
+        <servlet-name>protegido/Vendas/VendaPesquisarCliente</servlet-name>
         <servlet-class>br.sport.tads.servlet.VendaPesquisarCliente</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VendaGerarPedido</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaGerarPedido</servlet-class>
+        <servlet-name>RelatorioProdutosMaisVendidos</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioProdutosMaisVendidos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VendaProduto</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaProduto</servlet-class>
+        <servlet-name>RelatorioCliente</servlet-name>
+        <servlet-class>br.sport.tads.servlet.RelatorioCliente</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>VendaPesquisarFilial</servlet-name>
@@ -95,18 +95,6 @@
     <servlet>
         <servlet-name>RelatorioVendasCategoriaProduto</servlet-name>
         <servlet-class>br.sport.tads.servlet.RelatorioVendasCategoriaProduto</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VendaCarrinho</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaCarrinho</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VendaExcluirItem</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaExcluirItem</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VendaFinalizar</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaFinalizar</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RelatorioVendasCliente</servlet-name>
@@ -133,6 +121,22 @@
         <servlet-class>br.sport.tads.servlet.Logout</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>protegido/Vendas/VendaPesquisaProduto</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaPesquisaProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>protegido/Vendas/VendaAdicionarProdutoCarrinho</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaAdicionarProdutoCarrinho</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>protegido/Vendas/VendaRemoveProdutoCarrinho</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaRemoveProdutoCarrinho</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>protegido/Vendas/FinalizarVenda</servlet-name>
+        <servlet-class>br.sport.tads.servlet.FinalizarVenda</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>RelatorioVendasRegional</servlet-name>
         <servlet-class>br.sport.tads.servlet.RelatorioVendasRegional</servlet-class>
     </servlet>
@@ -140,14 +144,15 @@
         <servlet-name>RelatorioVendasGlobal</servlet-name>
         <servlet-class>br.sport.tads.servlet.RelatorioVendasGlobal</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>AlterarFilial</servlet-name>
-        <url-pattern>/AlterarFilial</url-pattern>
-    </servlet-mapping>
     <servlet>
         <servlet-name>ExcluirFilial</servlet-name>
         <servlet-class>br.sport.tads.servlet.ExcluirFilial</servlet-class>
     </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AlterarFilial</servlet-name>
+        <url-pattern>/AlterarFilial</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ExcluirFilial</servlet-name>
         <url-pattern>/ExcluirFilial</url-pattern>
@@ -217,36 +222,12 @@
         <url-pattern>/CadastrarColaborador</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>VendaPesquisarCliente</servlet-name>
-        <url-pattern>/VendaPesquisarCliente</url-pattern>
+        <servlet-name>protegido/Vendas/VendaPesquisarCliente</servlet-name>
+        <url-pattern>/protegido/Vendas/VendaPesquisarCliente</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>VendaGerarPedido</servlet-name>
-        <url-pattern>/VendaGerarPedido</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaProduto</servlet-name>
-        <url-pattern>/VendaProduto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaPesquisarFilial</servlet-name>
-        <url-pattern>/VendaPesquisarFilial</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaInserirProduto</servlet-name>
-        <url-pattern>/VendaInserirProduto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaCarrinho</servlet-name>
-        <url-pattern>/VendaCarrinho</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaExcluirItem</servlet-name>
-        <url-pattern>/VendaExcluirItem</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VendaFinalizar</servlet-name>
-        <url-pattern>/VendaFinalizar</url-pattern>
+        <servlet-name>RelatorioCliente</servlet-name>
+        <url-pattern>/RelatorioCliente</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RelatorioVendasCliente</servlet-name>
@@ -269,6 +250,22 @@
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>protegido/Vendas/VendaPesquisaProduto</servlet-name>
+        <url-pattern>/protegido/Vendas/VendaPesquisaProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>protegido/Vendas/VendaAdicionarProdutoCarrinho</servlet-name>
+        <url-pattern>/protegido/Vendas/VendaAdicionarProdutoCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>protegido/Vendas/VendaRemoveProdutoCarrinho</servlet-name>
+        <url-pattern>/protegido/Vendas/VendaRemoveProdutoCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>protegido/Vendas/FinalizarVenda</servlet-name>
+        <url-pattern>/protegido/Vendas/FinalizarVenda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>    
         <servlet-name>RelatorioVendasRegional</servlet-name>
         <url-pattern>/RelatorioVendasRegional</url-pattern>
     </servlet-mapping>

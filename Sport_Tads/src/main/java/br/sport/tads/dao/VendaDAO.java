@@ -20,11 +20,13 @@ public class VendaDAO {
         PreparedStatement ps = null;
         try {
             Connection con = ConexaoDB.getConexao();
-            ps = con.prepareStatement("insert into tb_venda (cpfCliente,codFilial,dtVenda) "
-                    + "values (?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            ps = con.prepareStatement("insert into tb_venda (cpfCliente,codFilial,codVendedor, dtVenda, total) "
+                    + "values (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, venda.getCpfCliente());
             ps.setInt(2, venda.getCodFilial());
-            ps.setDate(3, new java.sql.Date(venda.getDataDaVenda().getTime()));
+            ps.setInt(3, venda.getCodVendedor());
+            ps.setDate(4, new java.sql.Date(venda.getDataDaVenda().getTime()));
+            ps.setDouble(5, venda.getTotal());
 
             ps.executeUpdate();
 
