@@ -23,8 +23,8 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div>
-                <a href="<c:url value="protegido/index.jsp"/>">
-                    <img id="logo-sporttads" src="../img/lg.png">
+                <a href="<c:url value="/protegido/index.jsp"/>">
+                    <img id="logo-sporttads" src="img/lg.png">
                 </a>
             </div>
             <div id="links-menus">
