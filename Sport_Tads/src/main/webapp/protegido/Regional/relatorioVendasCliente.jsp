@@ -16,44 +16,14 @@
         table{
             text-align: center;
         }
-        p{
-            font-weight: bolder;
-            font-size: 18px;
-        }
-        div .row{
-            justify-content: space-between;
-            margin-right: auto;
-        }
-        #btn-pesquisar{
-            margin-left: 15px;
-        }
     </style>
     <script>
-        $(document).ready(function () {
-
-            $("#btn-pesquisar").click(function () {
-                var dataInicial = $("input[name='dataInicio']").val();
-                var dataFinal = $("input[name='dataFinal']").val();
-                var dataAtual = moment().format("YYYY-MM-DD");
-
-                if (dataInicial > dataAtual || dataFinal > dataAtual) {
-                    $.notify("Data inicial e final não podem ser superior a Data atual!", "error");
-                    return false;
-                }
-                if (dataInicial > dataFinal) {
-                    $.notify("Data final não pode ser inferior a Data inicial!", "error");
-                    return false;
-                }
-                return true;
+        $(function () {
+            var valorCalculado = 0;
+            $(".valor-calculado").each(function () {
+                valorCalculado += parseFloat($(this).text());
             });
-
-            $(function () {
-                var valorCalculado = 0;
-                $(".valor-calculado").each(function () {
-                    valorCalculado += parseFloat($(this).text());
-                });
-                document.getElementById('valorTotal').value = valorCalculado;
-            });
+            document.getElementById('valorTotal').value = valorCalculado;
         });
     </script>
     <body>
@@ -72,11 +42,11 @@
                     </div>
                     <div class="form-group col-lg-3">
                         <p>CPF Cliente</p>
-                        <input name="cpf" class="form-control" placeholder="000.000.000-00" required="true"/>
+                        <input name="cpf" class="form-control" placeholder="000.000.000-00" aria-describedby="button-addon2">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-lg-3">
                         <p>&nbsp;</p>
-                        <button type="submit" id="btn-pesquisar" class="btn btn-primary">Pesquisar</button>
+                        <button type="submit" class="btn btn-primary">Pesquisar</button>
                     </div>
                 </div>
                 <input type="hidden" name="codFilial" value="${sessionScope.colaborador.codFilial}"/>
