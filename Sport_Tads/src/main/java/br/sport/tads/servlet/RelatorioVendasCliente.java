@@ -22,7 +22,7 @@ public class RelatorioVendasCliente extends HttpServlet {
         double valorTotal = 0;
 
         List<Relatorio> listRelatorio = RelatorioDAO.novoRelatorioVendasPorCliente(cpf, dataInicio, dataFinal, codFilial);
-        for(Relatorio r : listRelatorio){    
+        for (Relatorio r : listRelatorio) {
             valorTotal += r.getValorTotal();
         }
         request.setAttribute("listaClientes", listRelatorio);

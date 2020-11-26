@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ProdutoDAO;
@@ -15,16 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author savio
- */
 public class VendaPesquisaProduto extends HttpServlet {
 
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         int idProduto = Integer.parseInt(request.getParameter("idProduto"));
         HttpSession sessaoVenda = request.getSession();
         Colaborador c = (Colaborador) sessaoVenda.getAttribute("colaborador");
@@ -32,6 +22,5 @@ public class VendaPesquisaProduto extends HttpServlet {
         sessaoVenda.setAttribute("produto", produto);
 
     }
-
 
 }

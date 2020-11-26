@@ -20,11 +20,11 @@ public class RelatorioVendasGlobal extends HttpServlet {
         int codFilial = Integer.parseInt(request.getParameter("codFilial"));
         double valorTotal = 0;
         List<Relatorio> listaVendasGlobal = RelatorioDAO.novoRelatorioVendasFilial(codFilial, dataInicio, dataFinal);
-        
+
         for (Relatorio r : listaVendasGlobal) {
             valorTotal += r.getValorTotal();
         }
-        
+
         request.setAttribute("vendas", listaVendasGlobal);
         request.setAttribute("valorTotal", valorTotal);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Global/relatorioVendasGlobal.jsp");

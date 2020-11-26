@@ -3,7 +3,6 @@ package br.sport.tads.servlet;
 import br.sport.tads.dao.RelatorioDAO;
 import br.sport.tads.entidade.Relatorio;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +17,7 @@ public class RelatorioConsolidadoVendasPorFilial extends HttpServlet {
 
         String dataInicio = request.getParameter("dataInicio");
         String dataFinal = request.getParameter("dataFinal");
-        double totalFaturado=0;
+        double totalFaturado = 0;
         List<Relatorio> listaFiliais = RelatorioDAO.novoRelatorioConsolidadoVendasPorFilial(dataInicio, dataFinal);
         for (Relatorio r : listaFiliais) {
             totalFaturado += r.getSubTotal();

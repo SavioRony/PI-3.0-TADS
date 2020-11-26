@@ -1,10 +1,7 @@
 package br.sport.tads.servlet;
 
-import br.sport.tads.dao.ProdutoDAO;
-import br.sport.tads.entidade.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,12 +20,6 @@ public class ServletBD extends HttpServlet {
             out.println("<title>Servlet ServletBD</title>");
             out.println("</head>");
             out.println("<body>");
-
-            /*            List<Produto> listaProdutos = ProdutoDAO.getListaProdutos();
-            for (Produto produto : listaProdutos) {
-            out.println(produto);
-            out.println("<br/>");
-            }*/
             out.println("</body>");
             out.println("</html>");
         }
