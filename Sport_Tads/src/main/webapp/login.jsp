@@ -17,6 +17,7 @@
             align-items: center
         }
         .box {
+            -webkit-box-shadow: -1px -1px 1px #C9C9C9, 1px 1px 1px #C9C9C9;
             width: 400px;
             height: 400px;
             background: #fff;
