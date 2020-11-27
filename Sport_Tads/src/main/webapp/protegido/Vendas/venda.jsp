@@ -8,19 +8,19 @@
         <title>Vendas</title>
         <script lang="text/javascript">
             function deletaProdutoCarrinho(i) {
-                $.get("VendaRemoveProdutoCarrinho?linha=" + i, function () {
+                $.get("VendaRemoverProdutoCarrinho?linha=" + i, function () {
                     location.reload();
                 });
             }
-            
+
             function BuscarProduto() {
                 var id = document.getElementById("idProduto").value;
                 $.get("VendaPesquisaProduto?idProduto=" + id, function () {
                     location.reload();
                 });
             }
-            
-           function BuscarCliente() {
+
+            function BuscarCliente() {
                 var cpf = document.getElementById("cpf").value;
                 $.get("VendaPesquisarCliente?cpf=" + cpf, function () {
                     location.reload();
@@ -56,7 +56,6 @@
             <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Vendas</h1>
             <h5><b>Vendedor:</b> ${sessionScope.colaborador.nome} </h5>
             <h5><b>Filial:</b> ${sessionScope.colaborador.codFilial} </h5>
-            
             <div class="row">
                 <div class="form-group col-lg-6">
                     <div class="panel panel1">
@@ -86,14 +85,14 @@
                     <div class="panel panel1">
                         <h3 style="text-align: center">Produto</h3>
                         <div class="row">
-                                <div class="form-group col-lg-10">
-                                    <div class="input-group mb-8">
-                                        <input name="idProduto" id="idProduto" type="text" class="form-control" placeholder="ID Produto" aria-describedby="button-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarProduto()">Buscar</button>
-                                        </div>
+                            <div class="form-group col-lg-10">
+                                <div class="input-group mb-8">
+                                    <input name="idProduto" id="idProduto" type="text" class="form-control" placeholder="ID Produto" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarProduto()">Buscar</button>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                         <div>
                             <p><b>Código Produto:</b> ${sessionScope.produto.codProduto}</p>

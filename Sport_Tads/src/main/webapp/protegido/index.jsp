@@ -3,8 +3,8 @@
 <html>
     <%@include file="../header.jsp" %>
     <head>
+        <link rel="stylesheet" href="<c:url value="../css/estilo.css"/>">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilo.css">
         <title>Home SportTads</title>
     </head>
     <style>
