@@ -107,9 +107,7 @@
                         </li>
                     </c:if>                        
                     <li class="nav-item dropdown" >
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Conta 
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Conta</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="<c:url value="/Logout"/>">Sair</a>
                         </div>
