@@ -3,6 +3,7 @@ package br.sport.tads.servlet;
 import br.sport.tads.dao.RelatorioDAO;
 import br.sport.tads.entidade.Relatorio;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,8 +23,9 @@ public class RelatorioConsolidadoVendasPorFilial extends HttpServlet {
         for (Relatorio r : listaFiliais) {
             totalFaturado += r.getSubTotal();
         }
+        DecimalFormat df = new DecimalFormat("#,###.00");
         request.setAttribute("listaFiliais", listaFiliais);
-        request.setAttribute("totalFaturado", totalFaturado);
+        request.setAttribute("totalFaturado", df.format(totalFaturado));
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Global/relatorioConsolidadoVendasPorFilial.jsp");
         requestDispatcher.forward(request, response);
     }

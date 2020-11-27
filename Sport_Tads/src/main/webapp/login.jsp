@@ -52,14 +52,14 @@
                 <form action="Login" method="POST">
                     <div class="row">
                         <div class="form-group col-lg-10">
-                            <p>Login</p>
-                            <input name="login" class="form-control" required="true"/>
+                            <p>Usuário</p>
+                            <input name="login" placeholder="Digite seu usuário..." class="form-control" required="true"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-10">
                             <p>Senha</p>
-                            <input type="password" name="senha" class="form-control" required="true"/>
+                            <input type="password" placeholder="Digite sua senha..." name="senha" class="form-control" required="true"/>
                         </div>
                     </div>
                     <br/>

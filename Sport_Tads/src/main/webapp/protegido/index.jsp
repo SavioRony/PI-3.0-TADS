@@ -4,7 +4,7 @@
     <%@include file="../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="<c:url value="../css/estilo.css"/>">
         <title>Home SportTads</title>
     </head>
     <style>

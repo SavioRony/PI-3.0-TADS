@@ -3,6 +3,7 @@ package br.sport.tads.servlet;
 import br.sport.tads.entidade.ItemVenda;
 import br.sport.tads.entidade.Produto;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -26,12 +27,9 @@ public class VendaAdicionarProdutoCarrinho extends HttpServlet {
 
         if (sessaoVenda.getAttribute("valorTotal") == null) {
             valorTotal = subValor;
-            System.out.println("Vazio: " + valorTotal);
         } else {
             valorTotal = (double) sessaoVenda.getAttribute("valorTotal");
-            System.out.println("Resgate da Sessão: " + valorTotal);
             valorTotal += subValor;
-            System.out.println("Somando com subTotal " + valorTotal);
         }
 
         List<ItemVenda> listaCarrinho;
@@ -44,7 +42,8 @@ public class VendaAdicionarProdutoCarrinho extends HttpServlet {
         if (!listaCarrinho.contains(item)) {
             listaCarrinho.add(item);
         }
+        DecimalFormat df = new DecimalFormat("#,###.00");
         sessaoVenda.setAttribute("listaCarrinho", listaCarrinho);
-        sessaoVenda.setAttribute("valorTotal", valorTotal);
+        sessaoVenda.setAttribute("valorTotal", df.format(valorTotal));
     }
 }

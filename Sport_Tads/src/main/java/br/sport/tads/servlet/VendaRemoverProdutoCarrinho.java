@@ -9,22 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class VendaRemoveProdutoCarrinho extends HttpServlet {
+public class VendaRemoverProdutoCarrinho extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int linha = Integer.parseInt(request.getParameter("linha")) - 1;
+        String linha = request.getParameter("linha");
+        int L = Integer.parseInt(linha) - 1;
         HttpSession sessaoVenda = request.getSession();
-
         List<ItemVenda> listaCarrinho = (List<ItemVenda>) sessaoVenda.getAttribute("listaCarrinho");
-        double valorTotal = Double.parseDouble((String) sessaoVenda.getAttribute("valorTotal"));
-
-        ItemVenda item = listaCarrinho.get(linha);
+        double valorTotal = (double) sessaoVenda.getAttribute("valorTotal");
+        ItemVenda item = listaCarrinho.get(L);
         valorTotal -= item.getSubTotal();
-        listaCarrinho.remove(linha);
+        listaCarrinho.remove(L);
         sessaoVenda.setAttribute("listaCarrinho", listaCarrinho);
         sessaoVenda.setAttribute("valorTotal", valorTotal);
-
     }
 }

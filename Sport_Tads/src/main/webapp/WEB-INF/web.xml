@@ -129,8 +129,8 @@
         <servlet-class>br.sport.tads.servlet.VendaAdicionarProdutoCarrinho</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>protegido/Vendas/VendaRemoveProdutoCarrinho</servlet-name>
-        <servlet-class>br.sport.tads.servlet.VendaRemoveProdutoCarrinho</servlet-class>
+        <servlet-name>protegido/Vendas/VendaRemoverProdutoCarrinho</servlet-name>
+        <servlet-class>br.sport.tads.servlet.VendaRemoverProdutoCarrinho</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>protegido/Vendas/FinalizarVenda</servlet-name>
@@ -148,7 +148,6 @@
         <servlet-name>ExcluirFilial</servlet-name>
         <servlet-class>br.sport.tads.servlet.ExcluirFilial</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>AlterarFilial</servlet-name>
         <url-pattern>/AlterarFilial</url-pattern>
@@ -258,14 +257,14 @@
         <url-pattern>/protegido/Vendas/VendaAdicionarProdutoCarrinho</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>protegido/Vendas/VendaRemoveProdutoCarrinho</servlet-name>
-        <url-pattern>/protegido/Vendas/VendaRemoveProdutoCarrinho</url-pattern>
+        <servlet-name>protegido/Vendas/VendaRemoverProdutoCarrinho</servlet-name>
+        <url-pattern>/protegido/Vendas/VendaRemoverProdutoCarrinho</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>protegido/Vendas/FinalizarVenda</servlet-name>
         <url-pattern>/protegido/Vendas/FinalizarVenda</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>    
+    <servlet-mapping>
         <servlet-name>RelatorioVendasRegional</servlet-name>
         <url-pattern>/RelatorioVendasRegional</url-pattern>
     </servlet-mapping>
