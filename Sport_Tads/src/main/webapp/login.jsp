@@ -45,9 +45,9 @@
                 </div>
                 <br/>
                 <c:if test="${param.erro != null}">
-                    <div class="alert alert-danger" role="alert">
-                        Usuário/Senha inválidos!
-                    </div>
+                    <script>
+                        $.notify("Usuário/Senha inválidos!", "error");
+                    </script>
                 </c:if>
                 <form action="Login" method="POST">
                     <div class="row">

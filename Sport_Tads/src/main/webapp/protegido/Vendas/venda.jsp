@@ -42,51 +42,57 @@
         .panel {
             display: inline-block;
             background: #ffffff;
-            box-shadow:0px 0px 5px 5px #C9C9C9;
-            -webkit-box-shadow:2px 2px 5px 5x #C9C9C9;
-            -moz-box-shadow:2px 2px 5px 5px #C9C9C9;
+            -webkit-box-shadow: -1px -1px 1px #C9C9C9, 1px 1px 1px #C9C9C9;
             margin: 10px;
             padding: 25px;
             width: 100%;
         }
+        h5{
+            margin-left: 10px;
+        }
+        .panel1{
+            height: 360px;
+        }
+        h3{
+            padding: 10px;
+            text-align: center;
+        }
     </style>
     <body>
         <%@include file="../../cabecalho.jsp" %>
+        <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Vendas</h1>
         <div class="container">
-            <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Vendas</h1>
-            <h5><b>Vendedor:</b> ${sessionScope.colaborador.nome} </h5>
+            <h5><b>Vendedor(a):</b> ${sessionScope.colaborador.nome} </h5>
             <h5><b>Filial:</b> ${sessionScope.colaborador.codFilial} </h5>
             <div class="row">
                 <div class="form-group col-lg-6">
                     <div class="panel panel1">
-                        <h3 style="text-align: center">Cliente</h3>
-                        <div class="row">
-                            <form action="BuscarCliente" method="GET">
-                                <div class="form-group col-lg-10">
-                                    <div class="input-group mb-8">
-                                        <input type="text" id="cpf" class="form-control" placeholder="CPF" aria-describedby="button-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarCliente()">Buscar</button>
-                                        </div>
+                        <h3>Cliente</h3>
+                        <div class="row" style="flex-flow: row-reverse">
+                            <div class="form-group col-lg-8">
+                                <div class="input-group mb-6">
+                                    <input type="text" id="cpf" class="form-control" placeholder="CPF (000.000.000-00)" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarCliente()">Buscar</button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
+                        <br/>
                         <div>
                             <p><b>CPF:</b> ${sessionScope.cliente.cpf}</p>
                             <p><b>Nome:</b> ${sessionScope.cliente.nome}</p>
                             <p><b>Email:</b> ${sessionScope.cliente.email}</p>
                             <p><b>Celular:</b> ${sessionScope.cliente.celular}</p>
-                            </br>
                         </div>
                     </div>
                 </div>
                 <div class="form-group col-lg-6">
                     <div class="panel panel1">
-                        <h3 style="text-align: center">Produto</h3>
-                        <div class="row">
-                            <div class="form-group col-lg-10">
-                                <div class="input-group mb-8">
+                        <h3>Produto</h3>
+                        <div class="row" style="flex-flow: row-reverse">
+                            <div class="form-group col-lg-6">
+                                <div class="input-group mb-6">
                                     <input name="idProduto" id="idProduto" type="text" class="form-control" placeholder="ID Produto" aria-describedby="button-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarProduto()">Buscar</button>
@@ -100,11 +106,13 @@
                             <p><b>Preço:</b> R$ ${sessionScope.produto.valorProduto}</p>
                             <p><b>Quantidade em estoque:</b> ${sessionScope.produto.quantidadeEmEstoque}</p>
                         </div>
-                        <div class="form-group col-lg-6" style="float: right">
-                            <div class="input-group mb-10">
-                                <input id="quantidade" type="text" name="quantidade" class="form-control" placeholder="Quantidade" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-primary" onclick="AdicionarProduto()">Adicionar</button>
+                        <div class="row" style="flex-flow: row-reverse">
+                            <div class="form-group col-lg-6" style="float: right">
+                                <div class="input-group mb-10">
+                                    <input id="quantidade" type="text" name="quantidade" class="form-control" placeholder="Quantidade" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary" onclick="AdicionarProduto()">Adicionar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -149,13 +157,12 @@
                         </table>
                         <h3 style="text-align: center; margin-top: 20px; margin-bottom: 20px"><b>Valor Total: R$ </b>${valorTotal} </h3>
                     </div>
-                    <a href="index.jsp"/>Voltar</a>
-                    <form action="FinalizarVenda" method="POST">  
-                        <button type="submit" style="float: right; width: 100px; margin-bottom: 30px" class="btn btn-primary">Finalizar</button>
-                    </form>    
+                    <form action="FinalizarVenda" method="POST">
+                        <br/>
+                        <button type="submit" style="float: right; width: 100px; margin-right: -15px" class="btn btn-primary">Finalizar</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
