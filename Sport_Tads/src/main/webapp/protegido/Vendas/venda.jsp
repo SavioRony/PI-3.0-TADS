@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,34 +7,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Vendas</title>
-        <script lang="text/javascript">
-            function deletaProdutoCarrinho(i) {
-                $.get("VendaRemoverProdutoCarrinho?linha=" + i, function () {
-                    location.reload();
-                });
-            }
-
-            function BuscarProduto() {
-                var id = document.getElementById("idProduto").value;
-                $.get("VendaPesquisaProduto?idProduto=" + id, function () {
-                    location.reload();
-                });
-            }
-
-            function BuscarCliente() {
-                var cpf = document.getElementById("cpf").value;
-                $.get("VendaPesquisarCliente?cpf=" + cpf, function () {
-                    location.reload();
-                });
-            }
-
-            function AdicionarProduto() {
-                var quant = document.getElementById("quantidade").value;
-                $.get("VendaAdicionarProdutoCarrinho?quantidade=" + quant, function () {
-                    location.reload();
-                });
-            }
-        </script>
     </head>
     <style>
         body {
@@ -57,7 +30,42 @@
             padding: 10px;
             text-align: center;
         }
+        table{
+            text-align: center;
+        }
     </style>
+    <script lang="text/javascript">
+        function deletaProdutoCarrinho(i) {
+            $.get("VendaRemoverProdutoCarrinho?linha=" + i, function () {
+                location.reload();
+            });
+        }
+
+        function BuscarProduto() {
+            var id = document.getElementById("idProduto").value;
+            $.get("VendaPesquisaProduto?idProduto=" + id, function () {
+                location.reload();
+            });
+        }
+
+        function BuscarCliente() {
+            var cpf = document.getElementById("cpf").value;
+            $.get("VendaPesquisarCliente?cpf=" + cpf, function () {
+                location.reload();
+            });
+        }
+
+        function AdicionarProduto() {
+            var quant = document.getElementById("quantidade").value;
+            $.get("VendaAdicionarProdutoCarrinho?quantidade=" + quant, function () {
+                location.reload();
+            });
+        }
+        $(document).ready(function () {
+            var valor = $("#input-valor-total").val() === "" ? "0.00" : parseFloat($("#input-valor-total").val()).toFixed(2);
+            $("#h3-total").html("Valor Total: R$ " + valor).text();
+        });
+    </script>
     <body>
         <%@include file="../../cabecalho.jsp" %>
         <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Vendas</h1>
@@ -106,6 +114,7 @@
                             <p><b>Preço:</b> R$ ${sessionScope.produto.valorProduto}</p>
                             <p><b>Quantidade em estoque:</b> ${sessionScope.produto.quantidadeEmEstoque}</p>
                         </div>
+                        <input type="hidden" id="qtd-estoque" value="${sessionScope.produto.quantidadeEmEstoque}"/>
                         <div class="row" style="flex-flow: row-reverse">
                             <div class="form-group col-lg-6" style="float: right">
                                 <div class="input-group mb-10">
@@ -155,7 +164,8 @@
                                 </c:forEach>
                             </tbody>
                         </table>
-                        <h3 style="text-align: center; margin-top: 20px; margin-bottom: 20px"><b>Valor Total: R$ </b>${valorTotal} </h3>
+                        <h3 id="h3-total" style="text-align: center; margin-top: 20px; margin-bottom: 20px"></h3>
+                        <input type="hidden" id="input-valor-total" value="${valorTotal}"/>
                     </div>
                     <form action="FinalizarVenda" method="POST">
                         <br/>

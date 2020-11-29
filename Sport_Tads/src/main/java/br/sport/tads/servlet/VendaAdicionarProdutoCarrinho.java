@@ -22,6 +22,9 @@ public class VendaAdicionarProdutoCarrinho extends HttpServlet {
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
 
         double subValor = quantidade * produto.getValorProduto();
+        DecimalFormat df = new DecimalFormat("###.00");
+        String subV = df.format(subValor).replace(",", ".");
+        subValor = Double.parseDouble(subV);
         ItemVenda item = new ItemVenda(produto.getCodProduto(), produto.getNomeProduto(), produto.getMarcaProduto(), produto.getValorProduto(), quantidade, subValor);
         double valorTotal = 0;
 
@@ -42,8 +45,7 @@ public class VendaAdicionarProdutoCarrinho extends HttpServlet {
         if (!listaCarrinho.contains(item)) {
             listaCarrinho.add(item);
         }
-        DecimalFormat df = new DecimalFormat("#,###.00");
         sessaoVenda.setAttribute("listaCarrinho", listaCarrinho);
-        sessaoVenda.setAttribute("valorTotal", df.format(valorTotal));
+        sessaoVenda.setAttribute("valorTotal", valorTotal);
     }
 }

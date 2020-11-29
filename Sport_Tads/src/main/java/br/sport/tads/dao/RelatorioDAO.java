@@ -15,84 +15,84 @@ import java.util.logging.Logger;
 
 public class RelatorioDAO {
 
-    public static List<Relatorio> relatorioDezMaisVendidos() {
-        List<Relatorio> relatorioDez = new ArrayList();
-
-        try {
-            Connection con = ConexaoDB.getConexao();
-            String query = " select \n"
-                    + "	tb_produto.codProduto,\n"
-                    + "	tb_produto.nomeProduto,\n"
-                    + "	tb_produto.marcaProduto,\n"
-                    + "	tb_produto.valorProduto, \n"
-                    + "	SUM(tb_itemvenda.quantidade) as quantidade,\n"
-                    + "    (tb_produto.valorProduto * (SUM(tb_itemvenda.quantidade))) as valorTotal\n"
-                    + "from \n"
-                    + "	tb_itemvenda \n"
-                    + "inner join \n"
-                    + "	tb_produto \n"
-                    + "on \n"
-                    + "	tb_itemvenda.codProduto = tb_produto.codProduto \n"
-                    + "group by codProduto \n"
-                    + "order by quantidade DESC \n"
-                    + "limit 10";
-
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                int codProduto = rs.getInt("codProduto");
-                String nomeProduto = rs.getString("nomeProduto");
-                String marcaProd = rs.getString("marcaProduto");
-                Double valorUn = rs.getDouble("valorProduto");
-                int quantidade = rs.getInt("quantidade");
-                Double valorTotal = rs.getDouble("valorTotal");
-                relatorioDez.add(new Relatorio(codProduto, nomeProduto, marcaProd, valorUn, quantidade, valorTotal));
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletBD.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletBD.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        }
-        return relatorioDez;
-    }
-
-    public static List<Relatorio> relatorioFiliais() {
-        List<Relatorio> relatorioFiliais = new ArrayList();
-
-        try {
-            Connection con = ConexaoDB.getConexao();
-            String query = "select f.codFilial, f.nomeFilial, sum(i.quantidade) as quantidadeVendida, sum(v.total) as totalFaturado\n"
-                    + "from tb_filial f\n"
-                    + "inner join tb_venda v\n"
-                    + "on v.codFilial = f.CodFilial\n"
-                    + "inner join tb_itemVenda i\n"
-                    + "on i.codVenda = v.codVenda\n"
-                    + "group by f.codFilial\n"
-                    + "order by totalFaturado desc;";
-
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                int codFilial = rs.getInt("codFilial");
-                String nomeFilial = rs.getString("nomeFilial");
-                int quantidadeVendida = rs.getInt("quantidadeVendida");
-                double totalFaturado = rs.getDouble("totalFaturado");
-                relatorioFiliais.add(new Relatorio(codFilial, nomeFilial, quantidadeVendida, totalFaturado));
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ServletBD.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletBD.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        }
-        return relatorioFiliais;
-    }
-
+//    public static List<Relatorio> relatorioDezMaisVendidos() {
+//        List<Relatorio> relatorioDez = new ArrayList();
+//
+//        try {
+//            Connection con = ConexaoDB.getConexao();
+//            String query = " select \n"
+//                    + "	tb_produto.codProduto,\n"
+//                    + "	tb_produto.nomeProduto,\n"
+//                    + "	tb_produto.marcaProduto,\n"
+//                    + "	tb_produto.valorProduto, \n"
+//                    + "	SUM(tb_itemvenda.quantidade) as quantidade,\n"
+//                    + "    (tb_produto.valorProduto * (SUM(tb_itemvenda.quantidade))) as valorTotal\n"
+//                    + "from \n"
+//                    + "	tb_itemvenda \n"
+//                    + "inner join \n"
+//                    + "	tb_produto \n"
+//                    + "on \n"
+//                    + "	tb_itemvenda.codProduto = tb_produto.codProduto \n"
+//                    + "group by codProduto \n"
+//                    + "order by quantidade DESC \n"
+//                    + "limit 10";
+//
+//            PreparedStatement ps = con.prepareStatement(query);
+//            ResultSet rs = ps.executeQuery();
+//
+//            while (rs.next()) {
+//                int codProduto = rs.getInt("codProduto");
+//                String nomeProduto = rs.getString("nomeProduto");
+//                String marcaProd = rs.getString("marcaProduto");
+//                Double valorUn = rs.getDouble("valorProduto");
+//                int quantidade = rs.getInt("quantidade");
+//                Double valorTotal = rs.getDouble("valorTotal");
+//                relatorioDez.add(new Relatorio(codProduto, nomeProduto, marcaProd, valorUn, quantidade, valorTotal));
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(ServletBD.class.getName()).
+//                    log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ServletBD.class.getName()).
+//                    log(Level.SEVERE, null, ex);
+//        }
+//        return relatorioDez;
+//    }
+//
+//    public static List<Relatorio> relatorioFiliais() {
+//        List<Relatorio> relatorioFiliais = new ArrayList();
+//
+//        try {
+//            Connection con = ConexaoDB.getConexao();
+//            String query = "select f.codFilial, f.nomeFilial, sum(i.quantidade) as quantidadeVendida, sum(v.total) as totalFaturado\n"
+//                    + "from tb_filial f\n"
+//                    + "inner join tb_venda v\n"
+//                    + "on v.codFilial = f.CodFilial\n"
+//                    + "inner join tb_itemVenda i\n"
+//                    + "on i.codVenda = v.codVenda\n"
+//                    + "group by f.codFilial\n"
+//                    + "order by totalFaturado desc;";
+//
+//            PreparedStatement ps = con.prepareStatement(query);
+//            ResultSet rs = ps.executeQuery();
+//
+//            while (rs.next()) {
+//                int codFilial = rs.getInt("codFilial");
+//                String nomeFilial = rs.getString("nomeFilial");
+//                int quantidadeVendida = rs.getInt("quantidadeVendida");
+//                double totalFaturado = rs.getDouble("totalFaturado");
+//                relatorioFiliais.add(new Relatorio(codFilial, nomeFilial, quantidadeVendida, totalFaturado));
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(ServletBD.class.getName()).
+//                    log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ServletBD.class.getName()).
+//                    log(Level.SEVERE, null, ex);
+//        }
+//        return relatorioFiliais;
+//    }
+//
     public static List<Relatorio> novoRelatorioVendasPorFilial(int codFilial, String dataInicio, String dataFinal) {
         PreparedStatement ps = null;
         List<Relatorio> listaRelatorioVendasPorFilial = new ArrayList();

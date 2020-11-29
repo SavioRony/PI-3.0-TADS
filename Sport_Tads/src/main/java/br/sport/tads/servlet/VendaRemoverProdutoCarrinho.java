@@ -18,7 +18,7 @@ public class VendaRemoverProdutoCarrinho extends HttpServlet {
         int L = Integer.parseInt(linha) - 1;
         HttpSession sessaoVenda = request.getSession();
         List<ItemVenda> listaCarrinho = (List<ItemVenda>) sessaoVenda.getAttribute("listaCarrinho");
-        Double valorTotal = (Double) sessaoVenda.getAttribute("valorTotal");
+        Double valorTotal = (Double) sessaoVenda.getAttribute("valorTotal");;
         ItemVenda item = listaCarrinho.get(L);
         valorTotal -= item.getSubTotal();
         listaCarrinho.remove(L);

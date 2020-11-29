@@ -34,7 +34,7 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
                         <p>Categoria</p>
                         <select name="categoria"class="browser-default custom-select" required="true">
                             <option value="" disabled selected>Selecione</option>
@@ -42,21 +42,15 @@
                             <option value="Futebol">Futebol</option>
                         </select>
                     </div>
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
                         <p>Quantidade</p>
                         <input name="qtd" class="form-control" required="true"/>
                     </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
                         <p>Valor</p>
                         <input name="valor" class="form-control" required="true"/>
                     </div>
-                    <div class="form-group col-lg-6">
-                        <p>Código da filial</p>
-                        <input name="filial" class="form-control" required="true"/>
-                    </div>
+                    <input name="filial" type="hidden" value="${sessionScope.colaborador.codFilial}"/>
                 </div>
                 <br/>
                 <button type="submit" style="float: right" class="btn btn-primary">Salvar</button>
