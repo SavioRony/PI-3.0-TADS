@@ -68,6 +68,17 @@
     </script>
     <body>
         <%@include file="../../cabecalho.jsp" %>
+        <c:if test="${sucesso == 1}">
+            ${sucesso = ''}
+            <div class="alert alert-success" role="alert" style="margin: 10px 500px 10px 550px;">
+                <h4 class="alert-heading">Venda finalizada com sucesso!</h4>
+                <hr>
+                Número do Pedido: ${codVenda}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </c:if>
         <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px">Vendas</h1>
         <div class="container">
             <h5><b>Vendedor(a):</b> ${sessionScope.colaborador.nome} </h5>
@@ -79,7 +90,7 @@
                         <div class="row" style="flex-flow: row-reverse">
                             <div class="form-group col-lg-8">
                                 <div class="input-group mb-6">
-                                    <input type="text" id="cpf" class="form-control" placeholder="CPF (000.000.000-00)" aria-describedby="button-addon2">
+                                    <input type="text" id="cpf" class="form-control" placeholder="CPF"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" aria-describedby="button-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarCliente()">Buscar</button>
                                     </div>
@@ -93,6 +104,15 @@
                             <p><b>Email:</b> ${sessionScope.cliente.email}</p>
                             <p><b>Celular:</b> ${sessionScope.cliente.celular}</p>
                         </div>
+                        <c:if test="${semCliente == 1}">
+                            ${semCliente = ''}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                Cliente não cadastrado no sistema!
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </c:if>
                     </div>
                 </div>
                 <div class="form-group col-lg-6">
@@ -101,30 +121,49 @@
                         <div class="row" style="flex-flow: row-reverse">
                             <div class="form-group col-lg-6">
                                 <div class="input-group mb-6">
-                                    <input name="idProduto" id="idProduto" type="text" class="form-control" placeholder="ID Produto" aria-describedby="button-addon2">
+                                    <input name="idProduto" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="idProduto" type="text" class="form-control" placeholder="ID Produto" aria-describedby="button-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarProduto()">Buscar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div>
                             <p><b>Código Produto:</b> ${sessionScope.produto.codProduto}</p>
                             <p><b>Nome do Produto:</b> ${sessionScope.produto.nomeProduto} </p>
                             <p><b>Preço:</b> R$ ${sessionScope.produto.valorProduto}</p>
-                            <p><b>Quantidade em estoque:</b> ${sessionScope.produto.quantidadeEmEstoque}</p>
+                            <p><b>Quantidade em estoque:</b> ${sessionScope.quantEstoque}</p>
                         </div>
-                        <input type="hidden" id="qtd-estoque" value="${sessionScope.produto.quantidadeEmEstoque}"/>
+                        <input type="hidden"  id="qtd-estoque" value="${sessionScope.produto.quantidadeEmEstoque}"/>
                         <div class="row" style="flex-flow: row-reverse">
                             <div class="form-group col-lg-6" style="float: right">
                                 <div class="input-group mb-10">
-                                    <input id="quantidade" type="text" name="quantidade" class="form-control" placeholder="Quantidade" aria-describedby="button-addon2">
+                                    <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="quantidade" type="text" name="quantidade" class="form-control" placeholder="Quantidade" aria-describedby="button-addon2">
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-primary" onclick="AdicionarProduto()">Adicionar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <c:if test="${semEstoque == 1}">
+                            ${semEstoque = ''}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                Quantidade insuficiente no estoque!
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </c:if>
+                        <c:if test="${semProduto == 1}">
+
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                Produto não cadastrado no estoque! ${semProduto = ''}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </c:if>
                     </div>
                 </div>  
             </div>

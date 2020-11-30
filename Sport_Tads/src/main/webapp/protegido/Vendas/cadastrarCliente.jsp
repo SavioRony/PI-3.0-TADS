@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <p>Nome</p>
-                            <input name="nome" class="form-control" placeholder="Nome Completo" required="true"/>
+                            <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" placeholder="Nome Completo" required="true"/>
                         </div>
                     </div>
                     <br/>
@@ -50,11 +50,11 @@
                         </div> 
                         <div class="form-group col-lg-4">
                             <p>CPF</p>      
-                            <input name="cpf" class="form-control cpf-mask" placeholder="000.000.000-00" maxlength="11" required="true"/>    
+                            <input name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control cpf-mask" placeholder="000.000.000-00" maxlength="11" required="true"/>    
                         </div>
                         <div class="form-group col-lg-4">
                             <p>Celular</p>
-                            <input name="celular" class="form-control cel-sp-mask" placeholder="(00)00000-0000" maxlength="11" required="true"/>
+                            <input name="celular" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control cel-sp-mask" placeholder="(00)00000-0000" maxlength="11" required="true"/>
                         </div>
                     </div>
                     <br/>

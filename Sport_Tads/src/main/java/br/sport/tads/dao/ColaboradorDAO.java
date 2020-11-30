@@ -49,6 +49,41 @@ public class ColaboradorDAO {
         return colaboradores;
     }
 
+    public static List<Colaborador> getColaborador(String cpf, int codFilial) {
+        PreparedStatement preparedStatement = null;
+        List<Colaborador> colaboradores = new ArrayList();
+
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_colaborador where status = 1 and codFilial = ? and cpf=?";
+            preparedStatement = con.prepareStatement(query);
+            preparedStatement.setInt(1, codFilial);
+            preparedStatement.setString(2, cpf);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int codColaborador = resultSet.getInt("codColaborador");
+                String nome = resultSet.getString("nomeCompleto");
+                cpf = resultSet.getString("cpf");
+                String endereco = resultSet.getString("endereco");
+                int numero = resultSet.getInt("numero");
+                int cep = resultSet.getInt("cep");
+                String cidade = resultSet.getString("cidade");
+                String cargo = resultSet.getString("cargo");
+                int codigoFilial = resultSet.getInt("codFilial");
+                String usuario = resultSet.getString("usuario");
+                String perfil = resultSet.getString("perfil");
+                colaboradores.add(new Colaborador(nome, cpf, endereco, numero, cep, cidade, cargo, codigoFilial, usuario, perfil, codColaborador));
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+        return colaboradores;
+    }
     
     public static Colaborador getColaboradores(String login) {
         PreparedStatement ps = null;

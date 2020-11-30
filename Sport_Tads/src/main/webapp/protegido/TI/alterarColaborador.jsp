@@ -27,11 +27,11 @@
                 <div class="row">
                     <div class="form-group col-lg-8">
                         <p>Nome Completo</p>
-                        <input name="nome" class="form-control" value="${colaborador.nome}" required="true"/>
+                        <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" value="${colaborador.nome}" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>CPF</p>
-                        <input name="cpf" class="form-control" value="${colaborador.cpf}" readonly="true"/>
+                        <input name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" value="${colaborador.cpf}" readonly="true"/>
                     </div>
                 </div>
                 <br/>
@@ -42,26 +42,22 @@
                     </div>
                     <div class="form-group col-lg-2">
                         <p>Número</p>
-                        <input name="numero" class="form-control" value="${colaborador.numero}" required="true"/>
+                        <input name="numero" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" value="${colaborador.numero}" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>CEP</p>
-                        <input name="cep" class="form-control" value="${colaborador.cep}" required="true"/>
+                        <input name="cep" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" value="${colaborador.cep}" required="true"/>
                     </div>
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="form-group col-lg-4">
+                    <div class="form-group col-lg-6">
                         <p>Cidade</p>
-                        <input name="cidade" class="form-control" value="${colaborador.cidade}" required="true"/>
+                        <input name="cidade" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" value="${colaborador.cidade}" required="true"/>
                     </div>
-                    <div class="form-group col-lg-4">
+                    <div class="form-group col-lg-6">
                         <p>Cargo</p>
-                        <input name="cargo" class="form-control" value="${colaborador.cargo}" required="true"/>
-                    </div>
-                    <div class="form-group col-lg-4">
-                        <p>Filial</p>
-                        <input name="filial" class="form-control" value="${colaborador.codFilial}" required="true"/>
+                        <input name="cargo" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" value="${colaborador.cargo}" required="true"/>
                     </div>
                 </div>
                 <br/>
@@ -87,6 +83,7 @@
                     </div>
                 </div>
                 <br/>
+                <input name="filial" type="hidden" class="form-control" value="${colaborador.codFilial}" required="true"/>
                 <button type="submit" style="float: right; margin-bottom: 30px" class="btn btn-primary">Salvar</button>
             </form>
         </div>
