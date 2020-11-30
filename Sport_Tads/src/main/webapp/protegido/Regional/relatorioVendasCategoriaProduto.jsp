@@ -66,8 +66,12 @@
                         <p>Categoria</p>
                         <select name="categoria"class="browser-default custom-select" required="true">
                             <option value="" disabled selected>Selecione</option>
+                            <option value="Aquaticos">Aquaticos</option>
                             <option value="Basquete">Basquete</option>
+                            <option value="Fitness">Fitness</option>
                             <option value="Futebol">Futebol</option>
+                            <option value="Marciais">Marciais</option>
+                            <option value="Volei">Volei</option>
                         </select>
                     </div>
                     <div class="form-group">

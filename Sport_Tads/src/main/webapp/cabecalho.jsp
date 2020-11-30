@@ -29,7 +29,7 @@
             </div>
             <div id="links-menus">
                 <ul class="navbar-nav">
-                    <c:if test="${sessionScope.colaborador.vendas || sessionScope.colaborador.regional}">
+                    <c:if test="${sessionScope.colaborador.vendas}">
                         <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 Clientes

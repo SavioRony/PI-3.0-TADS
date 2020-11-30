@@ -51,8 +51,11 @@ public class FinalizarVenda extends HttpServlet {
             for (ItemVenda item : listaCarrinho) {
                 ItemVendaDAO.inserirItemVenda(item, venda.getCodVenda());
             }
-
-            response.sendRedirect(request.getContextPath() + "/sucesso.jsp");
+            
+            sessaoVenda.setAttribute("sucesso", 1);
+            sessaoVenda.setAttribute("codVenda", venda.getCodVenda());
+            response.sendRedirect(request.getContextPath() + "/protegido/Vendas/venda.jsp");
+            
 
         } catch (SQLException ex) {
             Logger.getLogger(FinalizarVenda.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,6 +66,7 @@ public class FinalizarVenda extends HttpServlet {
             sessaoVenda.removeAttribute("valorTotal");
             sessaoVenda.removeAttribute("listaCarrinho");
             sessaoVenda.removeAttribute("produto");
+            
         }
 
     }

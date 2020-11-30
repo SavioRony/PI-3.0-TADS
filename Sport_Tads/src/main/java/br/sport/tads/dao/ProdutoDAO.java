@@ -53,6 +53,19 @@ public class ProdutoDAO {
         ps.execute();
 
     }
+    
+    public static void alterarQuantProduto(int quantidade, int codProduto) throws SQLException, ClassNotFoundException {
+
+        Connection con = ConexaoDB.getConexao();
+        String query = "update tb_produto set quantidadeEmEstoque=? where codProduto=?";
+        PreparedStatement ps = con.prepareStatement(query);
+
+        ps.setInt(1, quantidade);
+        ps.setInt(2, codProduto);
+
+        ps.execute();
+
+    }
 
     public static void excluirProduto(int codProd) throws SQLException, ClassNotFoundException {
 
@@ -124,11 +137,11 @@ public class ProdutoDAO {
         return produto;
     }
    
-    public static Produto getProduto(int codProduto, int codFilial) {
+   public static Produto getProduto(int codProduto, int codFilial) {
         Produto produto = null;
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_produto where codProduto=? and codFilial=?";
+            String query = "select * from tb_produto where codProduto=? and codFilial=? ";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, codProduto);
             ps.setInt(2, codFilial);
@@ -152,6 +165,36 @@ public class ProdutoDAO {
             Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return produto;
+    }
+   
+    public static List<Produto> getProduto(int codProduto, String categoria) {
+        List<Produto> listaProdutos = new ArrayList();
+        try {
+            Connection con = ConexaoDB.getConexao();
+            String query = "select * from tb_produto where codProduto=? or categoriaProduto=?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, codProduto);
+            ps.setString(2, categoria);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                codProduto = rs.getInt("codProduto");
+                int filial = rs.getInt("codFilial");
+                String nomeProduto = rs.getString("nomeProduto");
+                String marca = rs.getString("marcaProduto");
+                categoria = rs.getString("categoriaProduto");
+                int qtdEstoque = rs.getInt("quantidadeEmEstoque");
+                Double valor = rs.getDouble("valorProduto");
+
+                listaProdutos.add(new Produto(codProduto, filial, nomeProduto, marca, categoria, qtdEstoque, valor));
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaProdutos;
     }
 
     public static List<Produto> getListaProdutos(int codFilial, int codProduto) {

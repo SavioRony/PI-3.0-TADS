@@ -17,10 +17,15 @@ public class VendaPesquisaProduto extends HttpServlet {
 
         int idProduto = Integer.parseInt(request.getParameter("idProduto"));
         HttpSession sessaoVenda = request.getSession();
-        Colaborador c = (Colaborador) sessaoVenda.getAttribute("colaborador");
-        Produto produto = ProdutoDAO.getProduto(idProduto, c.getCodFilial());
-        sessaoVenda.setAttribute("produto", produto);
-
+        Colaborador c = (Colaborador) sessaoVenda.getAttribute("colaborador"); 
+        
+        if (ProdutoDAO.getProduto(idProduto, c.getCodFilial()) != null) {
+            Produto produto = ProdutoDAO.getProduto(idProduto, c.getCodFilial());
+            sessaoVenda.setAttribute("produto", produto);
+            sessaoVenda.setAttribute("quantEstoque", produto.getQuantidadeEmEstoque());
+        }
+        else {
+            sessaoVenda.setAttribute("semProduto", 1);
+        }
     }
-
 }

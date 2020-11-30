@@ -26,11 +26,11 @@
                 <div class="row">     
                     <div class="form-group col-lg-8">
                         <p>Nome</p>
-                        <input name="nome" class="form-control" value="${cliente.nome}" required="true"/>
+                        <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" value="${cliente.nome}" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>CPF</p>      
-                        <input name="cpf" class="form-control" value="${cliente.cpf}" readonly="true"/>    
+                        <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="cpf" class="form-control" value="${cliente.cpf}" readonly="true"/>    
                     </div>
                 </div>
                 <br/>
@@ -41,7 +41,7 @@
                     </div> 
                     <div class="form-group col-lg-6">
                         <p>Celular</p>
-                        <input name="celular" class="form-control" value="${cliente.celular}" required="true"/>
+                        <input name="celular" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" value="${cliente.celular}" required="true"/>
                     </div>
                 </div>
                 <br/>

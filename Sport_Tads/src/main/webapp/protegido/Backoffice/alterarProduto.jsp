@@ -38,17 +38,17 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="form-group col-lg-4">
+                    <div class="form-group col-lg-6">
                         <p>Categoria</p>
                         <select name="categoria"class="browser-default custom-select" required="true">
                             <option value="${prod.categoriaProduto}" disabled selected>Selecione</option>
+                            <option value="Aquaticos">Aquaticos</option>
                             <option value="Basquete">Basquete</option>
+                            <option value="Fitness">Fitness</option>
                             <option value="Futebol">Futebol</option>
+                            <option value="Marciais">Marciais</option>
+                            <option value="Volei">Volei</option>
                         </select>
-                    </div>
-                    <div class="form-group col-lg-2">
-                        <p>ID Filial</p>
-                        <input class="form-control" name="filial" value="${prod.codFilial}" readonly="true"/>
                     </div>
                     <div class="form-group col-lg-3">
                         <p>Valor</p>
@@ -59,6 +59,7 @@
                         <input class="form-control" name="qtd" value="${prod.quantidadeEmEstoque}"/>
                     </div>
                 </div>
+                    <input type="hidden" class="form-control" name="filial" value="${prod.codFilial}" readonly="true"/>
                 <br/>
                 <button class="btn btn-primary" type="submit" style="float: right">Salvar</button>
             </form>

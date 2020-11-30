@@ -36,6 +36,16 @@
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Lista de Colaboradores</h1>
+            <form action="BuscarColaborador" method="GET">
+                <div class="form-group col-lg-4" style="float: right; margin-right: -10px">
+                    <div class="input-group mb-3">
+                        <input name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" placeholder="CPF" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <table class="table">
                 <thead class="thead-light">
                     <tr>

@@ -148,6 +148,14 @@
         <servlet-name>ExcluirFilial</servlet-name>
         <servlet-class>br.sport.tads.servlet.ExcluirFilial</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListaBuscarProduto</servlet-name>
+        <servlet-class>br.sport.tads.servlet.ListaBuscarProduto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuscarColaborador</servlet-name>
+        <servlet-class>br.sport.tads.servlet.BuscarColaborador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AlterarFilial</servlet-name>
         <url-pattern>/AlterarFilial</url-pattern>
@@ -271,6 +279,14 @@
     <servlet-mapping>
         <servlet-name>RelatorioVendasGlobal</servlet-name>
         <url-pattern>/RelatorioVendasGlobal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListaBuscarProduto</servlet-name>
+        <url-pattern>/ListaBuscarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscarColaborador</servlet-name>
+        <url-pattern>/BuscarColaborador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

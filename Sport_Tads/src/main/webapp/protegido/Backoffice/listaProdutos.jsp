@@ -41,6 +41,30 @@
         <%@include file="../../cabecalho.jsp" %>
         <div class="container">
             <h1>Lista de Produtos</h1>
+            <form action="ListaBuscarProduto" method="GET">
+                <div class="row" style=" margin-right: -10px">
+                    <div class="form-group col-lg-2">
+                        <input name="idProduto" class="form-control" placeholder="ID produto" aria-describedby="button-addon2">
+                    </div>
+                    <div>
+                        <h3>ou</h3>
+                    </div>    
+                    <div class="form-group col-lg-4">
+                        <select name="categoria"class="browser-default custom-select" >
+                            <option value="" disabled selected>Selecione a Categoria</option>
+                            <option value="Aquaticos">Aquaticos</option>
+                            <option value="Basquete">Basquete</option>
+                            <option value="Fitness">Fitness</option>
+                            <option value="Futebol">Futebol</option>
+                            <option value="Marciais">Marciais</option>
+                            <option value="Volei">Volei</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
+                    </div>
+                </div>
+            </form>
             <table class="table">
                 <thead class="thead-light" >
                     <tr>
