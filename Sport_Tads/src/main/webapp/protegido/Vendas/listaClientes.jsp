@@ -37,7 +37,7 @@
         <%@include file="../../cabecalho.jsp" %>
         <div  class="container">
             <h1>Lista de Clientes</h1>
-            <form action="BuscarCliente" method="GET">
+            <form action="buscarCliente" method="GET">
                 <div class="form-group col-lg-4" style="float: right; margin-right: -10px">
                     <div class="input-group mb-3">
                         <input name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" placeholder="CPF Cliente" aria-describedby="button-addon2">

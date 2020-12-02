@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <p>Nome</p>
-                            <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" placeholder="Nome Completo" required="true"/>
+                            <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32" class="form-control" placeholder="Nome Completo" required="true"/>
                         </div>
                     </div>
                     <br/>

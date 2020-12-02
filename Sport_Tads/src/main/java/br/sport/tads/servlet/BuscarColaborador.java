@@ -1,4 +1,3 @@
-
 package br.sport.tads.servlet;
 
 import br.sport.tads.dao.ColaboradorDAO;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 public class BuscarColaborador extends HttpServlet {
 
     @Override
@@ -20,12 +18,16 @@ public class BuscarColaborador extends HttpServlet {
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
         String cpf = request.getParameter("cpf");
+        List<Colaborador> listaColaboradores = null;
         Colaborador c = (Colaborador) sessao.getAttribute("colaborador");
-        List<Colaborador> listaColaboradores = ColaboradorDAO.getColaborador(cpf, c.getCodFilial());
-        request.setAttribute("listaColaboradores", listaColaboradores);
 
+        if (cpf.equals("")) {
+            listaColaboradores = ColaboradorDAO.getColaboradores(c.getCodFilial());
+        } else {
+            listaColaboradores = ColaboradorDAO.getColaborador(cpf, c.getCodFilial());
+        }
+        request.setAttribute("listaColaboradores", listaColaboradores);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/TI/listaColaboradores.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }

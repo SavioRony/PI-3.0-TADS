@@ -167,14 +167,15 @@ public class ProdutoDAO {
         return produto;
     }
    
-    public static List<Produto> getProduto(int codProduto, String categoria) {
+    public static List<Produto> getProduto(int codProduto, String categoria, int codFilial) {
         List<Produto> listaProdutos = new ArrayList();
         try {
             Connection con = ConexaoDB.getConexao();
-            String query = "select * from tb_produto where codProduto=? or categoriaProduto=?";
+            String query = "select * from tb_produto where codProduto=? or categoriaProduto=? and codFilial=?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, codProduto);
             ps.setString(2, categoria);
+            ps.setInt(3, codFilial);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
