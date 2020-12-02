@@ -52,11 +52,11 @@
                     </div>
                     <div class="form-group col-lg-3">
                         <p>Valor</p>
-                        <input class="form-control" name="valor" value="${prod.valorProduto}"/>
+                        <input class="form-control" name="valor" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46" value="${prod.valorProduto}"/>
                     </div>
                     <div class="form-group col-lg-3">
                         <p>Quantidade</p>
-                        <input class="form-control" name="qtd" value="${prod.quantidadeEmEstoque}"/>
+                        <input class="form-control" name="qtd" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="${prod.quantidadeEmEstoque}"/>
                     </div>
                 </div>
                     <input type="hidden" class="form-control" name="filial" value="${prod.codFilial}" readonly="true"/>

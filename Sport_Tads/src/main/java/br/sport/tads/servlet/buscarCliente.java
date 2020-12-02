@@ -15,9 +15,13 @@ public class buscarCliente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cpf = request.getParameter("cpf");
-        List<Cliente> listaClientes = ClienteDAO.getClientes(cpf);
+        List<Cliente> listaClientes = null;
+        if (cpf.equals("")) {
+            listaClientes = ClienteDAO.getClientes();
+        } else {
+            listaClientes = ClienteDAO.getClientes(cpf);
+        }
         request.setAttribute("listaClientes", listaClientes);
-
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/protegido/Vendas/listaClientes.jsp");
         requestDispatcher.forward(request, response);
     }

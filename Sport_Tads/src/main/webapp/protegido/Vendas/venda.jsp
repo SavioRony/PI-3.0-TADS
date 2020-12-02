@@ -89,7 +89,7 @@
                         <h3>Cliente</h3>
                         <div class="row" style="flex-flow: row-reverse">
                             <div class="form-group col-lg-8">
-                                <div class="input-group mb-6">
+                                <div class="input-group mb-4">
                                     <input type="text" id="cpf" class="form-control" placeholder="CPF"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" aria-describedby="button-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button" id="button-addon2" onclick="BuscarCliente()">Buscar</button>
@@ -97,7 +97,6 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
                         <div>
                             <p><b>CPF:</b> ${sessionScope.cliente.cpf}</p>
                             <p><b>Nome:</b> ${sessionScope.cliente.nome}</p>

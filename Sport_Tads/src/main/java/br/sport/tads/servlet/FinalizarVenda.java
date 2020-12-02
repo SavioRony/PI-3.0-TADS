@@ -66,7 +66,7 @@ public class FinalizarVenda extends HttpServlet {
             sessaoVenda.removeAttribute("valorTotal");
             sessaoVenda.removeAttribute("listaCarrinho");
             sessaoVenda.removeAttribute("produto");
-            
+            sessaoVenda.removeAttribute("quantEstoque");
         }
 
     }

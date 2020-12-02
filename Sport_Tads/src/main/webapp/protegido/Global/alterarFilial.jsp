@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group col-lg-3">
                         <p>Cidade</p>
-                        <input name="cidade" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" value="${filial.cidade}" required="true"/>
+                        <input name="cidade" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32" class="form-control" value="${filial.cidade}" required="true"/>
                     </div>
                 </div>
                 <br/>

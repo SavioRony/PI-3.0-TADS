@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="form-group col-lg-8">
                         <p>Nome</p>
-                        <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" required="true"/>
+                        <input name="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32" class="form-control" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>CPF</p>
@@ -51,11 +51,11 @@
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Cidade</p>
-                        <input name="cidade" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" required="true"/>
+                        <input name="cidade" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32" class="form-control" required="true"/>
                     </div>
                     <div class="form-group col-lg-6">
                         <p>Cargo</p>
-                        <input name="cargo" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" class="form-control" required="true"/>
+                        <input name="cargo" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32" class="form-control" required="true"/>
                     </div>
                 </div>
                 <br/>

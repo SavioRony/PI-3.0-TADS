@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Nome</p>
-                        <input onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122" name="nome" class="form-control" required="true"/>
+                        <input name="nome" class="form-control" required="true"/>
                     </div>
                     <div class="form-group col-lg-6">
                         <p>Marca</p>
@@ -48,11 +48,11 @@
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Quantidade</p>
-                        <input name="qtd" class="form-control" required="true"/>
+                        <input name="qtd" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" required="true"/>
                     </div>
                     <div class="form-group col-lg-4">
                         <p>Valor</p>
-                        <input name="valor" class="form-control" required="true"/>
+                        <input name="valor" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46"  class="form-control" required="true"/>
                     </div>
                     <input name="filial" type="hidden" value="${sessionScope.colaborador.codFilial}"/>
                 </div>
