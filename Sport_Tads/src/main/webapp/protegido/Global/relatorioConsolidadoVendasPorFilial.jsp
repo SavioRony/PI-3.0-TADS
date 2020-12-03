@@ -87,7 +87,7 @@
                             <td>${filial.nomeFilial}</td>
                             <td>${filial.dataVenda}</td>
                             <td>${filial.quantidade}</td>
-                            <td>R$ ${filial.valorTotal}</td>
+                            <td>R$ ${filial.subTotal}</td>
                             <td>${filial.percentual}%</td>
                         </tr>
                     </c:forEach>

@@ -64,7 +64,7 @@
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <p>Usuario</p>
-                        <input name="usuario" class="form-control" value="${colaborador.usuario}" readonly="true"/>
+                        <input name="usuario" class="form-control" value="${colaborador.usuario}" />
                     </div>
                     <div class="form-group col-lg-3">
                         <p>Senha</p>
