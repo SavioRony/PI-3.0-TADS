@@ -41,16 +41,16 @@ public class AutorizacaoFilter implements Filter {
         if (url.contains("/Global/") && !colaborador.isGlobal()) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro.jsp");
         }
-        if (url.contains("/Regional/") && !colaborador.isRegional() && !colaborador.isGlobal()) {
+        if (url.contains("/Regional/") && !colaborador.isRegional()) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro.jsp");
         }
-        if (url.contains("/Vendas/") && !colaborador.isVendas() && !colaborador.isGlobal() && !colaborador.isRegional()) {
+        if (url.contains("/Vendas/") && !colaborador.isVendas()) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro.jsp");
         }
-        if (url.contains("/TI/") && !colaborador.isTi() && !colaborador.isGlobal() && !colaborador.isRegional()) {
+        if (url.contains("/TI/") && !colaborador.isTi()) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro.jsp");
         }
-        if (url.contains("/Backoffice/") && !colaborador.isBackoffice() && !colaborador.isGlobal() && !colaborador.isRegional()) {
+        if (url.contains("/Backoffice/") && !colaborador.isBackoffice()) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro.jsp");
         }
     }
